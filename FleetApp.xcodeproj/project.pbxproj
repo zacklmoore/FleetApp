@@ -13,6 +13,7 @@
 		126DF60A1BED2F3E002D9A7D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 126DF6091BED2F3E002D9A7D /* Images.xcassets */; };
 		126DF60D1BED2F3E002D9A7D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 126DF60B1BED2F3E002D9A7D /* LaunchScreen.xib */; };
 		126DF6191BED2F3E002D9A7D /* fleet_mockupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126DF6181BED2F3E002D9A7D /* fleet_mockupTests.swift */; };
+		14DA805C1BF0047D005228F4 /* CreateJoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DA805B1BF0047D005228F4 /* CreateJoinViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		126DF6121BED2F3E002D9A7D /* FleetApp.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FleetApp.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		126DF6171BED2F3E002D9A7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		126DF6181BED2F3E002D9A7D /* fleet_mockupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fleet_mockupTests.swift; sourceTree = "<group>"; };
+		14DA805B1BF0047D005228F4 /* CreateJoinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateJoinViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				126DF6091BED2F3E002D9A7D /* Images.xcassets */,
 				126DF60B1BED2F3E002D9A7D /* LaunchScreen.xib */,
 				126DF6001BED2F3E002D9A7D /* Supporting Files */,
+				14DA805B1BF0047D005228F4 /* CreateJoinViewController.swift */,
 			);
 			name = FleetApp;
 			path = fleet_mockup;
@@ -215,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14DA805C1BF0047D005228F4 /* CreateJoinViewController.swift in Sources */,
 				126DF6051BED2F3E002D9A7D /* ViewController.swift in Sources */,
 				126DF6031BED2F3E002D9A7D /* AppDelegate.swift in Sources */,
 			);
