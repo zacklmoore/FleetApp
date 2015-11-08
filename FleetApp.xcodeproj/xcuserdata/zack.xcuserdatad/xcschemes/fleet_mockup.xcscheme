@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0640"
+   LastUpgradeVersion = "0710"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,40 +14,26 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1412A30E1BED44A600BB0CA6"
+               BlueprintIdentifier = "126DF5FC1BED2F3E002D9A7D"
                BuildableName = "FleetApp.app"
                BlueprintName = "FleetApp"
-               ReferencedContainer = "container:FleetApp.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1412A3261BED44A700BB0CA6"
-               BuildableName = "FleetAppTests.xctest"
-               BlueprintName = "FleetAppTests"
                ReferencedContainer = "container:FleetApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      buildConfiguration = "Debug">
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1412A3261BED44A700BB0CA6"
-               BuildableName = "FleetAppTests.xctest"
+               BlueprintIdentifier = "126DF6111BED2F3E002D9A7D"
+               BuildableName = "FleetApp.xctest"
                BlueprintName = "FleetAppTests"
                ReferencedContainer = "container:FleetApp.xcodeproj">
             </BuildableReference>
@@ -56,27 +42,30 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1412A30E1BED44A600BB0CA6"
+            BlueprintIdentifier = "126DF5FC1BED2F3E002D9A7D"
             BuildableName = "FleetApp.app"
             BlueprintName = "FleetApp"
             ReferencedContainer = "container:FleetApp.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
+      <AdditionalOptions>
+      </AdditionalOptions>
    </TestAction>
    <LaunchAction
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Debug"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
+      debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1412A30E1BED44A600BB0CA6"
+            BlueprintIdentifier = "126DF5FC1BED2F3E002D9A7D"
             BuildableName = "FleetApp.app"
             BlueprintName = "FleetApp"
             ReferencedContainer = "container:FleetApp.xcodeproj">
@@ -86,16 +75,16 @@
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
+      buildConfiguration = "Release"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1412A30E1BED44A600BB0CA6"
+            BlueprintIdentifier = "126DF5FC1BED2F3E002D9A7D"
             BuildableName = "FleetApp.app"
             BlueprintName = "FleetApp"
             ReferencedContainer = "container:FleetApp.xcodeproj">

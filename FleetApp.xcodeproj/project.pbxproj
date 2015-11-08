@@ -7,48 +7,46 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1412A3151BED44A600BB0CA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1412A3141BED44A600BB0CA6 /* AppDelegate.swift */; };
-		1412A3181BED44A600BB0CA6 /* FleetApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1412A3161BED44A600BB0CA6 /* FleetApp.xcdatamodeld */; };
-		1412A31A1BED44A600BB0CA6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1412A3191BED44A600BB0CA6 /* ViewController.swift */; };
-		1412A31D1BED44A600BB0CA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1412A31B1BED44A600BB0CA6 /* Main.storyboard */; };
-		1412A31F1BED44A600BB0CA6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1412A31E1BED44A600BB0CA6 /* Images.xcassets */; };
-		1412A3221BED44A600BB0CA6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1412A3201BED44A600BB0CA6 /* LaunchScreen.xib */; };
-		1412A32E1BED44A700BB0CA6 /* FleetAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1412A32D1BED44A700BB0CA6 /* FleetAppTests.swift */; };
+		126DF6031BED2F3E002D9A7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126DF6021BED2F3E002D9A7D /* AppDelegate.swift */; };
+		126DF6051BED2F3E002D9A7D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126DF6041BED2F3E002D9A7D /* ViewController.swift */; };
+		126DF6081BED2F3E002D9A7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 126DF6061BED2F3E002D9A7D /* Main.storyboard */; };
+		126DF60A1BED2F3E002D9A7D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 126DF6091BED2F3E002D9A7D /* Images.xcassets */; };
+		126DF60D1BED2F3E002D9A7D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 126DF60B1BED2F3E002D9A7D /* LaunchScreen.xib */; };
+		126DF6191BED2F3E002D9A7D /* fleet_mockupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126DF6181BED2F3E002D9A7D /* fleet_mockupTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1412A3281BED44A700BB0CA6 /* PBXContainerItemProxy */ = {
+		126DF6131BED2F3E002D9A7D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 1412A3071BED44A600BB0CA6 /* Project object */;
+			containerPortal = 126DF5F51BED2F3E002D9A7D /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 1412A30E1BED44A600BB0CA6;
-			remoteInfo = FleetApp;
+			remoteGlobalIDString = 126DF5FC1BED2F3E002D9A7D;
+			remoteInfo = fleet_mockup;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1412A30F1BED44A600BB0CA6 /* FleetApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FleetApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1412A3131BED44A600BB0CA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1412A3141BED44A600BB0CA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1412A3171BED44A600BB0CA6 /* FleetApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FleetApp.xcdatamodel; sourceTree = "<group>"; };
-		1412A3191BED44A600BB0CA6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1412A31C1BED44A600BB0CA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		1412A31E1BED44A600BB0CA6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		1412A3211BED44A600BB0CA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		1412A3271BED44A700BB0CA6 /* FleetAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FleetAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1412A32C1BED44A700BB0CA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1412A32D1BED44A700BB0CA6 /* FleetAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleetAppTests.swift; sourceTree = "<group>"; };
+		126DF5FD1BED2F3E002D9A7D /* FleetApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FleetApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		126DF6011BED2F3E002D9A7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		126DF6021BED2F3E002D9A7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		126DF6041BED2F3E002D9A7D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		126DF6071BED2F3E002D9A7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		126DF6091BED2F3E002D9A7D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		126DF60C1BED2F3E002D9A7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		126DF6121BED2F3E002D9A7D /* FleetApp.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FleetApp.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		126DF6171BED2F3E002D9A7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		126DF6181BED2F3E002D9A7D /* fleet_mockupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fleet_mockupTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1412A30C1BED44A600BB0CA6 /* Frameworks */ = {
+		126DF5FA1BED2F3E002D9A7D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1412A3241BED44A700BB0CA6 /* Frameworks */ = {
+		126DF60F1BED2F3E002D9A7D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -58,59 +56,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1412A3061BED44A600BB0CA6 = {
+		126DF5F41BED2F3E002D9A7D = {
 			isa = PBXGroup;
 			children = (
-				1412A3111BED44A600BB0CA6 /* FleetApp */,
-				1412A32A1BED44A700BB0CA6 /* FleetAppTests */,
-				1412A3101BED44A600BB0CA6 /* Products */,
+				126DF5FF1BED2F3E002D9A7D /* FleetApp */,
+				126DF6151BED2F3E002D9A7D /* FleetApp */,
+				126DF5FE1BED2F3E002D9A7D /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		1412A3101BED44A600BB0CA6 /* Products */ = {
+		126DF5FE1BED2F3E002D9A7D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1412A30F1BED44A600BB0CA6 /* FleetApp.app */,
-				1412A3271BED44A700BB0CA6 /* FleetAppTests.xctest */,
+				126DF5FD1BED2F3E002D9A7D /* FleetApp.app */,
+				126DF6121BED2F3E002D9A7D /* FleetApp.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1412A3111BED44A600BB0CA6 /* FleetApp */ = {
+		126DF5FF1BED2F3E002D9A7D /* FleetApp */ = {
 			isa = PBXGroup;
 			children = (
-				1412A3141BED44A600BB0CA6 /* AppDelegate.swift */,
-				1412A3191BED44A600BB0CA6 /* ViewController.swift */,
-				1412A31B1BED44A600BB0CA6 /* Main.storyboard */,
-				1412A31E1BED44A600BB0CA6 /* Images.xcassets */,
-				1412A3201BED44A600BB0CA6 /* LaunchScreen.xib */,
-				1412A3161BED44A600BB0CA6 /* FleetApp.xcdatamodeld */,
-				1412A3121BED44A600BB0CA6 /* Supporting Files */,
+				126DF6021BED2F3E002D9A7D /* AppDelegate.swift */,
+				126DF6041BED2F3E002D9A7D /* ViewController.swift */,
+				126DF6061BED2F3E002D9A7D /* Main.storyboard */,
+				126DF6091BED2F3E002D9A7D /* Images.xcassets */,
+				126DF60B1BED2F3E002D9A7D /* LaunchScreen.xib */,
+				126DF6001BED2F3E002D9A7D /* Supporting Files */,
 			);
-			path = FleetApp;
+			name = FleetApp;
+			path = fleet_mockup;
 			sourceTree = "<group>";
 		};
-		1412A3121BED44A600BB0CA6 /* Supporting Files */ = {
+		126DF6001BED2F3E002D9A7D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1412A3131BED44A600BB0CA6 /* Info.plist */,
+				126DF6011BED2F3E002D9A7D /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		1412A32A1BED44A700BB0CA6 /* FleetAppTests */ = {
+		126DF6151BED2F3E002D9A7D /* FleetApp */ = {
 			isa = PBXGroup;
 			children = (
-				1412A32D1BED44A700BB0CA6 /* FleetAppTests.swift */,
-				1412A32B1BED44A700BB0CA6 /* Supporting Files */,
+				126DF6181BED2F3E002D9A7D /* fleet_mockupTests.swift */,
+				126DF6161BED2F3E002D9A7D /* Supporting Files */,
 			);
-			path = FleetAppTests;
+			name = FleetApp;
+			path = fleet_mockupTests;
 			sourceTree = "<group>";
 		};
-		1412A32B1BED44A700BB0CA6 /* Supporting Files */ = {
+		126DF6161BED2F3E002D9A7D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1412A32C1BED44A700BB0CA6 /* Info.plist */,
+				126DF6171BED2F3E002D9A7D /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -118,60 +117,61 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1412A30E1BED44A600BB0CA6 /* FleetApp */ = {
+		126DF5FC1BED2F3E002D9A7D /* FleetApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1412A3311BED44A700BB0CA6 /* Build configuration list for PBXNativeTarget "FleetApp" */;
+			buildConfigurationList = 126DF61C1BED2F3E002D9A7D /* Build configuration list for PBXNativeTarget "FleetApp" */;
 			buildPhases = (
-				1412A30B1BED44A600BB0CA6 /* Sources */,
-				1412A30C1BED44A600BB0CA6 /* Frameworks */,
-				1412A30D1BED44A600BB0CA6 /* Resources */,
+				126DF5F91BED2F3E002D9A7D /* Sources */,
+				126DF5FA1BED2F3E002D9A7D /* Frameworks */,
+				126DF5FB1BED2F3E002D9A7D /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = FleetApp;
-			productName = FleetApp;
-			productReference = 1412A30F1BED44A600BB0CA6 /* FleetApp.app */;
+			productName = fleet_mockup;
+			productReference = 126DF5FD1BED2F3E002D9A7D /* FleetApp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		1412A3261BED44A700BB0CA6 /* FleetAppTests */ = {
+		126DF6111BED2F3E002D9A7D /* FleetAppTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1412A3341BED44A700BB0CA6 /* Build configuration list for PBXNativeTarget "FleetAppTests" */;
+			buildConfigurationList = 126DF61F1BED2F3E002D9A7D /* Build configuration list for PBXNativeTarget "FleetAppTests" */;
 			buildPhases = (
-				1412A3231BED44A700BB0CA6 /* Sources */,
-				1412A3241BED44A700BB0CA6 /* Frameworks */,
-				1412A3251BED44A700BB0CA6 /* Resources */,
+				126DF60E1BED2F3E002D9A7D /* Sources */,
+				126DF60F1BED2F3E002D9A7D /* Frameworks */,
+				126DF6101BED2F3E002D9A7D /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				1412A3291BED44A700BB0CA6 /* PBXTargetDependency */,
+				126DF6141BED2F3E002D9A7D /* PBXTargetDependency */,
 			);
 			name = FleetAppTests;
-			productName = FleetAppTests;
-			productReference = 1412A3271BED44A700BB0CA6 /* FleetAppTests.xctest */;
+			productName = fleet_mockupTests;
+			productReference = 126DF6121BED2F3E002D9A7D /* FleetApp.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		1412A3071BED44A600BB0CA6 /* Project object */ = {
+		126DF5F51BED2F3E002D9A7D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
-				ORGANIZATIONNAME = cs407;
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = CS407;
 				TargetAttributes = {
-					1412A30E1BED44A600BB0CA6 = {
-						CreatedOnToolsVersion = 6.4;
+					126DF5FC1BED2F3E002D9A7D = {
+						CreatedOnToolsVersion = 6.3.2;
 					};
-					1412A3261BED44A700BB0CA6 = {
-						CreatedOnToolsVersion = 6.4;
-						TestTargetID = 1412A30E1BED44A600BB0CA6;
+					126DF6111BED2F3E002D9A7D = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = 126DF5FC1BED2F3E002D9A7D;
 					};
 				};
 			};
-			buildConfigurationList = 1412A30A1BED44A600BB0CA6 /* Build configuration list for PBXProject "FleetApp" */;
+			buildConfigurationList = 126DF5F81BED2F3E002D9A7D /* Build configuration list for PBXProject "FleetApp" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -179,29 +179,29 @@
 				en,
 				Base,
 			);
-			mainGroup = 1412A3061BED44A600BB0CA6;
-			productRefGroup = 1412A3101BED44A600BB0CA6 /* Products */;
+			mainGroup = 126DF5F41BED2F3E002D9A7D;
+			productRefGroup = 126DF5FE1BED2F3E002D9A7D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1412A30E1BED44A600BB0CA6 /* FleetApp */,
-				1412A3261BED44A700BB0CA6 /* FleetAppTests */,
+				126DF5FC1BED2F3E002D9A7D /* FleetApp */,
+				126DF6111BED2F3E002D9A7D /* FleetAppTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1412A30D1BED44A600BB0CA6 /* Resources */ = {
+		126DF5FB1BED2F3E002D9A7D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1412A31D1BED44A600BB0CA6 /* Main.storyboard in Resources */,
-				1412A3221BED44A600BB0CA6 /* LaunchScreen.xib in Resources */,
-				1412A31F1BED44A600BB0CA6 /* Images.xcassets in Resources */,
+				126DF6081BED2F3E002D9A7D /* Main.storyboard in Resources */,
+				126DF60D1BED2F3E002D9A7D /* LaunchScreen.xib in Resources */,
+				126DF60A1BED2F3E002D9A7D /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1412A3251BED44A700BB0CA6 /* Resources */ = {
+		126DF6101BED2F3E002D9A7D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -211,47 +211,46 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1412A30B1BED44A600BB0CA6 /* Sources */ = {
+		126DF5F91BED2F3E002D9A7D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1412A31A1BED44A600BB0CA6 /* ViewController.swift in Sources */,
-				1412A3181BED44A600BB0CA6 /* FleetApp.xcdatamodeld in Sources */,
-				1412A3151BED44A600BB0CA6 /* AppDelegate.swift in Sources */,
+				126DF6051BED2F3E002D9A7D /* ViewController.swift in Sources */,
+				126DF6031BED2F3E002D9A7D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1412A3231BED44A700BB0CA6 /* Sources */ = {
+		126DF60E1BED2F3E002D9A7D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1412A32E1BED44A700BB0CA6 /* FleetAppTests.swift in Sources */,
+				126DF6191BED2F3E002D9A7D /* fleet_mockupTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1412A3291BED44A700BB0CA6 /* PBXTargetDependency */ = {
+		126DF6141BED2F3E002D9A7D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1412A30E1BED44A600BB0CA6 /* FleetApp */;
-			targetProxy = 1412A3281BED44A700BB0CA6 /* PBXContainerItemProxy */;
+			target = 126DF5FC1BED2F3E002D9A7D /* FleetApp */;
+			targetProxy = 126DF6131BED2F3E002D9A7D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		1412A31B1BED44A600BB0CA6 /* Main.storyboard */ = {
+		126DF6061BED2F3E002D9A7D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1412A31C1BED44A600BB0CA6 /* Base */,
+				126DF6071BED2F3E002D9A7D /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		1412A3201BED44A600BB0CA6 /* LaunchScreen.xib */ = {
+		126DF60B1BED2F3E002D9A7D /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1412A3211BED44A600BB0CA6 /* Base */,
+				126DF60C1BED2F3E002D9A7D /* Base */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
@@ -259,7 +258,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		1412A32F1BED44A700BB0CA6 /* Debug */ = {
+		126DF61A1BED2F3E002D9A7D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -295,7 +294,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -303,7 +302,7 @@
 			};
 			name = Debug;
 		};
-		1412A3301BED44A700BB0CA6 /* Release */ = {
+		126DF61B1BED2F3E002D9A7D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -333,34 +332,36 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		1412A3321BED44A700BB0CA6 /* Debug */ = {
+		126DF61D1BED2F3E002D9A7D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = FleetApp/Info.plist;
+				INFOPLIST_FILE = fleet_mockup/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fleet-app";
+				PRODUCT_NAME = FleetApp;
 			};
 			name = Debug;
 		};
-		1412A3331BED44A700BB0CA6 /* Release */ = {
+		126DF61E1BED2F3E002D9A7D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = FleetApp/Info.plist;
+				INFOPLIST_FILE = fleet_mockup/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fleet-app";
+				PRODUCT_NAME = FleetApp;
 			};
 			name = Release;
 		};
-		1412A3351BED44A700BB0CA6 /* Debug */ = {
+		126DF6201BED2F3E002D9A7D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -372,14 +373,14 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = FleetAppTests/Info.plist;
+				INFOPLIST_FILE = fleet_mockupTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = FleetApp;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FleetApp.app/FleetApp";
 			};
 			name = Debug;
 		};
-		1412A3361BED44A700BB0CA6 /* Release */ = {
+		126DF6211BED2F3E002D9A7D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -387,9 +388,9 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = FleetAppTests/Info.plist;
+				INFOPLIST_FILE = fleet_mockupTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = FleetApp;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FleetApp.app/FleetApp";
 			};
 			name = Release;
@@ -397,45 +398,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1412A30A1BED44A600BB0CA6 /* Build configuration list for PBXProject "FleetApp" */ = {
+		126DF5F81BED2F3E002D9A7D /* Build configuration list for PBXProject "FleetApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1412A32F1BED44A700BB0CA6 /* Debug */,
-				1412A3301BED44A700BB0CA6 /* Release */,
+				126DF61A1BED2F3E002D9A7D /* Debug */,
+				126DF61B1BED2F3E002D9A7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1412A3311BED44A700BB0CA6 /* Build configuration list for PBXNativeTarget "FleetApp" */ = {
+		126DF61C1BED2F3E002D9A7D /* Build configuration list for PBXNativeTarget "FleetApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1412A3321BED44A700BB0CA6 /* Debug */,
-				1412A3331BED44A700BB0CA6 /* Release */,
+				126DF61D1BED2F3E002D9A7D /* Debug */,
+				126DF61E1BED2F3E002D9A7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		1412A3341BED44A700BB0CA6 /* Build configuration list for PBXNativeTarget "FleetAppTests" */ = {
+		126DF61F1BED2F3E002D9A7D /* Build configuration list for PBXNativeTarget "FleetAppTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1412A3351BED44A700BB0CA6 /* Debug */,
-				1412A3361BED44A700BB0CA6 /* Release */,
+				126DF6201BED2F3E002D9A7D /* Debug */,
+				126DF6211BED2F3E002D9A7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		1412A3161BED44A600BB0CA6 /* FleetApp.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				1412A3171BED44A600BB0CA6 /* FleetApp.xcdatamodel */,
-			);
-			currentVersion = 1412A3171BED44A600BB0CA6 /* FleetApp.xcdatamodel */;
-			path = FleetApp.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
-	rootObject = 1412A3071BED44A600BB0CA6 /* Project object */;
+	rootObject = 126DF5F51BED2F3E002D9A7D /* Project object */;
 }
