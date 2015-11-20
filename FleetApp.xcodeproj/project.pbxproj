@@ -12,8 +12,10 @@
 		126DF6081BED2F3E002D9A7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 126DF6061BED2F3E002D9A7D /* Main.storyboard */; };
 		126DF60A1BED2F3E002D9A7D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 126DF6091BED2F3E002D9A7D /* Images.xcassets */; };
 		126DF60D1BED2F3E002D9A7D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 126DF60B1BED2F3E002D9A7D /* LaunchScreen.xib */; };
-		126DF6191BED2F3E002D9A7D /* fleet_mockupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126DF6181BED2F3E002D9A7D /* fleet_mockupTests.swift */; };
 		14DA805C1BF0047D005228F4 /* CreateJoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DA805B1BF0047D005228F4 /* CreateJoinViewController.swift */; };
+		4110E2011BFFE9ED00FCE855 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4110E2001BFFE9ED00FCE855 /* MapViewController.swift */; };
+		414CDD581BFD368D00352CAF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414CDD571BFD368D00352CAF /* LoginViewController.swift */; };
+		414CDD5C1BFD382C00352CAF /* CarListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414CDD5B1BFD382C00352CAF /* CarListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +37,10 @@
 		126DF6091BED2F3E002D9A7D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		126DF60C1BED2F3E002D9A7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		126DF6121BED2F3E002D9A7D /* FleetApp.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FleetApp.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		126DF6171BED2F3E002D9A7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		126DF6181BED2F3E002D9A7D /* fleet_mockupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fleet_mockupTests.swift; sourceTree = "<group>"; };
 		14DA805B1BF0047D005228F4 /* CreateJoinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateJoinViewController.swift; sourceTree = "<group>"; };
+		4110E2001BFFE9ED00FCE855 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		414CDD571BFD368D00352CAF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		414CDD5B1BFD382C00352CAF /* CarListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,8 +64,8 @@
 		126DF5F41BED2F3E002D9A7D = {
 			isa = PBXGroup;
 			children = (
+				4110E2001BFFE9ED00FCE855 /* MapViewController.swift */,
 				126DF5FF1BED2F3E002D9A7D /* FleetApp */,
-				126DF6151BED2F3E002D9A7D /* FleetApp */,
 				126DF5FE1BED2F3E002D9A7D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -81,11 +84,13 @@
 			children = (
 				126DF6021BED2F3E002D9A7D /* AppDelegate.swift */,
 				126DF6041BED2F3E002D9A7D /* ViewController.swift */,
+				414CDD5B1BFD382C00352CAF /* CarListViewController.swift */,
 				126DF6061BED2F3E002D9A7D /* Main.storyboard */,
+				414CDD571BFD368D00352CAF /* LoginViewController.swift */,
 				126DF6091BED2F3E002D9A7D /* Images.xcassets */,
 				126DF60B1BED2F3E002D9A7D /* LaunchScreen.xib */,
-				126DF6001BED2F3E002D9A7D /* Supporting Files */,
 				14DA805B1BF0047D005228F4 /* CreateJoinViewController.swift */,
+				126DF6001BED2F3E002D9A7D /* Supporting Files */,
 			);
 			name = FleetApp;
 			path = fleet_mockup;
@@ -95,24 +100,6 @@
 			isa = PBXGroup;
 			children = (
 				126DF6011BED2F3E002D9A7D /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		126DF6151BED2F3E002D9A7D /* FleetApp */ = {
-			isa = PBXGroup;
-			children = (
-				126DF6181BED2F3E002D9A7D /* fleet_mockupTests.swift */,
-				126DF6161BED2F3E002D9A7D /* Supporting Files */,
-			);
-			name = FleetApp;
-			path = fleet_mockupTests;
-			sourceTree = "<group>";
-		};
-		126DF6161BED2F3E002D9A7D /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				126DF6171BED2F3E002D9A7D /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -218,6 +205,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				414CDD581BFD368D00352CAF /* LoginViewController.swift in Sources */,
+				4110E2011BFFE9ED00FCE855 /* MapViewController.swift in Sources */,
+				414CDD5C1BFD382C00352CAF /* CarListViewController.swift in Sources */,
 				14DA805C1BF0047D005228F4 /* CreateJoinViewController.swift in Sources */,
 				126DF6051BED2F3E002D9A7D /* ViewController.swift in Sources */,
 				126DF6031BED2F3E002D9A7D /* AppDelegate.swift in Sources */,
@@ -228,7 +218,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				126DF6191BED2F3E002D9A7D /* fleet_mockupTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
