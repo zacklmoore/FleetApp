@@ -23,6 +23,11 @@
 		8E92B3311C0271EC00785A32 /* trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E92B32A1C0271EC00785A32 /* trip.swift */; };
 		8E92B3321C0271EC00785A32 /* user.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E92B32B1C0271EC00785A32 /* user.swift */; };
 		8E92B3331C0271EC00785A32 /* vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E92B32C1C0271EC00785A32 /* vehicle.swift */; };
+		8EC5EBD41C027F3B00EF6B09 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC5EBD31C027F3B00EF6B09 /* CreateViewController.swift */; };
+		8EC5EBD61C027FAF00EF6B09 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC5EBD51C027FAF00EF6B09 /* JoinViewController.swift */; };
+		8EC5EBD81C027FD000EF6B09 /* TripOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC5EBD71C027FD000EF6B09 /* TripOverviewViewController.swift */; };
+		8EC5EBDA1C027FF800EF6B09 /* TripSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC5EBD91C027FF800EF6B09 /* TripSettingsViewController.swift */; };
+		8EC5EBDC1C02801400EF6B09 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC5EBDB1C02801400EF6B09 /* ChatViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +60,11 @@
 		8E92B32A1C0271EC00785A32 /* trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = trip.swift; sourceTree = "<group>"; };
 		8E92B32B1C0271EC00785A32 /* user.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = user.swift; sourceTree = "<group>"; };
 		8E92B32C1C0271EC00785A32 /* vehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = vehicle.swift; sourceTree = "<group>"; };
+		8EC5EBD31C027F3B00EF6B09 /* CreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
+		8EC5EBD51C027FAF00EF6B09 /* JoinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
+		8EC5EBD71C027FD000EF6B09 /* TripOverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripOverviewViewController.swift; sourceTree = "<group>"; };
+		8EC5EBD91C027FF800EF6B09 /* TripSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripSettingsViewController.swift; sourceTree = "<group>"; };
+		8EC5EBDB1C02801400EF6B09 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +117,11 @@
 				8E92B32C1C0271EC00785A32 /* vehicle.swift */,
 				414CDD5B1BFD382C00352CAF /* CarListViewController.swift */,
 				126DF6061BED2F3E002D9A7D /* Main.storyboard */,
+				8EC5EBD91C027FF800EF6B09 /* TripSettingsViewController.swift */,
+				8EC5EBDB1C02801400EF6B09 /* ChatViewController.swift */,
+				8EC5EBD71C027FD000EF6B09 /* TripOverviewViewController.swift */,
+				8EC5EBD51C027FAF00EF6B09 /* JoinViewController.swift */,
+				8EC5EBD31C027F3B00EF6B09 /* CreateViewController.swift */,
 				414CDD571BFD368D00352CAF /* LoginViewController.swift */,
 				126DF6091BED2F3E002D9A7D /* Images.xcassets */,
 				126DF60B1BED2F3E002D9A7D /* LaunchScreen.xib */,
@@ -226,8 +241,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EC5EBD81C027FD000EF6B09 /* TripOverviewViewController.swift in Sources */,
 				414CDD581BFD368D00352CAF /* LoginViewController.swift in Sources */,
 				8E92B32F1C0271EC00785A32 /* roadEvent.swift in Sources */,
+				8EC5EBD41C027F3B00EF6B09 /* CreateViewController.swift in Sources */,
 				8E92B32E1C0271EC00785A32 /* hazard.swift in Sources */,
 				8E92B3331C0271EC00785A32 /* vehicle.swift in Sources */,
 				8E92B3301C0271EC00785A32 /* stop.swift in Sources */,
@@ -237,7 +254,10 @@
 				14DA805C1BF0047D005228F4 /* CreateJoinViewController.swift in Sources */,
 				8E92B3321C0271EC00785A32 /* user.swift in Sources */,
 				8E92B32D1C0271EC00785A32 /* ColorTuple.swift in Sources */,
+				8EC5EBDA1C027FF800EF6B09 /* TripSettingsViewController.swift in Sources */,
 				126DF6051BED2F3E002D9A7D /* ViewController.swift in Sources */,
+				8EC5EBD61C027FAF00EF6B09 /* JoinViewController.swift in Sources */,
+				8EC5EBDC1C02801400EF6B09 /* ChatViewController.swift in Sources */,
 				126DF6031BED2F3E002D9A7D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
