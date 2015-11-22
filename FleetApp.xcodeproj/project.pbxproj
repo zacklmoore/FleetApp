@@ -16,6 +16,13 @@
 		4110E2011BFFE9ED00FCE855 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4110E2001BFFE9ED00FCE855 /* MapViewController.swift */; };
 		414CDD581BFD368D00352CAF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414CDD571BFD368D00352CAF /* LoginViewController.swift */; };
 		414CDD5C1BFD382C00352CAF /* CarListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414CDD5B1BFD382C00352CAF /* CarListViewController.swift */; };
+		8E92B32D1C0271EC00785A32 /* ColorTuple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E92B3261C0271EC00785A32 /* ColorTuple.swift */; };
+		8E92B32E1C0271EC00785A32 /* hazard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E92B3271C0271EC00785A32 /* hazard.swift */; };
+		8E92B32F1C0271EC00785A32 /* roadEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E92B3281C0271EC00785A32 /* roadEvent.swift */; };
+		8E92B3301C0271EC00785A32 /* stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E92B3291C0271EC00785A32 /* stop.swift */; };
+		8E92B3311C0271EC00785A32 /* trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E92B32A1C0271EC00785A32 /* trip.swift */; };
+		8E92B3321C0271EC00785A32 /* user.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E92B32B1C0271EC00785A32 /* user.swift */; };
+		8E92B3331C0271EC00785A32 /* vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E92B32C1C0271EC00785A32 /* vehicle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +48,13 @@
 		4110E2001BFFE9ED00FCE855 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		414CDD571BFD368D00352CAF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		414CDD5B1BFD382C00352CAF /* CarListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarListViewController.swift; sourceTree = "<group>"; };
+		8E92B3261C0271EC00785A32 /* ColorTuple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTuple.swift; sourceTree = "<group>"; };
+		8E92B3271C0271EC00785A32 /* hazard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = hazard.swift; sourceTree = "<group>"; };
+		8E92B3281C0271EC00785A32 /* roadEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = roadEvent.swift; sourceTree = "<group>"; };
+		8E92B3291C0271EC00785A32 /* stop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = stop.swift; sourceTree = "<group>"; };
+		8E92B32A1C0271EC00785A32 /* trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = trip.swift; sourceTree = "<group>"; };
+		8E92B32B1C0271EC00785A32 /* user.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = user.swift; sourceTree = "<group>"; };
+		8E92B32C1C0271EC00785A32 /* vehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = vehicle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +98,13 @@
 			children = (
 				126DF6021BED2F3E002D9A7D /* AppDelegate.swift */,
 				126DF6041BED2F3E002D9A7D /* ViewController.swift */,
+				8E92B3261C0271EC00785A32 /* ColorTuple.swift */,
+				8E92B3271C0271EC00785A32 /* hazard.swift */,
+				8E92B3281C0271EC00785A32 /* roadEvent.swift */,
+				8E92B3291C0271EC00785A32 /* stop.swift */,
+				8E92B32A1C0271EC00785A32 /* trip.swift */,
+				8E92B32B1C0271EC00785A32 /* user.swift */,
+				8E92B32C1C0271EC00785A32 /* vehicle.swift */,
 				414CDD5B1BFD382C00352CAF /* CarListViewController.swift */,
 				126DF6061BED2F3E002D9A7D /* Main.storyboard */,
 				414CDD571BFD368D00352CAF /* LoginViewController.swift */,
@@ -206,9 +227,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				414CDD581BFD368D00352CAF /* LoginViewController.swift in Sources */,
+				8E92B32F1C0271EC00785A32 /* roadEvent.swift in Sources */,
+				8E92B32E1C0271EC00785A32 /* hazard.swift in Sources */,
+				8E92B3331C0271EC00785A32 /* vehicle.swift in Sources */,
+				8E92B3301C0271EC00785A32 /* stop.swift in Sources */,
 				4110E2011BFFE9ED00FCE855 /* MapViewController.swift in Sources */,
+				8E92B3311C0271EC00785A32 /* trip.swift in Sources */,
 				414CDD5C1BFD382C00352CAF /* CarListViewController.swift in Sources */,
 				14DA805C1BF0047D005228F4 /* CreateJoinViewController.swift in Sources */,
+				8E92B3321C0271EC00785A32 /* user.swift in Sources */,
+				8E92B32D1C0271EC00785A32 /* ColorTuple.swift in Sources */,
 				126DF6051BED2F3E002D9A7D /* ViewController.swift in Sources */,
 				126DF6031BED2F3E002D9A7D /* AppDelegate.swift in Sources */,
 			);
