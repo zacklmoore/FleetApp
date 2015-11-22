@@ -45,7 +45,7 @@
 		126DF60C1BED2F3E002D9A7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		126DF6121BED2F3E002D9A7D /* FleetApp.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FleetApp.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		14DA805B1BF0047D005228F4 /* CreateJoinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateJoinViewController.swift; sourceTree = "<group>"; };
-		4110E2001BFFE9ED00FCE855 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		4110E2001BFFE9ED00FCE855 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = ../MapViewController.swift; sourceTree = "<group>"; };
 		414CDD571BFD368D00352CAF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		414CDD5B1BFD382C00352CAF /* CarListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarListViewController.swift; sourceTree = "<group>"; };
 		8E92B3261C0271EC00785A32 /* ColorTuple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTuple.swift; sourceTree = "<group>"; };
@@ -78,7 +78,6 @@
 		126DF5F41BED2F3E002D9A7D = {
 			isa = PBXGroup;
 			children = (
-				4110E2001BFFE9ED00FCE855 /* MapViewController.swift */,
 				126DF5FF1BED2F3E002D9A7D /* FleetApp */,
 				126DF5FE1BED2F3E002D9A7D /* Products */,
 			);
@@ -97,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				126DF6021BED2F3E002D9A7D /* AppDelegate.swift */,
+				4110E2001BFFE9ED00FCE855 /* MapViewController.swift */,
 				126DF6041BED2F3E002D9A7D /* ViewController.swift */,
 				8E92B3261C0271EC00785A32 /* ColorTuple.swift */,
 				8E92B3271C0271EC00785A32 /* hazard.swift */,

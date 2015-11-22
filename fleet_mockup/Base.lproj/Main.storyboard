@@ -599,6 +599,9 @@
                             <constraint firstItem="XDt-yC-2Ch" firstAttribute="bottom" secondItem="TBr-Jf-rIf" secondAttribute="top" id="z02-P7-pGk"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="MapView" destination="XDt-yC-2Ch" id="KUv-jX-GpG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nKG-ch-27Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
