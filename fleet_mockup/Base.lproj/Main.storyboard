@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -76,7 +76,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fleet" translatesAutoresizingMaskIntoConstraints="NO" id="5wp-cO-9N1">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="fleet" translatesAutoresizingMaskIntoConstraints="NO" id="5wp-cO-9N1">
                                 <rect key="frame" x="152" y="72" width="296" height="156"/>
                                 <animations/>
                                 <constraints>
@@ -95,7 +95,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Info" translatesAutoresizingMaskIntoConstraints="NO" id="b0s-K8-KBr">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Info" translatesAutoresizingMaskIntoConstraints="NO" id="b0s-K8-KBr">
                                 <rect key="frame" x="206" y="252" width="189" height="119"/>
                                 <animations/>
                                 <constraints>
@@ -436,35 +436,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Cars:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxc-zV-a6q">
-                                <rect key="frame" x="20" y="392" width="134" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="c1I-BH-nqe">
-                                <rect key="frame" x="78" y="421" width="94" height="29"/>
-                                <animations/>
-                            </stepper>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NYE-05-HDd">
-                                <rect key="frame" x="20" y="421" width="50" height="30"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="6GU-qd-8wg"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qGZ-YP-YEe">
-                                <rect key="frame" x="226" y="534" width="148" height="46"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
-                                <state key="normal" title="Create Trip"/>
-                                <connections>
-                                    <segue destination="2Wo-Ka-ail" kind="show" id="2bK-Cj-t8d"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trip Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q1E-NX-hIL">
                                 <rect key="frame" x="20" y="72" width="90" height="21"/>
                                 <animations/>
@@ -486,34 +457,102 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="1uO-lC-occ">
-                                <rect key="frame" x="20" y="168" width="560" height="216"/>
+                                <rect key="frame" x="20" y="168" width="560" height="154"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="154" id="oUT-fo-whW"/>
+                                </constraints>
                                 <date key="date" timeIntervalSinceReferenceDate="469841098.64763498">
                                     <!--2015-11-21 23:24:58 +0000-->
                                 </date>
                             </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iat-7r-x7h">
+                                <rect key="frame" x="20" y="397" width="111" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pAt-hI-Vj3">
+                                <rect key="frame" x="20" y="359" width="560" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mA4-Yc-1XK">
+                                <rect key="frame" x="20" y="426" width="560" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Cars:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxc-zV-a6q">
+                                <rect key="frame" x="20" y="464" width="134" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="c1I-BH-nqe">
+                                <rect key="frame" x="58" y="493" width="94" height="29"/>
+                                <animations/>
+                            </stepper>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NYE-05-HDd">
+                                <rect key="frame" x="20" y="493" width="30" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="exS-kq-x47"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lmt-oI-Jyt">
+                                <rect key="frame" x="20" y="330" width="122" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qGZ-YP-YEe">
+                                <rect key="frame" x="226" y="534" width="148" height="46"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <state key="normal" title="Create Trip"/>
+                                <connections>
+                                    <segue destination="2Wo-Ka-ail" kind="show" id="2bK-Cj-t8d"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="oxc-zV-a6q" firstAttribute="top" secondItem="1uO-lC-occ" secondAttribute="bottom" constant="8" id="3Xn-eN-V3a"/>
+                            <constraint firstItem="Iat-7r-x7h" firstAttribute="top" secondItem="pAt-hI-Vj3" secondAttribute="bottom" constant="8" id="060-B6-sN8"/>
+                            <constraint firstItem="c1I-BH-nqe" firstAttribute="top" secondItem="oxc-zV-a6q" secondAttribute="bottom" constant="8" id="1kJ-Kg-Vg2"/>
+                            <constraint firstItem="pAt-hI-Vj3" firstAttribute="trailing" secondItem="Vgl-Sq-uOf" secondAttribute="trailingMargin" id="1w5-XG-r46"/>
+                            <constraint firstItem="mA4-Yc-1XK" firstAttribute="trailing" secondItem="Vgl-Sq-uOf" secondAttribute="trailingMargin" id="3dY-D8-tHl"/>
+                            <constraint firstItem="Iat-7r-x7h" firstAttribute="leading" secondItem="Vgl-Sq-uOf" secondAttribute="leadingMargin" id="CPo-Vd-PyD"/>
                             <constraint firstItem="oB6-je-lGm" firstAttribute="top" secondItem="q1E-NX-hIL" secondAttribute="bottom" constant="8" id="Dc0-2v-CfV"/>
-                            <constraint firstItem="lH9-YW-pAW" firstAttribute="top" secondItem="qGZ-YP-YEe" secondAttribute="bottom" constant="20" id="EaE-xY-K0U"/>
+                            <constraint firstItem="NYE-05-HDd" firstAttribute="leading" secondItem="Vgl-Sq-uOf" secondAttribute="leadingMargin" id="Drf-ua-VBS"/>
                             <constraint firstItem="1uO-lC-occ" firstAttribute="trailing" secondItem="Vgl-Sq-uOf" secondAttribute="trailingMargin" id="GBp-mx-qUa"/>
                             <constraint firstItem="q1E-NX-hIL" firstAttribute="leading" secondItem="Vgl-Sq-uOf" secondAttribute="leadingMargin" id="GdW-Sh-t63"/>
+                            <constraint firstItem="mA4-Yc-1XK" firstAttribute="leading" secondItem="Vgl-Sq-uOf" secondAttribute="leadingMargin" id="KtO-Wg-zF2"/>
                             <constraint firstItem="oB6-je-lGm" firstAttribute="trailing" secondItem="Vgl-Sq-uOf" secondAttribute="trailingMargin" id="Kyw-AR-x3H"/>
                             <constraint firstItem="1uO-lC-occ" firstAttribute="top" secondItem="KnH-c8-Rka" secondAttribute="bottom" constant="8" id="LaH-Z9-bBb"/>
-                            <constraint firstItem="NYE-05-HDd" firstAttribute="top" secondItem="oxc-zV-a6q" secondAttribute="bottom" constant="8" id="SHx-nJ-hkr"/>
                             <constraint firstItem="oB6-je-lGm" firstAttribute="leading" secondItem="Vgl-Sq-uOf" secondAttribute="leadingMargin" id="T1g-BR-WfW"/>
-                            <constraint firstItem="qGZ-YP-YEe" firstAttribute="centerX" secondItem="Vgl-Sq-uOf" secondAttribute="centerX" id="TtP-PQ-TMk"/>
+                            <constraint firstItem="qGZ-YP-YEe" firstAttribute="centerX" secondItem="mA4-Yc-1XK" secondAttribute="centerX" id="UZA-SM-U34"/>
                             <constraint firstItem="KnH-c8-Rka" firstAttribute="top" secondItem="oB6-je-lGm" secondAttribute="bottom" constant="8" id="Vhu-MK-n6p"/>
-                            <constraint firstItem="c1I-BH-nqe" firstAttribute="top" secondItem="oxc-zV-a6q" secondAttribute="bottom" constant="8" id="ZLd-Cj-0QS"/>
-                            <constraint firstItem="c1I-BH-nqe" firstAttribute="leading" secondItem="NYE-05-HDd" secondAttribute="trailing" constant="8" id="bss-Z8-dXa"/>
+                            <constraint firstItem="oxc-zV-a6q" firstAttribute="leading" secondItem="Vgl-Sq-uOf" secondAttribute="leadingMargin" id="YEq-GL-Bvs"/>
+                            <constraint firstItem="oxc-zV-a6q" firstAttribute="top" secondItem="mA4-Yc-1XK" secondAttribute="bottom" constant="8" id="cws-NG-OlL"/>
+                            <constraint firstItem="Lmt-oI-Jyt" firstAttribute="top" secondItem="1uO-lC-occ" secondAttribute="bottom" constant="8" id="f26-kX-xfH"/>
                             <constraint firstItem="KnH-c8-Rka" firstAttribute="leading" secondItem="Vgl-Sq-uOf" secondAttribute="leadingMargin" id="hCA-Ji-G3y"/>
-                            <constraint firstItem="NYE-05-HDd" firstAttribute="leading" secondItem="Vgl-Sq-uOf" secondAttribute="leadingMargin" id="hfD-MF-4jz"/>
+                            <constraint firstItem="pAt-hI-Vj3" firstAttribute="top" secondItem="Lmt-oI-Jyt" secondAttribute="bottom" constant="8" id="hnR-XQ-2gs"/>
+                            <constraint firstItem="Lmt-oI-Jyt" firstAttribute="leading" secondItem="Vgl-Sq-uOf" secondAttribute="leadingMargin" id="jAm-bw-oBi"/>
                             <constraint firstItem="q1E-NX-hIL" firstAttribute="top" secondItem="XBc-8L-wU0" secondAttribute="bottom" constant="8" id="kDg-P6-TdI"/>
+                            <constraint firstItem="NYE-05-HDd" firstAttribute="top" secondItem="oxc-zV-a6q" secondAttribute="bottom" constant="8" id="q5g-uk-H7Y"/>
+                            <constraint firstItem="c1I-BH-nqe" firstAttribute="leading" secondItem="NYE-05-HDd" secondAttribute="trailing" constant="8" id="r7f-R0-dWp"/>
+                            <constraint firstItem="mA4-Yc-1XK" firstAttribute="top" secondItem="Iat-7r-x7h" secondAttribute="bottom" constant="8" id="r8h-Hx-Gri"/>
+                            <constraint firstItem="pAt-hI-Vj3" firstAttribute="leading" secondItem="Vgl-Sq-uOf" secondAttribute="leadingMargin" id="rqS-fv-MeJ"/>
                             <constraint firstItem="1uO-lC-occ" firstAttribute="leading" secondItem="Vgl-Sq-uOf" secondAttribute="leadingMargin" id="tAd-EB-lyO"/>
-                            <constraint firstItem="oxc-zV-a6q" firstAttribute="leading" secondItem="Vgl-Sq-uOf" secondAttribute="leadingMargin" id="yAI-6J-ft8"/>
+                            <constraint firstAttribute="bottom" secondItem="qGZ-YP-YEe" secondAttribute="bottom" constant="20" symbolic="YES" id="vlQ-3a-qxB"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -652,6 +691,6 @@
         <image name="fleet" width="809" height="725"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gIx-Xw-ANi"/>
+        <segue reference="2bK-Cj-t8d"/>
     </inferredMetricsTieBreakers>
 </document>
