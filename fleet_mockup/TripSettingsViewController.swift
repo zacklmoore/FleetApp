@@ -10,6 +10,12 @@ import UIKit
 
 class TripSettingsViewController: UIViewController {
     
+    @IBOutlet weak var tripNameField: UITextField!
+    @IBOutlet weak var tripDateTimePicker: UIDatePicker!
+    @IBOutlet weak var tripStartLocationField: UITextField!
+    @IBOutlet weak var tripEndLocationField: UITextField!
+    @IBOutlet weak var tripNumberOfCarsField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -18,5 +24,13 @@ class TripSettingsViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func tripNumberofCarsFieldChanged(sender: AnyObject) {
+        
+    }
+    
+    @IBAction func tripSaveSettingsPressed(sender: AnyObject) {
+        
     }
 }

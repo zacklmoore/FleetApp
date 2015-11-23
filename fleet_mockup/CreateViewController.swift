@@ -10,6 +10,12 @@ import UIKit
 
 class CreateViewController: UIViewController {
     
+    @IBOutlet weak var tripNameField: UITextField!
+    @IBOutlet weak var tripDateTimePicker: UIDatePicker!
+    @IBOutlet weak var tripStartLocationField: UITextField!
+    @IBOutlet weak var tripEndLocationField: UITextField!
+    @IBOutlet weak var tripCarsField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -18,5 +24,13 @@ class CreateViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-}
+    }
+    
+    func createTrip() {
+        
+    }
+    
+    @IBAction func tripCarsStepperChanged(sender: AnyObject) {
+        
+    }
 }

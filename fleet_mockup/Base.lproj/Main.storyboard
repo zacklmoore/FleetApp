@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -27,7 +27,7 @@
         <!--Startup View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController title="Startup View Controller" id="vXZ-lx-hvc" customClass="ViewController" customModule="FleetApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Startup View Controller" id="vXZ-lx-hvc" customClass="LoginViewController" customModule="FleetApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -51,6 +51,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="registerPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="dd4-H0-NLS"/>
                                     <segue destination="Vic-se-BzL" kind="show" id="Shm-Fx-3gx"/>
                                 </connections>
                             </button>
@@ -118,6 +119,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="loginPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="z23-pN-CuF"/>
                                     <segue destination="Vic-se-BzL" kind="show" id="d5y-fX-As9"/>
                                 </connections>
                             </button>
@@ -154,6 +156,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="h5A-jO-6PS"/>
+                    <connections>
+                        <outlet property="passworField" destination="z0F-fs-fer" id="NLa-A0-nA0"/>
+                        <outlet property="usernameField" destination="iWW-Hd-JLi" id="eUZ-OX-2FU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
@@ -186,6 +192,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="joinTripPressed:" destination="Yq7-8f-yve" eventType="touchUpInside" id="qCr-dr-FyW"/>
                                     <segue destination="isK-2y-1Sh" kind="show" id="wAv-1B-6mz"/>
                                 </connections>
                             </button>
@@ -220,6 +227,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="createTripPressed:" destination="Yq7-8f-yve" eventType="touchUpInside" id="MbK-sk-Qbp"/>
                                     <segue destination="HEm-2b-4DB" kind="show" id="Mbj-Tg-y4J"/>
                                 </connections>
                             </button>
@@ -246,7 +254,7 @@
         <!--Trip Overview View Controller-->
         <scene sceneID="yZr-JM-Eoq">
             <objects>
-                <viewController title="Trip Overview View Controller" id="2Wo-Ka-ail" sceneMemberID="viewController">
+                <viewController title="Trip Overview View Controller" id="2Wo-Ka-ail" customClass="TripOverviewViewController" customModule="FleetApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RMz-8x-yfJ"/>
                         <viewControllerLayoutGuide type="bottom" id="vfH-4O-U5b"/>
@@ -256,36 +264,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%Trip Name%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SYN-nb-N98">
-                                <rect key="frame" x="222" y="72" width="156" height="29"/>
+                                <rect key="frame" x="197" y="72" width="207" height="39"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3dD-OM-Ioq">
-                                <rect key="frame" x="261" y="109" width="78" height="34"/>
+                                <rect key="frame" x="261" y="167" width="78" height="34"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <state key="normal" title="Trip Chat"/>
                                 <connections>
+                                    <action selector="tripChatPressed:" destination="2Wo-Ka-ail" eventType="touchUpInside" id="adi-cd-FmQ"/>
                                     <segue destination="P7P-Ng-Ge0" kind="show" id="3wN-rw-JXn"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PsF-aK-yta">
-                                <rect key="frame" x="259" y="151" width="83" height="34"/>
+                                <rect key="frame" x="259" y="209" width="83" height="34"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <state key="normal" title="View Map"/>
                                 <connections>
+                                    <action selector="viewMapPressed:" destination="2Wo-Ka-ail" eventType="touchUpInside" id="rzN-ZW-VeL"/>
                                     <segue destination="lfF-ix-eKR" kind="show" id="SpL-ry-8wp"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bLU-8f-LiO">
-                                <rect key="frame" x="246" y="193" width="108" height="34"/>
+                                <rect key="frame" x="246" y="251" width="108" height="34"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <state key="normal" title="Trip Settings"/>
                                 <connections>
+                                    <action selector="tripSettingsPressed:" destination="2Wo-Ka-ail" eventType="touchUpInside" id="n5b-nX-eqq"/>
                                     <segue destination="d0x-pw-6R3" kind="show" id="eMK-F2-wUH"/>
                                 </connections>
                             </button>
@@ -294,19 +305,12 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Car List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwR-c0-YLM">
-                                <rect key="frame" x="261" y="235" width="79" height="27"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KIq-Ix-ixi">
-                                <rect key="frame" x="28" y="270" width="544" height="200"/>
+                                <rect key="frame" x="28" y="333" width="544" height="256"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="ffr-0E-nPJ"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="256" id="ffr-0E-nPJ"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="vOf-9i-CMv">
@@ -321,28 +325,56 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%Trip ID%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9R6-sQ-Sba">
+                                <rect key="frame" x="272" y="112" width="57" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%Start Location% --&gt; %End Location%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zPi-HF-4ue">
+                                <rect key="frame" x="129" y="135" width="343" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Car List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwR-c0-YLM">
+                                <rect key="frame" x="253" y="293" width="93" height="32"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="9R6-sQ-Sba" firstAttribute="top" secondItem="SYN-nb-N98" secondAttribute="bottom" constant="1" id="BkR-JH-qyj"/>
                             <constraint firstItem="KIq-Ix-ixi" firstAttribute="leading" secondItem="fFP-w8-EcY" secondAttribute="leadingMargin" constant="8" id="FA5-on-Uns"/>
                             <constraint firstItem="PsF-aK-yta" firstAttribute="centerX" secondItem="fFP-w8-EcY" secondAttribute="centerX" id="G6i-CJ-MQk"/>
+                            <constraint firstItem="zPi-HF-4ue" firstAttribute="top" secondItem="9R6-sQ-Sba" secondAttribute="bottom" constant="8" id="I9n-Ii-64O"/>
                             <constraint firstAttribute="trailingMargin" secondItem="KIq-Ix-ixi" secondAttribute="trailing" constant="8" id="JaT-fY-ZXg"/>
                             <constraint firstItem="vfH-4O-U5b" firstAttribute="top" secondItem="vVu-5R-Waj" secondAttribute="bottom" constant="8" id="JhN-zb-YDi"/>
                             <constraint firstItem="SYN-nb-N98" firstAttribute="top" secondItem="RMz-8x-yfJ" secondAttribute="bottom" constant="8" id="Kyj-nQ-ce5"/>
                             <constraint firstItem="PsF-aK-yta" firstAttribute="top" secondItem="3dD-OM-Ioq" secondAttribute="bottom" constant="8" id="P6Q-Dp-C9Z"/>
                             <constraint firstItem="bLU-8f-LiO" firstAttribute="top" secondItem="PsF-aK-yta" secondAttribute="bottom" constant="8" id="PPk-Ce-slY"/>
+                            <constraint firstItem="zPi-HF-4ue" firstAttribute="centerX" secondItem="fFP-w8-EcY" secondAttribute="centerX" id="aXi-QF-xLY"/>
                             <constraint firstItem="3dD-OM-Ioq" firstAttribute="centerX" secondItem="fFP-w8-EcY" secondAttribute="centerX" id="b4P-Tl-Xn5"/>
-                            <constraint firstItem="3dD-OM-Ioq" firstAttribute="top" secondItem="SYN-nb-N98" secondAttribute="bottom" constant="8" id="b4m-kV-oq7"/>
                             <constraint firstItem="vVu-5R-Waj" firstAttribute="leading" secondItem="fFP-w8-EcY" secondAttribute="leadingMargin" constant="8" id="dow-rs-aJT"/>
                             <constraint firstAttribute="trailingMargin" secondItem="vVu-5R-Waj" secondAttribute="trailing" constant="8" id="dqk-Ih-0N8"/>
                             <constraint firstItem="hwR-c0-YLM" firstAttribute="top" secondItem="bLU-8f-LiO" secondAttribute="bottom" constant="8" id="gU7-wj-MIB"/>
                             <constraint firstItem="KIq-Ix-ixi" firstAttribute="top" secondItem="hwR-c0-YLM" secondAttribute="bottom" constant="8" id="kuU-6o-YKf"/>
                             <constraint firstItem="SYN-nb-N98" firstAttribute="centerX" secondItem="fFP-w8-EcY" secondAttribute="centerX" id="n32-NG-d6f"/>
+                            <constraint firstItem="3dD-OM-Ioq" firstAttribute="top" secondItem="zPi-HF-4ue" secondAttribute="bottom" constant="8" id="pER-tc-C4S"/>
+                            <constraint firstItem="9R6-sQ-Sba" firstAttribute="centerX" secondItem="fFP-w8-EcY" secondAttribute="centerX" id="vSY-3w-Q2E"/>
                             <constraint firstItem="bLU-8f-LiO" firstAttribute="centerX" secondItem="fFP-w8-EcY" secondAttribute="centerX" id="y06-ZR-bhT"/>
                             <constraint firstItem="hwR-c0-YLM" firstAttribute="centerX" secondItem="fFP-w8-EcY" secondAttribute="centerX" id="zOW-59-x6u"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tripIDLabel" destination="9R6-sQ-Sba" id="g7Z-9o-h7k"/>
+                        <outlet property="tripLocationsLabel" destination="zPi-HF-4ue" id="wEO-yW-qHD"/>
+                        <outlet property="tripNameLabel" destination="SYN-nb-N98" id="57F-ir-f99"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I2N-fx-TSY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -351,7 +383,7 @@
         <!--Create View Controller-->
         <scene sceneID="PVZ-Ui-rq5">
             <objects>
-                <viewController title="Create View Controller" id="HEm-2b-4DB" sceneMemberID="viewController">
+                <viewController title="Create View Controller" id="HEm-2b-4DB" customClass="CreateViewController" customModule="FleetApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XBc-8L-wU0"/>
                         <viewControllerLayoutGuide type="bottom" id="lH9-YW-pAW"/>
@@ -419,6 +451,9 @@
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="c1I-BH-nqe">
                                 <rect key="frame" x="58" y="493" width="94" height="29"/>
                                 <animations/>
+                                <connections>
+                                    <action selector="tripCarsStepperChanged:" destination="HEm-2b-4DB" eventType="valueChanged" id="z27-Pm-fuc"/>
+                                </connections>
                             </stepper>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NYE-05-HDd">
                                 <rect key="frame" x="20" y="493" width="30" height="30"/>
@@ -479,6 +514,13 @@
                             <constraint firstAttribute="bottom" secondItem="qGZ-YP-YEe" secondAttribute="bottom" constant="20" symbolic="YES" id="vlQ-3a-qxB"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tripCarsField" destination="NYE-05-HDd" id="QDn-PN-tdl"/>
+                        <outlet property="tripDateTimePicker" destination="1uO-lC-occ" id="OQD-g8-9aq"/>
+                        <outlet property="tripEndLocationField" destination="mA4-Yc-1XK" id="u6T-aj-BoV"/>
+                        <outlet property="tripNameField" destination="oB6-je-lGm" id="OnI-yg-oYs"/>
+                        <outlet property="tripStartLocationField" destination="pAt-hI-Vj3" id="Qtg-2Y-5hB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fq4-Ue-O07" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -487,7 +529,7 @@
         <!--Join View Controller-->
         <scene sceneID="nYZ-26-HDj">
             <objects>
-                <viewController title="Join View Controller" id="isK-2y-1Sh" sceneMemberID="viewController">
+                <viewController title="Join View Controller" id="isK-2y-1Sh" customClass="JoinViewController" customModule="FleetApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Zhe-gu-eir"/>
                         <viewControllerLayoutGuide type="bottom" id="nej-H4-Nny"/>
@@ -515,6 +557,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <state key="normal" title="Join"/>
                                 <connections>
+                                    <action selector="joinTripButtonPressed:" destination="isK-2y-1Sh" eventType="touchUpInside" id="6uE-VN-Kdn"/>
                                     <segue destination="2Wo-Ka-ail" kind="show" id="gIx-Xw-ANi"/>
                                 </connections>
                             </button>
@@ -531,6 +574,9 @@
                             <constraint firstItem="Vo1-FX-qje" firstAttribute="trailing" secondItem="73T-HV-eLw" secondAttribute="trailingMargin" constant="8" id="oq0-ml-Oi0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tripIDField" destination="Vo1-FX-qje" id="Xuf-9i-Gpm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZY2-bD-ndi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -573,7 +619,7 @@
         <!--Chat View Controller-->
         <scene sceneID="29i-dm-YxU">
             <objects>
-                <viewController title="Chat View Controller" id="P7P-Ng-Ge0" sceneMemberID="viewController">
+                <viewController title="Chat View Controller" id="P7P-Ng-Ge0" customClass="ChatViewController" customModule="FleetApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eJd-0v-VT8"/>
                         <viewControllerLayoutGuide type="bottom" id="MIL-e0-bqt"/>
@@ -592,7 +638,7 @@
         <!--Create View Controller-->
         <scene sceneID="vCk-1R-ofm">
             <objects>
-                <viewController title="Create View Controller" id="d0x-pw-6R3" sceneMemberID="viewController">
+                <viewController title="Create View Controller" id="d0x-pw-6R3" customClass="TripSettingsViewController" customModule="FleetApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Rpv-79-EJE"/>
                         <viewControllerLayoutGuide type="bottom" id="fBk-Dj-Fpc"/>
@@ -660,6 +706,9 @@
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="zTi-ZT-1c1">
                                 <rect key="frame" x="58" y="493" width="94" height="29"/>
                                 <animations/>
+                                <connections>
+                                    <action selector="tripNumberofCarsFieldChanged:" destination="d0x-pw-6R3" eventType="valueChanged" id="Wzq-uW-qCw"/>
+                                </connections>
                             </stepper>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fe2-oV-Jlt">
                                 <rect key="frame" x="20" y="493" width="30" height="30"/>
@@ -682,6 +731,9 @@
                                 <animations/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="tripSaveSettingsPressed:" destination="d0x-pw-6R3" eventType="touchUpInside" id="Ppy-2P-8z5"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>
@@ -717,10 +769,18 @@
                             <constraint firstItem="b6e-cP-oPx" firstAttribute="trailing" secondItem="bHl-f8-VjN" secondAttribute="trailingMargin" id="zoh-rF-iP0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tripDateTimePicker" destination="hEh-qE-n6u" id="oI8-Sx-Wqe"/>
+                        <outlet property="tripEndLocationField" destination="b6e-cP-oPx" id="WeK-BZ-mA4"/>
+                        <outlet property="tripNameFIeld" destination="kRb-9G-ryH" id="1o3-8z-9ni"/>
+                        <outlet property="tripNameField" destination="kRb-9G-ryH" id="u2I-eE-7je"/>
+                        <outlet property="tripNumberOfCarsField" destination="fe2-oV-Jlt" id="L6f-T9-YBF"/>
+                        <outlet property="tripStartLocationField" destination="b3c-rp-eYX" id="Bvf-Dz-Rtd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zI5-nU-w75" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3795" y="1082"/>
+            <point key="canvasLocation" x="4078" y="1082"/>
         </scene>
     </scenes>
     <resources>
@@ -728,7 +788,7 @@
         <image name="fleet" width="809" height="725"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="gIx-Xw-ANi"/>
         <segue reference="d5y-fX-As9"/>
-        <segue reference="2bK-Cj-t8d"/>
     </inferredMetricsTieBreakers>
 </document>

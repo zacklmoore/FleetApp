@@ -9,6 +9,8 @@ import UIKit
 
 class JoinViewController: UIViewController {
     
+    @IBOutlet weak var tripIDField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -17,5 +19,13 @@ class JoinViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func joinTrip(tripID: String) {
+        
+    }
+    
+    @IBAction func joinTripButtonPressed(sender: AnyObject) {
+        
     }
 }
