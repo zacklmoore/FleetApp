@@ -631,7 +631,7 @@
         <!--Trip Settings View Controller-->
         <scene sceneID="ITy-LD-v2B">
             <objects>
-                <viewController title="Trip Settings View Controller" id="zIi-UQ-CHf" sceneMemberID="viewController">
+                <viewController title="Trip Settings View Controller" id="zIi-UQ-CHf" customClass="TripSettingsViewController" customModule="FleetApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2it-I3-ybP"/>
                         <viewControllerLayoutGuide type="bottom" id="U9f-9d-wwv"/>
@@ -698,6 +698,9 @@
                                 <rect key="frame" x="272" y="539" width="57" height="41"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="tripSaveSettingsPressed:" destination="zIi-UQ-CHf" eventType="touchUpInside" id="H4A-tr-jiU"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fcn-oa-O2L">
                                 <rect key="frame" x="20" y="493" width="50" height="30"/>
@@ -738,6 +741,13 @@
                             <constraint firstItem="Aow-ZA-l9h" firstAttribute="top" secondItem="wBw-LU-oVC" secondAttribute="bottom" constant="8" id="yjk-zC-4J1"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tripDateTimePicker" destination="Aow-ZA-l9h" id="TLN-wO-JNR"/>
+                        <outlet property="tripEndLocationField" destination="OZp-q7-LNp" id="B6W-db-5yU"/>
+                        <outlet property="tripNameField" destination="6G4-dy-2Zx" id="7aA-AA-fP8"/>
+                        <outlet property="tripNumberOfCarsField" destination="Fcn-oa-O2L" id="SLr-gw-gfR"/>
+                        <outlet property="tripStartLocationField" destination="LNq-Um-DmZ" id="ndk-Rl-bZx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7sm-gb-lp3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
