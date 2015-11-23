@@ -9,15 +9,15 @@
 import UIKit
 import CoreLocation;
 
-class user: NSObject {
+class User: NSObject {
     var username : String
     var homeLocation : CLLocationCoordinate2D?
     var driver : Bool
     var vehicleCaptain : Bool
-    var transport : vehicle
+    var transport : Vehicle
     var friends = [user]()
     
-    init(name : String, driver: Bool, vehicleCaptain : Bool, transport : vehicle){
+    init(name : String, driver: Bool, vehicleCaptain : Bool, transport : Vehicle){
         self.username = name
         self.driver = driver
         self.vehicleCaptain = vehicleCaptain

@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation;
 
-class roadEvent: NSObject {
+class RoadEvent: NSObject {
     
     var location : CLLocationCoordinate2D
     

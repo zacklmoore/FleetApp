@@ -9,12 +9,12 @@
 import UIKit
 import CoreLocation;
 
-class trip: NSObject {
+class Trip: NSObject {
     var destination : CLLocationCoordinate2D
     var startPoint : CLLocationCoordinate2D
     var members = [user]()
-    var vehicles = [vehicle]()
-    var roadEvents = [roadEvent]()
+    var vehicles = [Vehicle]()
+    var roadEvents = [RoadEvent]()
     var totalMiles : Int = 0
     var defaultColors = [UIColor]()
     var usedColors = [UIColor]()
@@ -22,7 +22,7 @@ class trip: NSObject {
     //for larger trips more colors might be necessary
     var numColors : Int = 20
     
-    init(destination: CLLocationCoordinate2D, startPoint : CLLocationCoordinate2D, tripCreator : user, creatorsVehicle : vehicle) {
+    init(destination: CLLocationCoordinate2D, startPoint : CLLocationCoordinate2D, tripCreator : user, creatorsVehicle : Vehicle) {
    
         self.destination = destination
         self.startPoint = startPoint
@@ -35,7 +35,7 @@ class trip: NSObject {
     }
     
     func addVehicle(vColor: UIColor, vOwner: user, defaultColors: [UIColor], usedColors: [UIColor]) -> (UIColor){
-        let newVehicle = vehicle(vColor: vColor, vOwner: vOwner, usedColors: usedColors, defaultColors: defaultColors)
+        let newVehicle = Vehicle(vColor: vColor, vOwner: vOwner, usedColors: usedColors, defaultColors: defaultColors)
         vehicles.append(newVehicle)
        return newVehicle.textColor
     }

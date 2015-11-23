@@ -9,7 +9,7 @@
 import UIKit
 
 
-class vehicle: NSObject {
+class Vehicle: NSObject {
     
 // This object has lots of optionals that the user could choose to input. The make, model, and color of the vehicle could be useful for vehicle identification in cases when people are being picked up. The MPG could be used to calculate gas money to split the cost of the trip.
     

@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation;
 
-class stop: roadEvent {
+class Stop: RoadEvent {
     
     //different stop types can be checked when creating the stop and will be represented as different symbols
     var type : stopType?
