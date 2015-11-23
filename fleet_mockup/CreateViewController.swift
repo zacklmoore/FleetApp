@@ -27,10 +27,6 @@ class CreateViewController: UIViewController {
     }
     
     func createTrip() {
-        
-    }
-    
-    @IBAction func tripCarsStepperChanged(sender: AnyObject) {
-        
+       
     }
 }

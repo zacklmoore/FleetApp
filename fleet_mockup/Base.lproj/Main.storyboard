@@ -448,18 +448,11 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="c1I-BH-nqe">
-                                <rect key="frame" x="58" y="493" width="94" height="29"/>
-                                <animations/>
-                                <connections>
-                                    <action selector="tripCarsStepperChanged:" destination="HEm-2b-4DB" eventType="valueChanged" id="z27-Pm-fuc"/>
-                                </connections>
-                            </stepper>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NYE-05-HDd">
-                                <rect key="frame" x="20" y="493" width="30" height="30"/>
+                                <rect key="frame" x="20" y="493" width="50" height="30"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="exS-kq-x47"/>
+                                    <constraint firstAttribute="width" constant="50" id="exS-kq-x47"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -485,7 +478,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Iat-7r-x7h" firstAttribute="top" secondItem="pAt-hI-Vj3" secondAttribute="bottom" constant="8" id="060-B6-sN8"/>
-                            <constraint firstItem="c1I-BH-nqe" firstAttribute="top" secondItem="oxc-zV-a6q" secondAttribute="bottom" constant="8" id="1kJ-Kg-Vg2"/>
                             <constraint firstItem="pAt-hI-Vj3" firstAttribute="trailing" secondItem="Vgl-Sq-uOf" secondAttribute="trailingMargin" id="1w5-XG-r46"/>
                             <constraint firstItem="mA4-Yc-1XK" firstAttribute="trailing" secondItem="Vgl-Sq-uOf" secondAttribute="trailingMargin" id="3dY-D8-tHl"/>
                             <constraint firstItem="Iat-7r-x7h" firstAttribute="leading" secondItem="Vgl-Sq-uOf" secondAttribute="leadingMargin" id="CPo-Vd-PyD"/>
@@ -507,7 +499,6 @@
                             <constraint firstItem="Lmt-oI-Jyt" firstAttribute="leading" secondItem="Vgl-Sq-uOf" secondAttribute="leadingMargin" id="jAm-bw-oBi"/>
                             <constraint firstItem="q1E-NX-hIL" firstAttribute="top" secondItem="XBc-8L-wU0" secondAttribute="bottom" constant="8" id="kDg-P6-TdI"/>
                             <constraint firstItem="NYE-05-HDd" firstAttribute="top" secondItem="oxc-zV-a6q" secondAttribute="bottom" constant="8" id="q5g-uk-H7Y"/>
-                            <constraint firstItem="c1I-BH-nqe" firstAttribute="leading" secondItem="NYE-05-HDd" secondAttribute="trailing" constant="8" id="r7f-R0-dWp"/>
                             <constraint firstItem="mA4-Yc-1XK" firstAttribute="top" secondItem="Iat-7r-x7h" secondAttribute="bottom" constant="8" id="r8h-Hx-Gri"/>
                             <constraint firstItem="pAt-hI-Vj3" firstAttribute="leading" secondItem="Vgl-Sq-uOf" secondAttribute="leadingMargin" id="rqS-fv-MeJ"/>
                             <constraint firstItem="1uO-lC-occ" firstAttribute="leading" secondItem="Vgl-Sq-uOf" secondAttribute="leadingMargin" id="tAd-EB-lyO"/>
@@ -788,7 +779,7 @@
         <image name="fleet" width="809" height="725"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gIx-Xw-ANi"/>
+        <segue reference="2bK-Cj-t8d"/>
         <segue reference="d5y-fX-As9"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation;
 
-class hazard: roadEvent {
+class Hazard: RoadEvent {
 
     var type : hazardType?
     
