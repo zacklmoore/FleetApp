@@ -16,6 +16,8 @@ class CreateViewController: UIViewController {
     @IBOutlet weak var tripEndLocationField: UITextField!
     @IBOutlet weak var tripCarsField: UITextField!
     
+    var newTrip: Trip!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -27,6 +29,19 @@ class CreateViewController: UIViewController {
     }
     
     func createTrip() {
-       
+        newTrip = Trip(name: tripNameField.text!, dateTime: tripDateTimePicker.date, startPoint: tripStartLocationField.text!, endPoint: tripEndLocationField.text!);
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "createOverviewSeuge")
+        {
+            let next = segue.destinationViewController as! TripOverviewViewController;
+            
+            next.trip = newTrip;
+        }
+    }
+    
+    @IBAction func createTripButtonPressed(sender: AnyObject) {
+        createTrip();
     }
 }

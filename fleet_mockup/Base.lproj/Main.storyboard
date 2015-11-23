@@ -51,7 +51,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="registerPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="dd4-H0-NLS"/>
-                                    <segue destination="Vic-se-BzL" kind="show" id="Shm-Fx-3gx"/>
+                                    <segue destination="Vic-se-BzL" kind="show" identifier="registerSegue" id="Shm-Fx-3gx"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Info" translatesAutoresizingMaskIntoConstraints="NO" id="b0s-K8-KBr">
@@ -103,7 +103,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="loginPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="z23-pN-CuF"/>
-                                    <segue destination="Vic-se-BzL" kind="show" id="d5y-fX-As9"/>
+                                    <segue destination="Vic-se-BzL" kind="show" identifier="loginSegue" id="d5y-fX-As9"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fleet" translatesAutoresizingMaskIntoConstraints="NO" id="5wp-cO-9N1">
@@ -189,7 +189,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="joinTripPressed:" destination="Yq7-8f-yve" eventType="touchUpInside" id="qCr-dr-FyW"/>
-                                    <segue destination="isK-2y-1Sh" kind="show" id="wAv-1B-6mz"/>
+                                    <segue destination="isK-2y-1Sh" kind="show" identifier="joinTripSegue" id="wAv-1B-6mz"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fleet" translatesAutoresizingMaskIntoConstraints="NO" id="Thd-ZD-1Mh">
@@ -224,7 +224,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="createTripPressed:" destination="Yq7-8f-yve" eventType="touchUpInside" id="MbK-sk-Qbp"/>
-                                    <segue destination="HEm-2b-4DB" kind="show" id="Mbj-Tg-y4J"/>
+                                    <segue destination="HEm-2b-4DB" kind="show" identifier="createTripSegue" id="Mbj-Tg-y4J"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -315,7 +315,7 @@
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <state key="normal" title="View Map"/>
                                 <connections>
-                                    <segue destination="lfF-ix-eKR" kind="show" id="FiD-zv-UkG"/>
+                                    <segue destination="lfF-ix-eKR" kind="show" identifier="mapViewSegue" id="FiD-zv-UkG"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAH-tM-Vbu">
@@ -323,7 +323,7 @@
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <state key="normal" title="Trip Chat"/>
                                 <connections>
-                                    <segue destination="P7P-Ng-Ge0" kind="show" id="YGv-zy-7ty"/>
+                                    <segue destination="P7P-Ng-Ge0" kind="show" identifier="chatSegue" id="YGv-zy-7ty"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B3a-QR-oD3">
@@ -331,7 +331,7 @@
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <state key="normal" title="Trip Settings"/>
                                 <connections>
-                                    <segue destination="zIi-UQ-CHf" kind="show" id="gFx-91-agb"/>
+                                    <segue destination="zIi-UQ-CHf" kind="show" identifier="settingsSegue" id="gFx-91-agb"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -460,7 +460,8 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <state key="normal" title="Create Trip"/>
                                 <connections>
-                                    <segue destination="2Wo-Ka-ail" kind="show" id="2bK-Cj-t8d"/>
+                                    <action selector="createTripButtonPressed:" destination="HEm-2b-4DB" eventType="touchUpInside" id="f10-hk-91W"/>
+                                    <segue destination="2Wo-Ka-ail" kind="show" identifier="createOverviewSeuge" id="2bK-Cj-t8d"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -539,7 +540,7 @@
                                 <state key="normal" title="Join"/>
                                 <connections>
                                     <action selector="joinTripButtonPressed:" destination="isK-2y-1Sh" eventType="touchUpInside" id="6uE-VN-Kdn"/>
-                                    <segue destination="2Wo-Ka-ail" kind="show" id="gIx-Xw-ANi"/>
+                                    <segue destination="2Wo-Ka-ail" kind="show" identifier="joinOverviewSegue" id="gIx-Xw-ANi"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -759,7 +760,7 @@
         <image name="fleet" width="809" height="725"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="d5y-fX-As9"/>
+        <segue reference="Shm-Fx-3gx"/>
         <segue reference="2bK-Cj-t8d"/>
     </inferredMetricsTieBreakers>
 </document>

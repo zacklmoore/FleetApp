@@ -14,9 +14,16 @@ class TripOverviewViewController: UIViewController {
     @IBOutlet weak var tripIDLabel: UILabel!
     @IBOutlet weak var tripLocationsLabel: UILabel!
     
+    var trip: Trip?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        if(trip != nil)
+        {
+            tripNameLabel.text = trip!.name;
+            tripLocationsLabel.text = trip!.startString + " --> " + trip!.endString;
+        }
     }
     
     override func didReceiveMemoryWarning() {

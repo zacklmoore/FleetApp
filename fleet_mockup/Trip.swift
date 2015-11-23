@@ -10,13 +10,14 @@ import UIKit
 import CoreLocation;
 
 class Trip: NSObject {
-    var endPoint : CLLocationCoordinate2D
-    var startPoint : CLLocationCoordinate2D
+    //var endPoint : CLLocationCoordinate2D
+    //var startPoint : CLLocationCoordinate2D
     //Temporary until we get lcoation selection working
     var startString: String
     var endString: String
     //-------------------------------------------------
     var name : String
+    var startDateTime: NSDate
     var members = [user]()
     var vehicles = [Vehicle]()
     var roadEvents = [RoadEvent]()
@@ -27,13 +28,15 @@ class Trip: NSObject {
     //for larger trips more colors might be necessary
     var numColors : Int = 20
     
-    init(destination: CLLocationCoordinate2D, startPoint : CLLocationCoordinate2D, tripCreator : user, creatorsVehicle : Vehicle) {
+    init(name: String, dateTime: NSDate, startPoint : String, endPoint: String) {
         
-        self.name = ""
-        self.endPoint = destination
-        self.startPoint = startPoint
-        self.members.append(tripCreator)
-        self.vehicles.append(creatorsVehicle)
+        self.name = name;
+        self.endString = endPoint;
+        self.startString = startPoint;
+        self.startDateTime = dateTime;
+        
+        //Eventually add creator's user to init once we have users working
+        
         
         //Temporary until we get lcoation selection working
         self.startString = ""
