@@ -26,10 +26,6 @@ class TripSettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func tripNumberofCarsFieldChanged(sender: AnyObject) {
-        
-    }
-    
     @IBAction func tripSaveSettingsPressed(sender: AnyObject) {
         
     }

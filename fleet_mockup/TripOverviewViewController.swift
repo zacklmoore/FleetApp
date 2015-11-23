@@ -23,16 +23,4 @@ class TripOverviewViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func tripChatPressed(sender: AnyObject) {
-        
-    }
-    
-    @IBAction func viewMapPressed(sender: AnyObject) {
-        
-    }
-    
-    @IBAction func tripSettingsPressed(sender: AnyObject) {
-        
-    }
 }
