@@ -15,9 +15,19 @@ class TripSettingsViewController: UIViewController {
     @IBOutlet weak var tripStartLocationField: UITextField!
     @IBOutlet weak var tripEndLocationField: UITextField!
     
+    var  trip: Trip!
+    var delegate: settingsReturnDelegate!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        if(trip != nil)
+        {
+            tripNameField.text = trip.name;
+            tripDateTimePicker.date = trip.startDateTime;
+            tripStartLocationField.text = trip.startString;
+            tripEndLocationField.text = trip.endString;
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -25,7 +35,14 @@ class TripSettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func tripSaveSettingsPressed(sender: AnyObject) {
+    func saveTrip() {
+        let newTrip = Trip(name: tripNameField.text!, dateTime: tripDateTimePicker.date, startPoint: tripStartLocationField.text!, endPoint: tripEndLocationField.text!);
         
+        delegate.saveTripSettings(newTrip);
+    }
+    
+    @IBAction func saveButtonPressed(sender: AnyObject) {
+        saveTrip();
+        dismissViewControllerAnimated(true, completion: nil);
     }
 }
