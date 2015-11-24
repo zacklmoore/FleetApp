@@ -363,7 +363,7 @@
                     <navigationItem key="navigationItem" title="Trip Overview" id="3au-0I-lmC">
                         <barButtonItem key="rightBarButtonItem" title="Leave Trip" id="VCz-D7-tOW">
                             <connections>
-                                <segue destination="Vic-se-BzL" kind="showDetail" id="4Z7-j3-qgL"/>
+                                <action selector="leaveButtonPressed:" destination="2Wo-Ka-ail" id="3K1-2o-mbw"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -371,6 +371,7 @@
                         <outlet property="tripIDLabel" destination="9R6-sQ-Sba" id="g7Z-9o-h7k"/>
                         <outlet property="tripLocationsLabel" destination="zPi-HF-4ue" id="wEO-yW-qHD"/>
                         <outlet property="tripNameLabel" destination="SYN-nb-N98" id="57F-ir-f99"/>
+                        <segue destination="Vic-se-BzL" kind="showDetail" identifier="leaveTripSegue" id="22J-St-5ye"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I2N-fx-TSY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -598,7 +599,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nKG-ch-27Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5038" y="-388"/>
+            <point key="canvasLocation" x="5032" y="-388"/>
         </scene>
         <!--Chat View Controller-->
         <scene sceneID="29i-dm-YxU">
@@ -629,7 +630,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2x8-kH-QWd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5038" y="304"/>
+            <point key="canvasLocation" x="5032" y="304"/>
         </scene>
         <!--Trip Settings View Controller-->
         <scene sceneID="ITy-LD-v2B">
@@ -735,7 +736,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7sm-gb-lp3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5038" y="1082"/>
+            <point key="canvasLocation" x="5032" y="1082"/>
         </scene>
     </scenes>
     <resources>
@@ -744,6 +745,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="H4N-jO-FJM"/>
-        <segue reference="4Z7-j3-qgL"/>
+        <segue reference="22J-St-5ye"/>
     </inferredMetricsTieBreakers>
 </document>
