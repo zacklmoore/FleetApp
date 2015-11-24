@@ -28,7 +28,20 @@ class CreateViewController: UIViewController {
     }
     
     func createTrip() {
-        newTrip = Trip(name: tripNameField.text!, dateTime: tripDateTimePicker.date, startPoint: tripStartLocationField.text!, endPoint: tripEndLocationField.text!);
+        //Validate form data
+        if(tripNameField.text == "" || tripStartLocationField.text == "" ||
+            tripEndLocationField.text == "")
+        {
+            let alert = UIAlertController(title: "Error", message: "One or more fields is blank.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil));
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+        else
+        {
+            //Create Trip object
+            newTrip = Trip(name: tripNameField.text!, dateTime: tripDateTimePicker.date, startPoint: tripStartLocationField.text!, endPoint: tripEndLocationField.text!);
+            performSegueWithIdentifier("createOverviewSegue", sender: self);
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

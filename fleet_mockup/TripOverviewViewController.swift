@@ -33,6 +33,7 @@ class TripOverviewViewController: UIViewController, settingsReturnDelegate {
     }
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated);
         if(trip != nil)
         {
             tripNameLabel.text = trip!.name;
@@ -59,7 +60,6 @@ class TripOverviewViewController: UIViewController, settingsReturnDelegate {
     }
     
     @IBAction func leaveButtonPressed(sender: AnyObject) {
-        print("Here!");
         let alert = UIAlertController(title: "Are you sure?", message: "Are you sure you want to leave this trip?", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.Default, handler:
             {

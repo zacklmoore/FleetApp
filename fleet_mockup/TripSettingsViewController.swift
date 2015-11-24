@@ -30,19 +30,43 @@ class TripSettingsViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated);
+        
+        if(trip != nil)
+        {
+            tripNameField.text = trip.name;
+            tripDateTimePicker.date = trip.startDateTime;
+            tripStartLocationField.text = trip.startString;
+            tripEndLocationField.text = trip.endString;
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     func saveTrip() {
-        let newTrip = Trip(name: tripNameField.text!, dateTime: tripDateTimePicker.date, startPoint: tripStartLocationField.text!, endPoint: tripEndLocationField.text!);
         
-        delegate.saveTripSettings(newTrip);
+        //Validate form data
+        if(tripNameField.text == "" || tripStartLocationField.text == "" ||
+            tripEndLocationField.text == "")
+        {
+            let alert = UIAlertController(title: "Error", message: "One or more fields is blank.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil));
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+        else
+        {
+            let newTrip = Trip(name: tripNameField.text!, dateTime: tripDateTimePicker.date, startPoint: tripStartLocationField.text!, endPoint: tripEndLocationField.text!);
+        
+            delegate.saveTripSettings(newTrip);
+            navigationController?.popViewControllerAnimated(true);
+        }
     }
     
     @IBAction func saveButtonPressed(sender: AnyObject) {
         saveTrip();
-        dismissViewControllerAnimated(true, completion: nil);
     }
 }

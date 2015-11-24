@@ -331,7 +331,7 @@
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <state key="normal" title="Trip Settings"/>
                                 <connections>
-                                    <segue destination="zIi-UQ-CHf" kind="presentation" identifier="settingsSegue" id="gFx-91-agb"/>
+                                    <segue destination="zIi-UQ-CHf" kind="show" identifier="settingsSegue" id="2O3-TE-CRj"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -453,7 +453,6 @@
                                 <state key="normal" title="Create Trip"/>
                                 <connections>
                                     <action selector="createTripButtonPressed:" destination="HEm-2b-4DB" eventType="touchUpInside" id="f10-hk-91W"/>
-                                    <segue destination="hqQ-pG-th2" kind="showDetail" identifier="createOverviewSegue" action="showViewController:sender:" id="H4N-jO-FJM"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -489,6 +488,7 @@
                         <outlet property="tripEndLocationField" destination="mA4-Yc-1XK" id="u6T-aj-BoV"/>
                         <outlet property="tripNameField" destination="oB6-je-lGm" id="OnI-yg-oYs"/>
                         <outlet property="tripStartLocationField" destination="pAt-hI-Vj3" id="Qtg-2Y-5hB"/>
+                        <segue destination="hqQ-pG-th2" kind="showDetail" identifier="createOverviewSegue" action="showViewController:sender:" id="kbD-ec-6Uo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fq4-Ue-O07" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -744,7 +744,7 @@
         <image name="fleet" width="809" height="725"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="H4N-jO-FJM"/>
+        <segue reference="kbD-ec-6Uo"/>
         <segue reference="22J-St-5ye"/>
     </inferredMetricsTieBreakers>
 </document>
