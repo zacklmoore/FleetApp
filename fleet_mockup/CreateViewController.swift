@@ -32,9 +32,10 @@ class CreateViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if(segue.identifier == "createOverviewSeuge")
+        if(segue.identifier == "createOverviewSegue")
         {
-            let next = segue.destinationViewController as! TripOverviewViewController;
+            let nextNav = segue.destinationViewController  as! UINavigationController;
+            let next = nextNav.topViewController as! TripOverviewViewController;
             
             next.trip = newTrip;
         }

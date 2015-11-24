@@ -360,6 +360,13 @@
                             <constraint firstItem="hwR-c0-YLM" firstAttribute="centerX" secondItem="fFP-w8-EcY" secondAttribute="centerX" id="zOW-59-x6u"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Trip Overview" id="3au-0I-lmC">
+                        <barButtonItem key="rightBarButtonItem" title="Leave Trip" id="VCz-D7-tOW">
+                            <connections>
+                                <segue destination="Vic-se-BzL" kind="showDetail" id="4Z7-j3-qgL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tripIDLabel" destination="9R6-sQ-Sba" id="g7Z-9o-h7k"/>
                         <outlet property="tripLocationsLabel" destination="zPi-HF-4ue" id="wEO-yW-qHD"/>
@@ -368,7 +375,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I2N-fx-TSY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3360" y="304"/>
+            <point key="canvasLocation" x="4316" y="304"/>
         </scene>
         <!--Create View Controller-->
         <scene sceneID="PVZ-Ui-rq5">
@@ -445,7 +452,7 @@
                                 <state key="normal" title="Create Trip"/>
                                 <connections>
                                     <action selector="createTripButtonPressed:" destination="HEm-2b-4DB" eventType="touchUpInside" id="f10-hk-91W"/>
-                                    <segue destination="2Wo-Ka-ail" kind="show" identifier="createOverviewSeuge" id="2bK-Cj-t8d"/>
+                                    <segue destination="hqQ-pG-th2" kind="showDetail" identifier="createOverviewSegue" action="showViewController:sender:" id="H4N-jO-FJM"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -519,7 +526,7 @@
                                 <state key="normal" title="Join"/>
                                 <connections>
                                     <action selector="joinTripButtonPressed:" destination="isK-2y-1Sh" eventType="touchUpInside" id="6uE-VN-Kdn"/>
-                                    <segue destination="2Wo-Ka-ail" kind="show" identifier="joinOverviewSegue" id="gIx-Xw-ANi"/>
+                                    <segue destination="hqQ-pG-th2" kind="show" identifier="joinOverviewSegue" id="qrE-jW-7Mh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -542,6 +549,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZY2-bD-ndi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2640" y="1082"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="VJy-dI-2xC">
+            <objects>
+                <navigationController id="hqQ-pG-th2" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ymZ-ND-WGQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="2Wo-Ka-ail" kind="relationship" relationship="rootViewController" id="chw-Hu-r6c"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ScU-h4-g77" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3512" y="304"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="VQW-rA-cuU">
@@ -575,7 +598,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nKG-ch-27Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4078" y="-396"/>
+            <point key="canvasLocation" x="5038" y="-388"/>
         </scene>
         <!--Chat View Controller-->
         <scene sceneID="29i-dm-YxU">
@@ -606,7 +629,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2x8-kH-QWd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4078" y="304"/>
+            <point key="canvasLocation" x="5038" y="304"/>
         </scene>
         <!--Trip Settings View Controller-->
         <scene sceneID="ITy-LD-v2B">
@@ -712,7 +735,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7sm-gb-lp3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4078" y="1082"/>
+            <point key="canvasLocation" x="5038" y="1082"/>
         </scene>
     </scenes>
     <resources>
@@ -720,7 +743,7 @@
         <image name="fleet" width="809" height="725"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Shm-Fx-3gx"/>
-        <segue reference="gIx-Xw-ANi"/>
+        <segue reference="H4N-jO-FJM"/>
+        <segue reference="4Z7-j3-qgL"/>
     </inferredMetricsTieBreakers>
 </document>
