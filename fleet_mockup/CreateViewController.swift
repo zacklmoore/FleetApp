@@ -14,7 +14,6 @@ class CreateViewController: UIViewController {
     @IBOutlet weak var tripDateTimePicker: UIDatePicker!
     @IBOutlet weak var tripStartLocationField: UITextField!
     @IBOutlet weak var tripEndLocationField: UITextField!
-    @IBOutlet weak var tripCarsField: UITextField!
     
     var newTrip: Trip!
     

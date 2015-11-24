@@ -23,6 +23,7 @@ class TripOverviewViewController: UIViewController {
         {
             tripNameLabel.text = trip!.name;
             tripLocationsLabel.text = trip!.startString + " --> " + trip!.endString;
+            tripIDLabel.text = "Trip ID: " + trip!.id
         }
     }
     

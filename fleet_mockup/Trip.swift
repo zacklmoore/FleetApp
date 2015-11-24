@@ -16,6 +16,7 @@ class Trip: NSObject {
     var startString: String
     var endString: String
     //-------------------------------------------------
+    var id : String
     var name : String
     var startDateTime: NSDate
     var members = [user]()
@@ -34,14 +35,9 @@ class Trip: NSObject {
         self.endString = endPoint;
         self.startString = startPoint;
         self.startDateTime = dateTime;
+        self.id = ""
         
         //Eventually add creator's user to init once we have users working
-        
-        
-        //Temporary until we get lcoation selection working
-        self.startString = ""
-        self.endString = ""
-        //-------------------------------------------------
         
         for _ in 1...20 {
             defaultColors.append(UIColor.randomFlatColor())

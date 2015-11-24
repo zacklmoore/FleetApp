@@ -14,7 +14,6 @@ class TripSettingsViewController: UIViewController {
     @IBOutlet weak var tripDateTimePicker: UIDatePicker!
     @IBOutlet weak var tripStartLocationField: UITextField!
     @IBOutlet weak var tripEndLocationField: UITextField!
-    @IBOutlet weak var tripNumberOfCarsField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
