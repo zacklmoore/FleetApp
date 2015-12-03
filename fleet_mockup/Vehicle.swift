@@ -16,18 +16,25 @@ class Vehicle: NSObject {
    
     var make : String?
     var model : String?
-    var vehicleColor : UIColor
+    var vOwnerName: String
+    var vehicleColor : UIColor?
     var MPG : Int?
-    var People = [user]()
+    var people = [user]()
     
     //textColor = vehicleColor except when vehicleColor has already been used for a vehicle on this trip.
-    var textColor : UIColor
+    var textColor : UIColor?
     
     // add ~20 default color values
     // remove all the colors in the usedColors array in the init before initializing textColor
     
+    //Temporary init
+    init(owner: String)
+    {
+        vOwnerName = owner
+    }
     
-    
+    //Temprarily disabled until all pre-requistes implemented
+    /*
     init(vColor : UIColor, vOwner : user, usedColors : [UIColor], var defaultColors : [UIColor]) {
         self.vehicleColor = vColor
         People.append(vOwner)
@@ -43,6 +50,7 @@ class Vehicle: NSObject {
         }
         
     }
+    */
     
     
 }

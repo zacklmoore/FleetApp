@@ -12,6 +12,7 @@
 		126DF6081BED2F3E002D9A7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 126DF6061BED2F3E002D9A7D /* Main.storyboard */; };
 		126DF60A1BED2F3E002D9A7D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 126DF6091BED2F3E002D9A7D /* Images.xcassets */; };
 		126DF60D1BED2F3E002D9A7D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 126DF60B1BED2F3E002D9A7D /* LaunchScreen.xib */; };
+		147100DF1C100E1500802359 /* CarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147100DE1C100E1500802359 /* CarTableViewCell.swift */; };
 		14DA805C1BF0047D005228F4 /* CreateJoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DA805B1BF0047D005228F4 /* CreateJoinViewController.swift */; };
 		4110E2011BFFE9ED00FCE855 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4110E2001BFFE9ED00FCE855 /* MapViewController.swift */; };
 		414CDD581BFD368D00352CAF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414CDD571BFD368D00352CAF /* LoginViewController.swift */; };
@@ -49,6 +50,7 @@
 		126DF6091BED2F3E002D9A7D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		126DF60C1BED2F3E002D9A7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		126DF6121BED2F3E002D9A7D /* FleetApp.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FleetApp.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		147100DE1C100E1500802359 /* CarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarTableViewCell.swift; sourceTree = "<group>"; };
 		14DA805B1BF0047D005228F4 /* CreateJoinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateJoinViewController.swift; sourceTree = "<group>"; };
 		4110E2001BFFE9ED00FCE855 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = ../MapViewController.swift; sourceTree = "<group>"; };
 		414CDD571BFD368D00352CAF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				8EC5EBD91C027FF800EF6B09 /* TripSettingsViewController.swift */,
 				8EC5EBDB1C02801400EF6B09 /* ChatViewController.swift */,
 				8EC5EBD71C027FD000EF6B09 /* TripOverviewViewController.swift */,
+				147100DE1C100E1500802359 /* CarTableViewCell.swift */,
 				8EC5EBD51C027FAF00EF6B09 /* JoinViewController.swift */,
 				8EC5EBD31C027F3B00EF6B09 /* CreateViewController.swift */,
 				414CDD571BFD368D00352CAF /* LoginViewController.swift */,
@@ -256,6 +259,7 @@
 				8E92B32D1C0271EC00785A32 /* ColorTuple.swift in Sources */,
 				8EC5EBDA1C027FF800EF6B09 /* TripSettingsViewController.swift in Sources */,
 				126DF6051BED2F3E002D9A7D /* ViewController.swift in Sources */,
+				147100DF1C100E1500802359 /* CarTableViewCell.swift in Sources */,
 				8EC5EBD61C027FAF00EF6B09 /* JoinViewController.swift in Sources */,
 				8EC5EBDC1C02801400EF6B09 /* ChatViewController.swift in Sources */,
 				126DF6031BED2F3E002D9A7D /* AppDelegate.swift in Sources */,

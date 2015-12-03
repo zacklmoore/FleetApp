@@ -44,10 +44,11 @@ class Trip: NSObject {
         }
     }
     
+    /* Temporarily Commented Out Until All Pre-Requisites Implemented
     func addVehicle(vColor: UIColor, vOwner: user, defaultColors: [UIColor], usedColors: [UIColor]) -> (UIColor){
         let newVehicle = Vehicle(vColor: vColor, vOwner: vOwner, usedColors: usedColors, defaultColors: defaultColors)
         vehicles.append(newVehicle)
        return newVehicle.textColor
-    }
+    }*/
     
 }

@@ -40,6 +40,7 @@ class CreateViewController: UIViewController {
         {
             //Create Trip object
             newTrip = Trip(name: tripNameField.text!, dateTime: tripDateTimePicker.date, startPoint: tripStartLocationField.text!, endPoint: tripEndLocationField.text!);
+            newTrip.vehicles.append(Vehicle(owner: "myUsername"));
             performSegueWithIdentifier("createOverviewSegue", sender: self);
         }
     }

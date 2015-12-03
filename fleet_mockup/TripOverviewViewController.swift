@@ -13,11 +13,12 @@ protocol settingsReturnDelegate {
     func saveTripSettings(newTrip: Trip);
 }
 
-class TripOverviewViewController: UIViewController, settingsReturnDelegate {
+class TripOverviewViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, settingsReturnDelegate {
     
     @IBOutlet weak var tripNameLabel: UILabel!
     @IBOutlet weak var tripIDLabel: UILabel!
     @IBOutlet weak var tripLocationsLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
     
     var trip: Trip?
     
@@ -30,6 +31,8 @@ class TripOverviewViewController: UIViewController, settingsReturnDelegate {
             tripLocationsLabel.text = trip!.startString + " --> " + trip!.endString;
             tripIDLabel.text = "Trip ID: " + trip!.id
         }
+        
+        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "carCell");
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -46,6 +49,23 @@ class TripOverviewViewController: UIViewController, settingsReturnDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return trip!.vehicles.count;
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell:CarTableViewCell = self.tableView.dequeueReusableCellWithIdentifier("CarTableViewCell") as! CarTableViewCell;
+        
+        cell.carNameLabel.text = trip!.vehicles[indexPath.row].vOwnerName + "'s Car";
+        
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+    }
+    
+    
     
     //Delegate method called by Settings View Controller
     func saveTripSettings(newTrip: Trip)
@@ -69,6 +89,9 @@ class TripOverviewViewController: UIViewController, settingsReturnDelegate {
         self.presentViewController(alert, animated: true, completion: nil)
     }
     
+    @IBAction func addCarButtonPressed(sender: AnyObject) {
+        
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "settingsSegue")

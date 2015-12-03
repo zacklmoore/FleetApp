@@ -279,17 +279,46 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="ffr-0E-nPJ"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="vOf-9i-CMv">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CarTableViewCell" id="vOf-9i-CMv" customClass="CarTableViewCell" customModule="FleetApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="544" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vOf-9i-CMv" id="u9u-T0-dwd">
                                             <rect key="frame" x="0.0" y="0.0" width="544" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9C-kx-6Vl">
+                                                    <rect key="frame" x="8" y="11" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fvk-9F-413">
+                                                    <rect key="frame" x="512" y="10" width="24" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="24" id="J55-BT-8Px"/>
+                                                        <constraint firstAttribute="width" constant="24" id="ffR-pS-o2d"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstItem="fvk-9F-413" firstAttribute="trailing" secondItem="u9u-T0-dwd" secondAttribute="trailingMargin" id="JPJ-i5-l0Q"/>
+                                                <constraint firstItem="L9C-kx-6Vl" firstAttribute="centerY" secondItem="u9u-T0-dwd" secondAttribute="centerY" id="awQ-qo-Jcr"/>
+                                                <constraint firstItem="fvk-9F-413" firstAttribute="centerY" secondItem="u9u-T0-dwd" secondAttribute="centerY" id="dKt-zC-jeX"/>
+                                                <constraint firstItem="L9C-kx-6Vl" firstAttribute="leading" secondItem="u9u-T0-dwd" secondAttribute="leadingMargin" id="jtm-rm-DQx"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <connections>
+                                            <outlet property="carNameLabel" destination="L9C-kx-6Vl" id="2o8-RA-WBN"/>
+                                            <outlet property="myCarIcon" destination="fvk-9F-413" id="smn-yg-AeM"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="2Wo-Ka-ail" id="5Pw-WV-0bA"/>
+                                    <outlet property="delegate" destination="2Wo-Ka-ail" id="Tug-4H-Dp7"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%Trip ID%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9R6-sQ-Sba">
                                 <rect key="frame" x="272" y="112" width="57" height="15"/>
@@ -334,11 +363,20 @@
                                     <segue destination="zIi-UQ-CHf" kind="show" identifier="settingsSegue" id="2O3-TE-CRj"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQF-jd-3gS">
+                                <rect key="frame" x="542" y="305" width="30" height="39"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="addCarButtonPressed:" destination="2Wo-Ka-ail" eventType="touchUpInside" id="05L-xi-eE4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="B3a-QR-oD3" firstAttribute="top" secondItem="AAH-tM-Vbu" secondAttribute="bottom" constant="8" id="4bD-mn-5mD"/>
+                            <constraint firstItem="KIq-Ix-ixi" firstAttribute="top" secondItem="UQF-jd-3gS" secondAttribute="bottom" constant="5" id="8Sx-JE-FuA"/>
                             <constraint firstItem="o5n-Yo-jQR" firstAttribute="centerX" secondItem="fFP-w8-EcY" secondAttribute="centerX" id="9sZ-jv-nea"/>
                             <constraint firstItem="9R6-sQ-Sba" firstAttribute="top" secondItem="SYN-nb-N98" secondAttribute="bottom" constant="1" id="BkR-JH-qyj"/>
                             <constraint firstItem="KIq-Ix-ixi" firstAttribute="leading" secondItem="fFP-w8-EcY" secondAttribute="leadingMargin" constant="8" id="FA5-on-Uns"/>
@@ -357,6 +395,7 @@
                             <constraint firstItem="SYN-nb-N98" firstAttribute="centerX" secondItem="fFP-w8-EcY" secondAttribute="centerX" id="n32-NG-d6f"/>
                             <constraint firstItem="AAH-tM-Vbu" firstAttribute="top" secondItem="o5n-Yo-jQR" secondAttribute="bottom" constant="8" id="uGr-7E-Qmb"/>
                             <constraint firstItem="9R6-sQ-Sba" firstAttribute="centerX" secondItem="fFP-w8-EcY" secondAttribute="centerX" id="vSY-3w-Q2E"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UQF-jd-3gS" secondAttribute="trailing" constant="8" id="xZS-5U-xyo"/>
                             <constraint firstItem="hwR-c0-YLM" firstAttribute="centerX" secondItem="fFP-w8-EcY" secondAttribute="centerX" id="zOW-59-x6u"/>
                         </constraints>
                     </view>
@@ -368,6 +407,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="tableView" destination="KIq-Ix-ixi" id="o9y-ZW-ylD"/>
                         <outlet property="tripIDLabel" destination="9R6-sQ-Sba" id="g7Z-9o-h7k"/>
                         <outlet property="tripLocationsLabel" destination="zPi-HF-4ue" id="wEO-yW-qHD"/>
                         <outlet property="tripNameLabel" destination="SYN-nb-N98" id="57F-ir-f99"/>
@@ -613,7 +653,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trip Chat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82c-cI-bPY">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Trip Chat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82c-cI-bPY">
                                 <rect key="frame" x="265" y="72" width="71" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
