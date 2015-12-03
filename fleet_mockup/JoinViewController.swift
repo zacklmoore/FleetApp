@@ -11,8 +11,6 @@ class JoinViewController: UIViewController {
     
     @IBOutlet weak var tripIDField: UITextField!
     
-    var user: User!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -29,9 +27,7 @@ class JoinViewController: UIViewController {
             let nextNav = segue.destinationViewController  as! UINavigationController;
             let next = nextNav.topViewController as! TripOverviewViewController;
             
-            next.user = user;
-            
-            //NOTE: Eventually Pass Trip Object
+            //NOTE: Eventually Pass Recieved Trip Object
         }
     }
     

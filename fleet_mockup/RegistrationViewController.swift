@@ -40,7 +40,7 @@ class RegistrationViewController: UIViewController {
         {
             let newUser = User(uName: usernameField.text!, pWord: passwordField.text!, fName: firstNameField.text!, lName: lastNameField.text!);
             delegate.registerUser(newUser);
-            self.dismissViewControllerAnimated(true, completion: {});
+            navigationController?.popViewControllerAnimated(true);
         }
     }
     

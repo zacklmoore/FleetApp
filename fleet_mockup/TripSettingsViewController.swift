@@ -59,9 +59,12 @@ class TripSettingsViewController: UIViewController {
         }
         else
         {
-            let newTrip = Trip(name: tripNameField.text!, dateTime: tripDateTimePicker.date, startPoint: tripStartLocationField.text!, endPoint: tripEndLocationField.text!);
+            trip.name = tripNameField.text!;
+            trip.startDateTime = tripDateTimePicker.date;
+            trip.startString = tripStartLocationField.text!;
+            trip.endString = tripEndLocationField.text!;
         
-            delegate.saveTripSettings(newTrip);
+            delegate.saveTripSettings(trip);
             navigationController?.popViewControllerAnimated(true);
         }
     }

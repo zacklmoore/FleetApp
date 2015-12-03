@@ -12,15 +12,16 @@ protocol registerReturnDelegate {
     func registerUser(newUser: User);
 }
 
+//User Should Be Global
+var loggedInUser: User?
+
+//Temporary Global Array of Users until Excis Impleneted
+var userList = [User]();
+
 class LoginViewController: UIViewController, registerReturnDelegate {
     
     @IBOutlet weak var passworField: UITextField!
     @IBOutlet weak var usernameField: UITextField!
-    
-    var loggedInUser: User?
-    
-    //Temporary Array of Users until Excis Impleneted
-    var userList = [User]();
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,13 +69,6 @@ class LoginViewController: UIViewController, registerReturnDelegate {
             let next = segue.destinationViewController as! RegistrationViewController;
             next.delegate = self;
         }
-        else if(segue.identifier == "loginSegue")
-        {
-            let nextNav = segue.destinationViewController  as! UINavigationController;
-            let next = nextNav.topViewController as! CreateJoinViewController;
-            
-            next.user = self.loggedInUser;
-        }
     }
     
     @IBAction func loginPressed(sender: UIButton) {
@@ -82,7 +76,7 @@ class LoginViewController: UIViewController, registerReturnDelegate {
         
         if(loggedInUser != nil)
         {
-            //Logged In Successfully
+            //Logged In Successfully So Go On
             performSegueWithIdentifier("loginSegue", sender: self);
         }
         else

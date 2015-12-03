@@ -66,8 +66,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="registerPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="dd4-H0-NLS"/>
-                                    <segue destination="yRT-Ds-LQz" kind="show" identifier="registerSegue" id="dKi-DJ-tI7"/>
+                                    <segue destination="yRT-Ds-LQz" kind="show" identifier="registerSegue" id="zlN-aJ-xGS"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Info" translatesAutoresizingMaskIntoConstraints="NO" id="b0s-K8-KBr">
@@ -306,8 +305,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="joinTripPressed:" destination="Yq7-8f-yve" eventType="touchUpInside" id="qCr-dr-FyW"/>
-                                    <segue destination="isK-2y-1Sh" kind="show" identifier="joinTripSegue" id="wAv-1B-6mz"/>
+                                    <segue destination="isK-2y-1Sh" kind="show" identifier="joinSegue" id="wAv-1B-6mz"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fleet" translatesAutoresizingMaskIntoConstraints="NO" id="Thd-ZD-1Mh">
@@ -341,8 +339,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="createTripPressed:" destination="Yq7-8f-yve" eventType="touchUpInside" id="MbK-sk-Qbp"/>
-                                    <segue destination="HEm-2b-4DB" kind="show" identifier="createTripSegue" id="Mbj-Tg-y4J"/>
+                                    <segue destination="HEm-2b-4DB" kind="show" identifier="createSegue" id="Mbj-Tg-y4J"/>
                                 </connections>
                             </button>
                         </subviews>

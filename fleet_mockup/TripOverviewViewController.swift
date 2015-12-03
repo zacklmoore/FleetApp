@@ -43,6 +43,7 @@ class TripOverviewViewController: UIViewController, UITableViewDelegate, UITable
             tripNameLabel.text = trip!.name;
             tripLocationsLabel.text = trip!.startString + " --> " + trip!.endString;
             tripIDLabel.text = "Trip ID: " + trip!.id
+            tableView.reloadData();
         }
     }
     
@@ -50,14 +51,19 @@ class TripOverviewViewController: UIViewController, UITableViewDelegate, UITable
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return trip!.vehicles.count;
+        if(trip != nil)
+        {
+            return trip!.vehicles.count;
+        }
+        return 0;
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell:CarTableViewCell = self.tableView.dequeueReusableCellWithIdentifier("CarTableViewCell") as! CarTableViewCell;
         
-        cell.carNameLabel.text = trip!.vehicles[indexPath.row].vOwnerName + "'s Car";
+        cell.carNameLabel.text = trip!.vehicles[indexPath.row].captain.firstName + " " + trip!.vehicles[indexPath.row].captain.lastName + "'s Car";
         
         return cell
     }
