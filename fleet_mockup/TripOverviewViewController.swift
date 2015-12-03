@@ -21,7 +21,6 @@ class TripOverviewViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var tableView: UITableView!
     
     var trip: Trip!
-    var user: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,7 +94,18 @@ class TripOverviewViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     @IBAction func addCarButtonPressed(sender: AnyObject) {
+        for v in trip.vehicles {
+            if(v.captain == loggedInUser)
+            {
+                let alert = UIAlertController(title: "Error", message: "You are already the captain of another car.", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil));
+                self.presentViewController(alert, animated: true, completion: nil)
+                return;
+            }
+        }
         
+        trip.vehicles.append(Vehicle(vCap: loggedInUser!));
+        tableView.reloadData();
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
