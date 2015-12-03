@@ -11,17 +11,15 @@ import CoreLocation;
 
 class User: NSObject {
     var username : String
+    var firstName : String
+    var lastName : String
     var homeLocation : CLLocationCoordinate2D?
-    var driver : Bool
-    var vehicleCaptain : Bool
-    var transport : Vehicle
-    var friends = [user]()
+    var driver : Bool?
+    var vehicleCaptain : Bool?
     
-    init(name : String, driver: Bool, vehicleCaptain : Bool, transport : Vehicle){
-        self.username = name
-        self.driver = driver
-        self.vehicleCaptain = vehicleCaptain
-        self.transport = transport
-        
+    init(uName: String, fName: String, lName: String){
+        self.username = uName
+        self.firstName = fName
+        self.lastName = lName
     }
 }

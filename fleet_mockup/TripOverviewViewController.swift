@@ -65,8 +65,6 @@ class TripOverviewViewController: UIViewController, UITableViewDelegate, UITable
         
     }
     
-    
-    
     //Delegate method called by Settings View Controller
     func saveTripSettings(newTrip: Trip)
     {
