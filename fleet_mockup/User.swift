@@ -13,12 +13,14 @@ class User: NSObject {
     var username : String
     var firstName : String
     var lastName : String
+    var password : String
     var homeLocation : CLLocationCoordinate2D?
     var driver : Bool?
     var vehicleCaptain : Bool?
     
-    init(uName: String, fName: String, lName: String){
+    init(uName: String, pWord: String, fName: String, lName: String){
         self.username = uName
+        self.password = pWord
         self.firstName = fName
         self.lastName = lName
     }

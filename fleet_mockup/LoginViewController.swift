@@ -8,10 +8,19 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+protocol registerReturnDelegate {
+    func registerUser(newUser: User);
+}
+
+class LoginViewController: UIViewController, registerReturnDelegate {
     
     @IBOutlet weak var passworField: UITextField!
     @IBOutlet weak var usernameField: UITextField!
+    
+    var loggedInUser: User?
+    
+    //Temporary Array of Users until Excis Impleneted
+    var userList = [User]();
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,19 +32,64 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func login(username: String, password: String) {
-        
+    func registerUser(newUser: User) {
+        //Save User
+        userList.append(newUser);
     }
     
-    func register(username: String, password: String) {
+    func login() -> User? {
+        if(usernameField.text == "" || passworField.text == "")
+        {
+            let alert = UIAlertController(title: "Error", message: "One or more fields is blank.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil));
+            self.presentViewController(alert, animated: true, completion: nil)
+            return nil;
+        }
+        else
+        {
+            //Handle Login Via Excis HERE
+            
+            //The following code is temporary for fake logins. Remove it once Excis implemented
+            for u in userList {
+                if(u.username == usernameField.text && u.password == passworField.text)
+                {
+                    return u;
+                }
+            }
+        }
         
+        //Remove once Excis code implemented
+        return nil;
     }
-
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "registerSegue")
+        {
+            let next = segue.destinationViewController as! RegistrationViewController;
+            next.delegate = self;
+        }
+        else if(segue.identifier == "loginSegue")
+        {
+            let nextNav = segue.destinationViewController  as! UINavigationController;
+            let next = nextNav.topViewController as! CreateJoinViewController;
+            
+            next.user = self.loggedInUser;
+        }
+    }
+    
     @IBAction func loginPressed(sender: UIButton) {
+        loggedInUser = login();
         
-    }
-    
-    @IBAction func registerPressed(sender: UIButton) {
-        
+        if(loggedInUser != nil)
+        {
+            //Logged In Successfully
+            performSegueWithIdentifier("loginSegue", sender: self);
+        }
+        else
+        {
+            let alert = UIAlertController(title: "Error", message: "Unable to login. Please check your username, password, and network connectivity.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil));
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
     }
 }

@@ -16,6 +16,7 @@ class CreateViewController: UIViewController {
     @IBOutlet weak var tripEndLocationField: UITextField!
     
     var newTrip: Trip!
+    var user: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,8 +40,8 @@ class CreateViewController: UIViewController {
         else
         {
             //Create Trip object
-            newTrip = Trip(name: tripNameField.text!, dateTime: tripDateTimePicker.date, startPoint: tripStartLocationField.text!, endPoint: tripEndLocationField.text!);
-            newTrip.vehicles.append(Vehicle(owner: "myUsername"));
+            newTrip = Trip(name: tripNameField.text!, leader: user, dateTime: tripDateTimePicker.date, startPoint: tripStartLocationField.text!, endPoint: tripEndLocationField.text!);
+            newTrip.vehicles.append(Vehicle(owner: user));
             performSegueWithIdentifier("createOverviewSegue", sender: self);
         }
     }
@@ -52,6 +53,7 @@ class CreateViewController: UIViewController {
             let next = nextNav.topViewController as! TripOverviewViewController;
             
             next.trip = newTrip;
+            next.user = user;
         }
     }
     

@@ -20,7 +20,8 @@ class TripOverviewViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var tripLocationsLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
-    var trip: Trip?
+    var trip: Trip!
+    var user: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()

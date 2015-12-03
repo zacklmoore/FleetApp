@@ -19,7 +19,8 @@ class Trip: NSObject {
     var id : String
     var name : String
     var startDateTime: NSDate
-    var members = [user]()
+    var leader : User
+    var members = [User]()
     var vehicles = [Vehicle]()
     var roadEvents = [RoadEvent]()
     var totalMiles : Int = 0
@@ -29,9 +30,10 @@ class Trip: NSObject {
     //for larger trips more colors might be necessary
     var numColors : Int = 20
     
-    init(name: String, dateTime: NSDate, startPoint : String, endPoint: String) {
+    init(name: String, lead: User, dateTime: NSDate, startPoint : String, endPoint: String) {
         
         self.name = name;
+        self.leader = lead;
         self.endString = endPoint;
         self.startString = startPoint;
         self.startDateTime = dateTime;

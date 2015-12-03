@@ -10,6 +10,8 @@ import UIKit
 
 class CreateJoinViewController: UIViewController {
     
+    var user: User!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,12 +22,17 @@ class CreateJoinViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func createTripPressed(sender: AnyObject) {
-        
-    }
-    
-    @IBAction func joinTripPressed(sender: AnyObject) {
-        
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "joinSegue")
+        {
+            let next = segue.destinationViewController as! JoinViewController;
+            next.user = user;
+        }
+        else if(segue.identifier == "createSegue")
+        {
+            let next = segue.destinationViewController as! CreateViewController;
+            next.user = user;
+        }
     }
 }
 
