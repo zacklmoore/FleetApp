@@ -115,5 +115,11 @@ class TripOverviewViewController: UIViewController, UITableViewDelegate, UITable
             nextViewController.trip = trip;
             nextViewController.delegate = self;
         }
+        else if(segue.identifier == "carDetailSegue")
+        {
+            let nextViewController = segue.destinationViewController as! CarDetailViewController;
+            nextViewController.vehicle = trip.vehicles[tableView.indexPathForSelectedRow!.row];
+            //nextViewController.delegate = self;
+        }
     }
 }

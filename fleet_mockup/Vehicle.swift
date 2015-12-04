@@ -19,7 +19,7 @@ class Vehicle: NSObject {
     var captain: User
     var vehicleColor : UIColor?
     var MPG : Int?
-    var people = [user]()
+    var passengers = [User]()
     
     //textColor = vehicleColor except when vehicleColor has already been used for a vehicle on this trip.
     var textColor : UIColor?
@@ -31,6 +31,7 @@ class Vehicle: NSObject {
     init(vCap: User)
     {
         captain = vCap
+        passengers.append(vCap);
     }
     
     //Temprarily disabled until all pre-requistes implemented

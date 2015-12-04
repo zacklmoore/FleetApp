@@ -364,6 +364,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sbi-oN-O54" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -434,6 +435,7 @@
                                         <connections>
                                             <outlet property="carNameLabel" destination="L9C-kx-6Vl" id="2o8-RA-WBN"/>
                                             <outlet property="myCarIcon" destination="fvk-9F-413" id="smn-yg-AeM"/>
+                                            <segue destination="YFd-Pq-NxJ" kind="show" identifier="carDetailSegue" id="jCw-eU-HSl"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -528,6 +530,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="tableView" destination="KIq-Ix-ixi" id="o9y-ZW-ylD"/>
                         <outlet property="tripIDLabel" destination="9R6-sQ-Sba" id="g7Z-9o-h7k"/>
@@ -645,6 +648,7 @@
                             <constraint firstAttribute="bottom" secondItem="qGZ-YP-YEe" secondAttribute="bottom" constant="20" symbolic="YES" id="vlQ-3a-qxB"/>
                         </constraints>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="tripDateTimePicker" destination="1uO-lC-occ" id="OQD-g8-9aq"/>
                         <outlet property="tripEndLocationField" destination="mA4-Yc-1XK" id="u6T-aj-BoV"/>
@@ -705,6 +709,7 @@
                             <constraint firstItem="Vo1-FX-qje" firstAttribute="trailing" secondItem="73T-HV-eLw" secondAttribute="trailingMargin" constant="8" id="oq0-ml-Oi0"/>
                         </constraints>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="tripIDField" destination="Vo1-FX-qje" id="Xuf-9i-Gpm"/>
                     </connections>
@@ -755,6 +760,7 @@
                             <constraint firstItem="XDt-yC-2Ch" firstAttribute="bottom" secondItem="TBr-Jf-rIf" secondAttribute="top" id="z02-P7-pGk"/>
                         </constraints>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="MapView" destination="XDt-yC-2Ch" id="KUv-jX-GpG"/>
                     </connections>
@@ -789,15 +795,16 @@
                             <constraint firstItem="82c-cI-bPY" firstAttribute="centerX" secondItem="j5Q-cO-qEa" secondAttribute="centerX" id="W8E-YN-wRH"/>
                         </constraints>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2x8-kH-QWd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5032" y="304"/>
         </scene>
-        <!--Trip Settings View Controller-->
+        <!--Settings-->
         <scene sceneID="ITy-LD-v2B">
             <objects>
-                <viewController title="Trip Settings View Controller" id="zIi-UQ-CHf" customClass="TripSettingsViewController" customModule="FleetApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Settings" id="zIi-UQ-CHf" customClass="TripSettingsViewController" customModule="FleetApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2it-I3-ybP"/>
                         <viewControllerLayoutGuide type="bottom" id="U9f-9d-wwv"/>
@@ -889,6 +896,7 @@
                             <constraint firstItem="Aow-ZA-l9h" firstAttribute="top" secondItem="wBw-LU-oVC" secondAttribute="bottom" constant="8" id="yjk-zC-4J1"/>
                         </constraints>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="tripDateTimePicker" destination="Aow-ZA-l9h" id="TLN-wO-JNR"/>
                         <outlet property="tripEndLocationField" destination="OZp-q7-LNp" id="B6W-db-5yU"/>
@@ -900,13 +908,164 @@
             </objects>
             <point key="canvasLocation" x="5032" y="1082"/>
         </scene>
+        <!--Car Details-->
+        <scene sceneID="SwB-Uk-Pvr">
+            <objects>
+                <viewController title="Car Details" id="YFd-Pq-NxJ" customClass="CarDetailViewController" customModule="FleetApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ikG-CW-2kf"/>
+                        <viewControllerLayoutGuide type="bottom" id="5vd-nT-C9L"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MHl-1B-ehY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="%Car Name%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mex-TT-Lwz">
+                                <rect key="frame" x="223" y="28" width="155" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jsI-tQ-Djj">
+                                <rect key="frame" x="20" y="96" width="560" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="gvp-ds-KL4"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PassengerTableViewCell" id="B1k-JV-Jws" customClass="PassengerTableViewCell" customModule="FleetApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="560" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B1k-JV-Jws" id="fcv-Cq-YBQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%Passenger Name%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tG7-J6-V7J">
+                                                    <rect key="frame" x="196" y="11" width="169" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="tG7-J6-V7J" firstAttribute="centerX" secondItem="fcv-Cq-YBQ" secondAttribute="centerX" id="7fe-Be-QqH"/>
+                                                <constraint firstItem="tG7-J6-V7J" firstAttribute="centerY" secondItem="fcv-Cq-YBQ" secondAttribute="centerY" id="Axc-7m-U9H"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="tG7-J6-V7J" id="GKS-H6-FVt"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="YFd-Pq-NxJ" id="Wwd-fH-Oh0"/>
+                                    <outlet property="delegate" destination="YFd-Pq-NxJ" id="W6Z-Qh-FV4"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Passengers:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DBn-Kh-fhV">
+                                <rect key="frame" x="20" y="66" width="104" height="22"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Car Details:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92v-SK-Yti">
+                                <rect key="frame" x="20" y="348" width="98" height="22"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Make:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GuT-AJ-g4W">
+                                <rect key="frame" x="20" y="378" width="46" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Model:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZx-aa-3em">
+                                <rect key="frame" x="20" y="407" width="53" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Color:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0Y-T6-6ud">
+                                <rect key="frame" x="20" y="436" width="46" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vjD-VY-0CI">
+                                <rect key="frame" x="240" y="304" width="121" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <state key="normal" title="Join This Car"/>
+                                <connections>
+                                    <action selector="joinButtonPressed:" destination="YFd-Pq-NxJ" eventType="touchUpInside" id="VbX-8V-hl5"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="%model%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krv-Q3-hY8">
+                                <rect key="frame" x="81" y="407" width="74" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="%color%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fMd-0t-S1W">
+                                <rect key="frame" x="74" y="436" width="65" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="%make%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqm-a4-VGp">
+                                <rect key="frame" x="74" y="378" width="68" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GuT-AJ-g4W" firstAttribute="leading" secondItem="MHl-1B-ehY" secondAttribute="leadingMargin" id="0RR-2e-3Ae"/>
+                            <constraint firstItem="fMd-0t-S1W" firstAttribute="top" secondItem="krv-Q3-hY8" secondAttribute="bottom" constant="8" id="BNn-ma-oMw"/>
+                            <constraint firstItem="hqm-a4-VGp" firstAttribute="top" secondItem="92v-SK-Yti" secondAttribute="bottom" constant="8" id="EG9-s1-bnW"/>
+                            <constraint firstItem="BZx-aa-3em" firstAttribute="top" secondItem="GuT-AJ-g4W" secondAttribute="bottom" constant="8" id="FAk-G6-WNg"/>
+                            <constraint firstItem="mex-TT-Lwz" firstAttribute="centerX" secondItem="MHl-1B-ehY" secondAttribute="centerX" id="Fws-8u-2mt"/>
+                            <constraint firstItem="jsI-tQ-Djj" firstAttribute="top" secondItem="DBn-Kh-fhV" secondAttribute="bottom" constant="8" id="Jy0-Lo-aMt"/>
+                            <constraint firstItem="s0Y-T6-6ud" firstAttribute="top" secondItem="BZx-aa-3em" secondAttribute="bottom" constant="8" id="MCV-0T-wjv"/>
+                            <constraint firstItem="hqm-a4-VGp" firstAttribute="leading" secondItem="GuT-AJ-g4W" secondAttribute="trailing" constant="8" id="Q65-A0-wZs"/>
+                            <constraint firstItem="jsI-tQ-Djj" firstAttribute="leading" secondItem="MHl-1B-ehY" secondAttribute="leadingMargin" id="RPQ-kj-PMY"/>
+                            <constraint firstItem="mex-TT-Lwz" firstAttribute="top" secondItem="ikG-CW-2kf" secondAttribute="bottom" constant="8" id="X5D-4P-DTC"/>
+                            <constraint firstItem="92v-SK-Yti" firstAttribute="leading" secondItem="MHl-1B-ehY" secondAttribute="leadingMargin" id="byK-TF-o71"/>
+                            <constraint firstItem="GuT-AJ-g4W" firstAttribute="top" secondItem="92v-SK-Yti" secondAttribute="bottom" constant="8" id="cx1-xJ-UYe"/>
+                            <constraint firstItem="DBn-Kh-fhV" firstAttribute="top" secondItem="mex-TT-Lwz" secondAttribute="bottom" constant="8" id="czI-pP-Ep7"/>
+                            <constraint firstItem="jsI-tQ-Djj" firstAttribute="trailing" secondItem="MHl-1B-ehY" secondAttribute="trailingMargin" id="dns-1g-JKj"/>
+                            <constraint firstItem="92v-SK-Yti" firstAttribute="top" secondItem="vjD-VY-0CI" secondAttribute="bottom" constant="8" id="eGy-Y6-1S1"/>
+                            <constraint firstItem="fMd-0t-S1W" firstAttribute="leading" secondItem="s0Y-T6-6ud" secondAttribute="trailing" constant="8" id="eM1-vp-u83"/>
+                            <constraint firstItem="BZx-aa-3em" firstAttribute="leading" secondItem="MHl-1B-ehY" secondAttribute="leadingMargin" id="egp-dg-77V"/>
+                            <constraint firstItem="s0Y-T6-6ud" firstAttribute="leading" secondItem="MHl-1B-ehY" secondAttribute="leadingMargin" id="gcJ-SP-xK9"/>
+                            <constraint firstItem="krv-Q3-hY8" firstAttribute="top" secondItem="hqm-a4-VGp" secondAttribute="bottom" constant="8" id="jEM-Ei-Rl7"/>
+                            <constraint firstItem="vjD-VY-0CI" firstAttribute="centerX" secondItem="MHl-1B-ehY" secondAttribute="centerX" id="lBn-EI-J4R"/>
+                            <constraint firstItem="krv-Q3-hY8" firstAttribute="leading" secondItem="BZx-aa-3em" secondAttribute="trailing" constant="8" id="o1w-Nb-deh"/>
+                            <constraint firstItem="vjD-VY-0CI" firstAttribute="top" secondItem="jsI-tQ-Djj" secondAttribute="bottom" constant="8" id="plr-zL-j4V"/>
+                            <constraint firstItem="DBn-Kh-fhV" firstAttribute="leading" secondItem="MHl-1B-ehY" secondAttribute="leadingMargin" id="svi-25-t7F"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="carColorLabel" destination="fMd-0t-S1W" id="8pB-M1-LAl"/>
+                        <outlet property="carMakeLabel" destination="hqm-a4-VGp" id="RgN-KE-W3R"/>
+                        <outlet property="carModelLabel" destination="krv-Q3-hY8" id="C0S-VD-xD4"/>
+                        <outlet property="carNameLabel" destination="mex-TT-Lwz" id="BAA-pu-bYe"/>
+                        <outlet property="tableView" destination="jsI-tQ-Djj" id="lpo-Qg-vjv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pNW-XQ-E5j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5032" y="1823"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Info" width="800" height="662"/>
         <image name="fleet" width="809" height="725"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cjl-c9-xpV"/>
-        <segue reference="kbD-ec-6Uo"/>
+        <segue reference="22J-St-5ye"/>
+        <segue reference="qrE-jW-7Mh"/>
     </inferredMetricsTieBreakers>
 </document>
