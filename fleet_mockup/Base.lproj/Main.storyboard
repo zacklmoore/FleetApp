@@ -415,7 +415,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fvk-9F-413">
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check_mark" translatesAutoresizingMaskIntoConstraints="NO" id="fvk-9F-413">
                                                     <rect key="frame" x="512" y="10" width="24" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="24" id="J55-BT-8Px"/>
@@ -1062,6 +1062,7 @@
     </scenes>
     <resources>
         <image name="Info" width="800" height="662"/>
+        <image name="check_mark" width="64" height="64"/>
         <image name="fleet" width="809" height="725"/>
     </resources>
     <inferredMetricsTieBreakers>

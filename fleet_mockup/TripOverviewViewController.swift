@@ -64,6 +64,11 @@ class TripOverviewViewController: UIViewController, UITableViewDelegate, UITable
         
         cell.carNameLabel.text = trip!.vehicles[indexPath.row].captain.firstName + " " + trip!.vehicles[indexPath.row].captain.lastName + "'s Car";
         
+        if(trip!.vehicleForUser(loggedInUser!) == trip!.vehicles[indexPath.row])
+        {
+            cell.myCarIcon.hidden = false;
+        }
+        
         return cell
     }
     

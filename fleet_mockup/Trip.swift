@@ -46,6 +46,17 @@ class Trip: NSObject {
         }
     }
     
+    func vehicleForUser(user: User) -> Vehicle? {
+        for v in vehicles {
+            if(v.passengers.contains(user))
+            {
+                return v;
+            }
+        }
+        
+        return nil;
+    }
+    
     /* Temporarily Commented Out Until All Pre-Requisites Implemented
     func addVehicle(vColor: UIColor, vOwner: user, defaultColors: [UIColor], usedColors: [UIColor]) -> (UIColor){
         let newVehicle = Vehicle(vColor: vColor, vOwner: vOwner, usedColors: usedColors, defaultColors: defaultColors)
