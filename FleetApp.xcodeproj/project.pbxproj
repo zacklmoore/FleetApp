@@ -16,6 +16,8 @@
 		147100E11C10C82000802359 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147100E01C10C82000802359 /* RegistrationViewController.swift */; };
 		147100E31C10FB5E00802359 /* CarDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147100E21C10FB5D00802359 /* CarDetailViewController.swift */; };
 		147100E51C11048B00802359 /* PassengerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147100E41C11048B00802359 /* PassengerTableViewCell.swift */; };
+		14C881161C165F23002D4D6B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14C881151C165F22002D4D6B /* CoreLocation.framework */; };
+		14C881181C165F4E002D4D6B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14C881171C165F4E002D4D6B /* MapKit.framework */; };
 		14DA805C1BF0047D005228F4 /* CreateJoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DA805B1BF0047D005228F4 /* CreateJoinViewController.swift */; };
 		4110E2011BFFE9ED00FCE855 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4110E2001BFFE9ED00FCE855 /* MapViewController.swift */; };
 		414CDD581BFD368D00352CAF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414CDD571BFD368D00352CAF /* LoginViewController.swift */; };
@@ -56,6 +58,8 @@
 		147100E01C10C82000802359 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		147100E21C10FB5D00802359 /* CarDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarDetailViewController.swift; sourceTree = "<group>"; };
 		147100E41C11048B00802359 /* PassengerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassengerTableViewCell.swift; sourceTree = "<group>"; };
+		14C881151C165F22002D4D6B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		14C881171C165F4E002D4D6B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		14DA805B1BF0047D005228F4 /* CreateJoinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateJoinViewController.swift; sourceTree = "<group>"; };
 		4110E2001BFFE9ED00FCE855 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = ../MapViewController.swift; sourceTree = "<group>"; };
 		414CDD571BFD368D00352CAF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +82,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14C881181C165F4E002D4D6B /* MapKit.framework in Frameworks */,
+				14C881161C165F23002D4D6B /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +100,8 @@
 		126DF5F41BED2F3E002D9A7D = {
 			isa = PBXGroup;
 			children = (
+				14C881171C165F4E002D4D6B /* MapKit.framework */,
+				14C881151C165F22002D4D6B /* CoreLocation.framework */,
 				126DF5FF1BED2F3E002D9A7D /* FleetApp */,
 				126DF5FE1BED2F3E002D9A7D /* Products */,
 			);
@@ -199,6 +207,11 @@
 				TargetAttributes = {
 					126DF5FC1BED2F3E002D9A7D = {
 						CreatedOnToolsVersion = 6.3.2;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					126DF6111BED2F3E002D9A7D = {
 						CreatedOnToolsVersion = 6.3.2;
