@@ -18,13 +18,16 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-            self.mapView.delegate = self;
-            let uilgr = UILongPressGestureRecognizer(target: self, action: "addAnnotation:")
-            uilgr.minimumPressDuration = 2.0
-            self.mapView.addGestureRecognizer(uilgr);
-
-            updateTripLocations();
-        }
+        self.mapView.delegate = self;
+        
+        //Create Long Press Gesture Recognizer to allow adding annotations
+        let uilgr = UILongPressGestureRecognizer(target: self, action: "addAnnotation:")
+        uilgr.minimumPressDuration = 2.0
+        self.mapView.addGestureRecognizer(uilgr);
+        
+        //Load map pins
+        updateTripLocations();
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -32,12 +35,26 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     }
     
     func updateTripLocations() {
+        //Pins for Start / Finish
+        let startAnnotation = MKPointAnnotation();
+        startAnnotation.title = trip.startString;
+        startAnnotation.coordinate = trip.startLoc;
+        self.mapView.addAnnotation(startAnnotation);
+        
+        let endAnnotation = MKPointAnnotation();
+        endAnnotation.title = trip.endString;
+        endAnnotation.coordinate = trip.endLoc;
+        self.mapView.addAnnotation(endAnnotation);
+        
+        //Pins for Vehicles
         for v in trip!.vehicles {
             let annotation = MKPointAnnotation();
             annotation.title = v.captain.firstName + " " + v.captain.lastName + "'s Car";
             annotation.coordinate = v.captain.curLocation!.coordinate;
             self.mapView.addAnnotation(annotation);
         }
+        
+        //Pins for Road Events...
     }
     
     func addAnnotation(gestureRecognizer:UIGestureRecognizer){
