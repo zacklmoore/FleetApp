@@ -9,6 +9,10 @@
 import UIKit
 import MapKit
 
+class CustomPointAnnotation: MKPointAnnotation {
+    var imageName: String!
+}
+
 class MapViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
@@ -34,23 +38,59 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        if !(annotation is CustomPointAnnotation) {
+            return nil
+        }
+        
+        let reuseId = "test"
+        
+        var anView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId)
+        if anView == nil {
+            anView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            anView!.canShowCallout = true
+        }
+        else {
+            anView!.annotation = annotation
+        }
+        
+        //Set annotation-specific properties **AFTER**
+        //the view is dequeued or created...
+        
+        let cpa = annotation as! CustomPointAnnotation
+        anView!.image = UIImage(named:cpa.imageName)
+        
+        return anView
+    }
+    
     func updateTripLocations() {
         //Pins for Start / Finish
-        let startAnnotation = MKPointAnnotation();
+        let startAnnotation = CustomPointAnnotation();
         startAnnotation.title = trip.startString;
         startAnnotation.coordinate = trip.startLoc;
+        startAnnotation.imageName = "start_icon";
         self.mapView.addAnnotation(startAnnotation);
         
-        let endAnnotation = MKPointAnnotation();
+        let endAnnotation = CustomPointAnnotation();
         endAnnotation.title = trip.endString;
         endAnnotation.coordinate = trip.endLoc;
+        endAnnotation.imageName = "finish_icon";
         self.mapView.addAnnotation(endAnnotation);
         
         //Pins for Vehicles
         for v in trip!.vehicles {
-            let annotation = MKPointAnnotation();
+            let annotation = CustomPointAnnotation();
             annotation.title = v.captain.firstName + " " + v.captain.lastName + "'s Car";
             annotation.coordinate = v.captain.curLocation!.coordinate;
+            
+            if(trip.vehicleForUser(loggedInUser!) == v)
+            {
+                annotation.imageName = "mycar_icon";
+            }
+            else
+            {
+                annotation.imageName = "car_icon";
+            }
             self.mapView.addAnnotation(annotation);
         }
         
