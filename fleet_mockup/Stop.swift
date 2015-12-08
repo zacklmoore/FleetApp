@@ -18,7 +18,7 @@ class Stop: RoadEvent {
        case food, scenic, bathroom, gas
     }
     
-    init(typeOfStop : stopType?, location : CLLocationCoordinate2D){
+    init(typeOfStop : stopType?, location : CLLocation){
         super.init( location: location)
         self.type = typeOfStop
     }

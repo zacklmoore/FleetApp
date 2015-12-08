@@ -18,6 +18,7 @@
 		147100E51C11048B00802359 /* PassengerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147100E41C11048B00802359 /* PassengerTableViewCell.swift */; };
 		14C881161C165F23002D4D6B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14C881151C165F22002D4D6B /* CoreLocation.framework */; };
 		14C881181C165F4E002D4D6B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14C881171C165F4E002D4D6B /* MapKit.framework */; };
+		14C8811A1C167EC3002D4D6B /* LocationSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C881191C167EC3002D4D6B /* LocationSelectViewController.swift */; };
 		14DA805C1BF0047D005228F4 /* CreateJoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DA805B1BF0047D005228F4 /* CreateJoinViewController.swift */; };
 		4110E2011BFFE9ED00FCE855 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4110E2001BFFE9ED00FCE855 /* MapViewController.swift */; };
 		414CDD581BFD368D00352CAF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414CDD571BFD368D00352CAF /* LoginViewController.swift */; };
@@ -60,6 +61,7 @@
 		147100E41C11048B00802359 /* PassengerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassengerTableViewCell.swift; sourceTree = "<group>"; };
 		14C881151C165F22002D4D6B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		14C881171C165F4E002D4D6B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		14C881191C167EC3002D4D6B /* LocationSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSelectViewController.swift; sourceTree = "<group>"; };
 		14DA805B1BF0047D005228F4 /* CreateJoinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateJoinViewController.swift; sourceTree = "<group>"; };
 		4110E2001BFFE9ED00FCE855 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = ../MapViewController.swift; sourceTree = "<group>"; };
 		414CDD571BFD368D00352CAF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				8E92B32B1C0271EC00785A32 /* User.swift */,
 				8E92B32C1C0271EC00785A32 /* Vehicle.swift */,
 				126DF6061BED2F3E002D9A7D /* Main.storyboard */,
+				14C881191C167EC3002D4D6B /* LocationSelectViewController.swift */,
 				147100E41C11048B00802359 /* PassengerTableViewCell.swift */,
 				8EC5EBD91C027FF800EF6B09 /* TripSettingsViewController.swift */,
 				8EC5EBDB1C02801400EF6B09 /* ChatViewController.swift */,
@@ -268,6 +271,7 @@
 				8E92B32F1C0271EC00785A32 /* RoadEvent.swift in Sources */,
 				8EC5EBD41C027F3B00EF6B09 /* CreateViewController.swift in Sources */,
 				147100E31C10FB5E00802359 /* CarDetailViewController.swift in Sources */,
+				14C8811A1C167EC3002D4D6B /* LocationSelectViewController.swift in Sources */,
 				8E92B32E1C0271EC00785A32 /* Hazard.swift in Sources */,
 				8E92B3331C0271EC00785A32 /* Vehicle.swift in Sources */,
 				8E92B3301C0271EC00785A32 /* Stop.swift in Sources */,

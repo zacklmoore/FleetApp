@@ -7,8 +7,18 @@
 //
 
 import UIKit
+import CoreLocation
 
-class CreateViewController: UIViewController {
+//Protocols to enable delegation for Location Select data passback
+protocol startLocationReturnDelegate {
+    func saveStartLocation(loc: CLLocationCoordinate2D);
+}
+
+protocol endLocationReturnDelegate {
+    func saveEndLocation(loc: CLLocationCoordinate2D);
+}
+
+class CreateViewController: UIViewController, startLocationReturnDelegate, endLocationReturnDelegate {
     
     @IBOutlet weak var tripNameField: UITextField!
     @IBOutlet weak var tripDateTimePicker: UIDatePicker!
@@ -16,9 +26,13 @@ class CreateViewController: UIViewController {
     @IBOutlet weak var tripEndLocationField: UITextField!
     
     var newTrip: Trip!
+    var startLoc: CLLocationCoordinate2D?
+    var endLoc: CLLocationCoordinate2D?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tripStartLocationField.enabled = false;
+        tripEndLocationField.enabled = false;
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -39,7 +53,7 @@ class CreateViewController: UIViewController {
         else
         {
             //Create Trip object
-            newTrip = Trip(name: tripNameField.text!, lead: loggedInUser!, dateTime: tripDateTimePicker.date, startPoint: tripStartLocationField.text!, endPoint: tripEndLocationField.text!);
+            newTrip = Trip(name: tripNameField.text!, lead: loggedInUser!, dateTime: tripDateTimePicker.date, startPoint: startLoc!, endPoint: endLoc!, startName: tripStartLocationField.text!, endName: tripEndLocationField.text!);
             newTrip.vehicles.append(Vehicle(vCap: loggedInUser!));
             performSegueWithIdentifier("createOverviewSegue", sender: self);
         }
@@ -53,9 +67,33 @@ class CreateViewController: UIViewController {
             
             next.trip = newTrip;
         }
+        else if(segue.identifier == "selectStartLocationSegue")
+        {
+            let next = segue.destinationViewController as! LocationSelectViewController;
+            next.startDelegate = self;
+            
+        }
+        else if(segue.identifier == "selectEndLocationSegue")
+        {
+            let next = segue.destinationViewController as! LocationSelectViewController;
+            next.endDelegate = self;
+        }
+    }
+    
+    func saveStartLocation(loc: CLLocationCoordinate2D) {
+        startLoc = loc;
+        tripStartLocationField.enabled = true;
+        tripStartLocationField.placeholder = "Name this Location...";
+    }
+    
+    func saveEndLocation(loc: CLLocationCoordinate2D) {
+        endLoc = loc;
+        tripEndLocationField.enabled = true;
+        tripEndLocationField.placeholder = "Name this Location...";
     }
     
     @IBAction func createTripButtonPressed(sender: AnyObject) {
         createTrip();
     }
+    
 }

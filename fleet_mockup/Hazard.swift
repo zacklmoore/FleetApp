@@ -17,7 +17,7 @@ class Hazard: RoadEvent {
         case carCrash, traffic, cop, roadKill
     }
     
-    init(typeOfHazard: hazardType?, location : CLLocationCoordinate2D){
+    init(typeOfHazard: hazardType?, location : CLLocation){
         super.init(location: location)
         self.type = typeOfHazard
     }

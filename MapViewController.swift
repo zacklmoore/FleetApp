@@ -19,6 +19,10 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
             self.mapView.delegate = self;
+            let uilgr = UILongPressGestureRecognizer(target: self, action: "addAnnotation:")
+            uilgr.minimumPressDuration = 2.0
+            self.mapView.addGestureRecognizer(uilgr);
+
             updateTripLocations();
         }
     
@@ -36,6 +40,23 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         }
     }
     
+    func addAnnotation(gestureRecognizer:UIGestureRecognizer){
+        let touchPoint = gestureRecognizer.locationInView(self.mapView)
+        let newCoordinates = self.mapView.convertPoint(touchPoint, toCoordinateFromView: self.mapView)
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = newCoordinates
+        self.mapView.addAnnotation(annotation)
+    }
     
+    @IBAction func addButtonPressed(sender: AnyObject) {
+        //Add a hazard or other pin
+        
+    }
     
+    @IBAction func refreshButtonPressed(sender: AnyObject) {
+        //Refresh user locations and pins
+        self.mapView.removeAnnotations(self.mapView.annotations);
+        updateTripLocations();
+        //updateTripLocations()
+    }
 }

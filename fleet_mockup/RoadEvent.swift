@@ -11,9 +11,9 @@ import CoreLocation;
 
 class RoadEvent: NSObject {
     
-    var location : CLLocationCoordinate2D
+    var location : CLLocation
     
-    init(location : CLLocationCoordinate2D){
+    init(location : CLLocation){
         self.location = location
     }
 

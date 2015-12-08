@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -543,6 +544,53 @@
             </objects>
             <point key="canvasLocation" x="4316" y="304"/>
         </scene>
+        <!--Select Location-->
+        <scene sceneID="xbY-Q8-PSa">
+            <objects>
+                <viewController id="INE-Hh-CO3" customClass="LocationSelectViewController" customModule="FleetApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TGg-xt-CbK"/>
+                        <viewControllerLayoutGuide type="bottom" id="pOl-KU-4sO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fqD-Ep-tVN">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="oii-ez-AjJ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oii-ez-AjJ" firstAttribute="top" secondItem="fqD-Ep-tVN" secondAttribute="topMargin" id="5ME-6z-ONK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oii-ez-AjJ" secondAttribute="trailing" constant="-20" id="787-79-NoI"/>
+                            <constraint firstItem="oii-ez-AjJ" firstAttribute="leading" secondItem="fqD-Ep-tVN" secondAttribute="leadingMargin" constant="-20" id="aAG-6u-4K7"/>
+                            <constraint firstItem="pOl-KU-4sO" firstAttribute="top" secondItem="oii-ez-AjJ" secondAttribute="bottom" id="uRq-LP-jca"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Select Location" id="cdF-kk-tx3">
+                        <rightBarButtonItems>
+                            <barButtonItem title="Done" id="YIb-3q-v4I">
+                                <connections>
+                                    <action selector="doneButtonPressed:" destination="INE-Hh-CO3" id="ogR-Ck-Idn"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="search" id="hpF-He-VyZ">
+                                <connections>
+                                    <action selector="showSearchBar:" destination="INE-Hh-CO3" id="kkz-GQ-GnC"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="mapView" destination="oii-ez-AjJ" id="mec-YO-0wl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x6S-N9-ZrW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2638" y="-407"/>
+        </scene>
         <!--Create View Controller-->
         <scene sceneID="PVZ-Ui-rq5">
             <objects>
@@ -592,17 +640,17 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pAt-hI-Vj3">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select a Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pAt-hI-Vj3">
                                 <rect key="frame" x="20" y="359" width="560" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mA4-Yc-1XK">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select a Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mA4-Yc-1XK">
                                 <rect key="frame" x="20" y="426" width="560" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lmt-oI-Jyt">
                                 <rect key="frame" x="20" y="330" width="122" height="21"/>
@@ -620,6 +668,20 @@
                                     <action selector="createTripButtonPressed:" destination="HEm-2b-4DB" eventType="touchUpInside" id="f10-hk-91W"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yG7-M3-mUf">
+                                <rect key="frame" x="150" y="326" width="99" height="30"/>
+                                <state key="normal" title="Select on Map"/>
+                                <connections>
+                                    <segue destination="INE-Hh-CO3" kind="show" identifier="selectStartLocationSegue" id="wVx-bv-Pob"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uZR-MM-3Q8">
+                                <rect key="frame" x="150" y="393" width="99" height="30"/>
+                                <state key="normal" title="Select on Map"/>
+                                <connections>
+                                    <segue destination="INE-Hh-CO3" kind="show" identifier="selectEndLocationSegue" id="mMn-0A-iAN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -627,6 +689,9 @@
                             <constraint firstItem="Iat-7r-x7h" firstAttribute="top" secondItem="pAt-hI-Vj3" secondAttribute="bottom" constant="8" id="060-B6-sN8"/>
                             <constraint firstItem="pAt-hI-Vj3" firstAttribute="trailing" secondItem="Vgl-Sq-uOf" secondAttribute="trailingMargin" id="1w5-XG-r46"/>
                             <constraint firstItem="mA4-Yc-1XK" firstAttribute="trailing" secondItem="Vgl-Sq-uOf" secondAttribute="trailingMargin" id="3dY-D8-tHl"/>
+                            <constraint firstItem="yG7-M3-mUf" firstAttribute="top" secondItem="1uO-lC-occ" secondAttribute="bottom" constant="4" id="5xF-WJ-tcY"/>
+                            <constraint firstItem="yG7-M3-mUf" firstAttribute="leading" secondItem="Lmt-oI-Jyt" secondAttribute="trailing" constant="8" id="78u-b2-rHM"/>
+                            <constraint firstItem="uZR-MM-3Q8" firstAttribute="top" secondItem="pAt-hI-Vj3" secondAttribute="bottom" constant="4" id="9fm-jK-GUh"/>
                             <constraint firstItem="Iat-7r-x7h" firstAttribute="leading" secondItem="Vgl-Sq-uOf" secondAttribute="leadingMargin" id="CPo-Vd-PyD"/>
                             <constraint firstItem="oB6-je-lGm" firstAttribute="top" secondItem="q1E-NX-hIL" secondAttribute="bottom" constant="8" id="Dc0-2v-CfV"/>
                             <constraint firstItem="1uO-lC-occ" firstAttribute="trailing" secondItem="Vgl-Sq-uOf" secondAttribute="trailingMargin" id="GBp-mx-qUa"/>
@@ -636,7 +701,9 @@
                             <constraint firstItem="1uO-lC-occ" firstAttribute="top" secondItem="KnH-c8-Rka" secondAttribute="bottom" constant="8" id="LaH-Z9-bBb"/>
                             <constraint firstItem="oB6-je-lGm" firstAttribute="leading" secondItem="Vgl-Sq-uOf" secondAttribute="leadingMargin" id="T1g-BR-WfW"/>
                             <constraint firstItem="qGZ-YP-YEe" firstAttribute="centerX" secondItem="mA4-Yc-1XK" secondAttribute="centerX" id="UZA-SM-U34"/>
+                            <constraint firstItem="uZR-MM-3Q8" firstAttribute="top" secondItem="pAt-hI-Vj3" secondAttribute="bottom" constant="4" id="VRz-ge-9PB"/>
                             <constraint firstItem="KnH-c8-Rka" firstAttribute="top" secondItem="oB6-je-lGm" secondAttribute="bottom" constant="8" id="Vhu-MK-n6p"/>
+                            <constraint firstItem="uZR-MM-3Q8" firstAttribute="leading" secondItem="Iat-7r-x7h" secondAttribute="trailing" constant="19" id="a1S-G7-L7w"/>
                             <constraint firstItem="Lmt-oI-Jyt" firstAttribute="top" secondItem="1uO-lC-occ" secondAttribute="bottom" constant="8" id="f26-kX-xfH"/>
                             <constraint firstItem="KnH-c8-Rka" firstAttribute="leading" secondItem="Vgl-Sq-uOf" secondAttribute="leadingMargin" id="hCA-Ji-G3y"/>
                             <constraint firstItem="pAt-hI-Vj3" firstAttribute="top" secondItem="Lmt-oI-Jyt" secondAttribute="bottom" constant="8" id="hnR-XQ-2gs"/>
@@ -734,7 +801,7 @@
             </objects>
             <point key="canvasLocation" x="3512" y="304"/>
         </scene>
-        <!--Map View Controller-->
+        <!--Map-->
         <scene sceneID="VQW-rA-cuU">
             <objects>
                 <viewController id="lfF-ix-eKR" customClass="MapViewController" customModule="FleetApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -749,6 +816,7 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="XDt-yC-2Ch">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
+                                <gestureRecognizers/>
                                 <connections>
                                     <outlet property="delegate" destination="lfF-ix-eKR" id="NcL-xo-sh7"/>
                                 </connections>
@@ -756,6 +824,7 @@
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="XDt-yC-2Ch" firstAttribute="top" secondItem="K1T-fs-AUe" secondAttribute="top" id="8PI-52-HEM"/>
                             <constraint firstItem="XDt-yC-2Ch" firstAttribute="leading" secondItem="K1T-fs-AUe" secondAttribute="leading" id="Bth-dl-BDQ"/>
@@ -763,7 +832,23 @@
                             <constraint firstItem="XDt-yC-2Ch" firstAttribute="bottom" secondItem="TBr-Jf-rIf" secondAttribute="top" id="z02-P7-pGk"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Map" id="a0L-0o-Gy5">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="refresh" id="nbd-Bh-aiw">
+                                <connections>
+                                    <action selector="refreshButtonPressed:" destination="lfF-ix-eKR" id="i4b-d3-6M4"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="add" id="Brw-IC-JBJ">
+                                <connections>
+                                    <action selector="addButtonPressed:" destination="lfF-ix-eKR" id="B7w-U9-klh"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="MapView" destination="XDt-yC-2Ch" id="KUv-jX-GpG"/>
                         <outlet property="mapView" destination="XDt-yC-2Ch" id="EeA-Qa-gGq"/>
@@ -1071,6 +1156,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="22J-St-5ye"/>
-        <segue reference="qrE-jW-7Mh"/>
+        <segue reference="kbD-ec-6Uo"/>
+        <segue reference="mMn-0A-iAN"/>
     </inferredMetricsTieBreakers>
 </document>

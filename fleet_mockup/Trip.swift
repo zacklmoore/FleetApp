@@ -10,12 +10,10 @@ import UIKit
 import CoreLocation;
 
 class Trip: NSObject {
-    //var endPoint : CLLocationCoordinate2D
-    //var startPoint : CLLocationCoordinate2D
-    //Temporary until we get lcoation selection working
     var startString: String
     var endString: String
-    //-------------------------------------------------
+    var startLoc: CLLocationCoordinate2D
+    var endLoc: CLLocationCoordinate2D
     var id : String
     var name : String
     var startDateTime: NSDate
@@ -30,12 +28,14 @@ class Trip: NSObject {
     //for larger trips more colors might be necessary
     var numColors : Int = 20
     
-    init(name: String, lead: User, dateTime: NSDate, startPoint : String, endPoint: String) {
+    init(name: String, lead: User, dateTime: NSDate, startPoint : CLLocationCoordinate2D, endPoint: CLLocationCoordinate2D, startName: String, endName: String) {
         
         self.name = name;
         self.leader = lead;
-        self.endString = endPoint;
-        self.startString = startPoint;
+        self.endString = startName;
+        self.startString = endName;
+        self.startLoc = startPoint;
+        self.endLoc = endPoint;
         self.startDateTime = dateTime;
         self.id = ""
         
