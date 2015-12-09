@@ -10,10 +10,12 @@ import UIKit
 class JoinViewController: UIViewController {
     
     @IBOutlet weak var tripIDField: UITextField!
+    var theTrip: Trip?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -26,16 +28,29 @@ class JoinViewController: UIViewController {
         {
             let nextNav = segue.destinationViewController  as! UINavigationController;
             let next = nextNav.topViewController as! TripOverviewViewController;
+            if(theTrip != nil){
+                next.trip = theTrip
+            }
             
             //NOTE: Eventually Pass Recieved Trip Object
         }
     }
     
-    func joinTrip(tripID: String) {
-        
+    func joinTrip(tripID: String) -> Trip? {
+        //var found = false;
+        for v in trips{
+            if(v.id == tripID){
+                return v
+            }
+        }
+        return nil
     }
     
     @IBAction func joinTripButtonPressed(sender: AnyObject) {
+      theTrip = joinTrip(tripIDField.text!)
         
+        if(theTrip != nil){
+            performSegueWithIdentifier("joinOverviewSegue", sender: self)
+        }
     }
 }

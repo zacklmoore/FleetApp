@@ -54,6 +54,7 @@ class CreateViewController: UIViewController, startLocationReturnDelegate, endLo
         {
             //Create Trip object
             newTrip = Trip(name: tripNameField.text!, lead: loggedInUser!, dateTime: tripDateTimePicker.date, startPoint: startLoc!, endPoint: endLoc!, startName: tripStartLocationField.text!, endName: tripEndLocationField.text!);
+            trips.append(newTrip)
             newTrip.vehicles.append(Vehicle(vCap: loggedInUser!));
             performSegueWithIdentifier("createOverviewSegue", sender: self);
         }

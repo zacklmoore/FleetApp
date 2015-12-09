@@ -17,6 +17,7 @@ var loggedInUser: User?
 
 //Temporary Global Array of Users until Excis Impleneted
 var userList = [User]();
+var trips = [Trip]();
 
 class LoginViewController: UIViewController, registerReturnDelegate {
     
@@ -68,7 +69,9 @@ class LoginViewController: UIViewController, registerReturnDelegate {
         {
             let next = segue.destinationViewController as! RegistrationViewController;
             next.delegate = self;
+            
         }
+       
     }
     
     @IBAction func loginPressed(sender: UIButton) {
@@ -76,8 +79,10 @@ class LoginViewController: UIViewController, registerReturnDelegate {
         
         if(loggedInUser != nil)
         {
+            
             //Logged In Successfully So Go On
             performSegueWithIdentifier("loginSegue", sender: self);
+            
         }
         else
         {

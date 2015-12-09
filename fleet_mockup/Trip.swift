@@ -37,7 +37,9 @@ class Trip: NSObject {
         self.startLoc = startPoint;
         self.endLoc = endPoint;
         self.startDateTime = dateTime;
-        self.id = ""
+        
+        self.id = self.leader.username + NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .MediumStyle, timeStyle: .ShortStyle)
+        
         
         for _ in 1...20 {
             defaultColors.append(UIColor.randomFlatColor())
