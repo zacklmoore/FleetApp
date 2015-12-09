@@ -6,6 +6,7 @@
 //  Copyright © 2015 Austin Cary. All rights reserved.
 //
 
+/* Temporarily commented out until Road Events fully implemented
 import UIKit
 import CoreLocation;
 
@@ -24,3 +25,4 @@ class Stop: RoadEvent {
     }
 
 }
+*/

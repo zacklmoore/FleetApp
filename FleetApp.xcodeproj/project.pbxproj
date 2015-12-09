@@ -16,6 +16,7 @@
 		147100E11C10C82000802359 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147100E01C10C82000802359 /* RegistrationViewController.swift */; };
 		147100E31C10FB5E00802359 /* CarDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147100E21C10FB5D00802359 /* CarDetailViewController.swift */; };
 		147100E51C11048B00802359 /* PassengerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147100E41C11048B00802359 /* PassengerTableViewCell.swift */; };
+		1486F3BE1C17F0AF00F344E5 /* CreateRoadEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1486F3BD1C17F0AE00F344E5 /* CreateRoadEventViewController.swift */; };
 		14C881161C165F23002D4D6B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14C881151C165F22002D4D6B /* CoreLocation.framework */; };
 		14C881181C165F4E002D4D6B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14C881171C165F4E002D4D6B /* MapKit.framework */; };
 		14C8811A1C167EC3002D4D6B /* LocationSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C881191C167EC3002D4D6B /* LocationSelectViewController.swift */; };
@@ -59,6 +60,7 @@
 		147100E01C10C82000802359 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		147100E21C10FB5D00802359 /* CarDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarDetailViewController.swift; sourceTree = "<group>"; };
 		147100E41C11048B00802359 /* PassengerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassengerTableViewCell.swift; sourceTree = "<group>"; };
+		1486F3BD1C17F0AE00F344E5 /* CreateRoadEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRoadEventViewController.swift; sourceTree = "<group>"; };
 		14C881151C165F22002D4D6B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		14C881171C165F4E002D4D6B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		14C881191C167EC3002D4D6B /* LocationSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSelectViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				8E92B3261C0271EC00785A32 /* ColorTuple.swift */,
 				8E92B3271C0271EC00785A32 /* Hazard.swift */,
 				8E92B3281C0271EC00785A32 /* RoadEvent.swift */,
+				1486F3BD1C17F0AE00F344E5 /* CreateRoadEventViewController.swift */,
 				8E92B3291C0271EC00785A32 /* Stop.swift */,
 				8E92B32A1C0271EC00785A32 /* Trip.swift */,
 				8E92B32B1C0271EC00785A32 /* User.swift */,
@@ -269,6 +272,7 @@
 				8EC5EBD81C027FD000EF6B09 /* TripOverviewViewController.swift in Sources */,
 				414CDD581BFD368D00352CAF /* LoginViewController.swift in Sources */,
 				8E92B32F1C0271EC00785A32 /* RoadEvent.swift in Sources */,
+				1486F3BE1C17F0AF00F344E5 /* CreateRoadEventViewController.swift in Sources */,
 				8EC5EBD41C027F3B00EF6B09 /* CreateViewController.swift in Sources */,
 				147100E31C10FB5E00802359 /* CarDetailViewController.swift in Sources */,
 				14C8811A1C167EC3002D4D6B /* LocationSelectViewController.swift in Sources */,

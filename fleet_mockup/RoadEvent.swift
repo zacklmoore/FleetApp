@@ -11,17 +11,23 @@ import CoreLocation;
 
 class RoadEvent: NSObject {
     
-    var location : CLLocation
+    var location : CLLocationCoordinate2D
+    var titleString: String
+    var subtitleString: String
+    var eventType : EventType
     
-    init(location : CLLocation){
-        self.location = location
+    enum EventType : Int {
+        case Stop, Hazard
+    }
+    
+    init(loc : CLLocationCoordinate2D, event: EventType, title: String, subtitle: String){
+        self.location = loc
+        self.eventType = event
+        self.titleString = title
+        self.subtitleString = subtitle
     }
 
     func cancelRoadEvent(){
         
     }
-    
-    
-    
-    
 }

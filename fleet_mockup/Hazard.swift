@@ -6,6 +6,7 @@
 //  Copyright © 2015 Austin Cary. All rights reserved.
 //
 
+/* Temporarily commented out until Road Events Fully Implemented
 import UIKit
 import CoreLocation;
 
@@ -22,3 +23,4 @@ class Hazard: RoadEvent {
         self.type = typeOfHazard
     }
 }
+*/
