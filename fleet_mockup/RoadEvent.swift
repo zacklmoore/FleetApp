@@ -17,7 +17,7 @@ class RoadEvent: NSObject {
     var eventType : EventType
     
     enum EventType : Int {
-        case Stop, Hazard
+        case Stop, Hazard, Food, Gas, Crash, Traffic, Cop, Other
     }
     
     init(loc : CLLocationCoordinate2D, event: EventType, title: String, subtitle: String){

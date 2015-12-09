@@ -110,21 +110,41 @@ class MapViewController: UIViewController, MKMapViewDelegate, CreateRoadEventDel
         //Pins for Road Events...
         for e in trip!.roadEvents
         {
-            let annotation = MKPointAnnotation();
+            let annotation = CustomPointAnnotation();
             annotation.title = e.titleString;
             annotation.subtitle = e.subtitleString;
             annotation.coordinate = e.location;
             
             //Set custom annotation icons
-            /*
+            
             switch(e.eventType)
             {
-                case RoadEvent.EventType.stop:
+                case RoadEvent.EventType.Stop:
+                    annotation.imageName = "stopPointer"
                     break;
-                case RoadEvent.EventType.hazard:
+                case RoadEvent.EventType.Hazard:
+                    annotation.imageName = "hazardPointer"
                     break;
+                case RoadEvent.EventType.Food:
+                    annotation.imageName = "foodPointer"
+                    break;
+                case RoadEvent.EventType.Gas:
+                    annotation.imageName = "gasPointer"
+                    break;
+                case RoadEvent.EventType.Crash:
+                    annotation.imageName = "crashPointer"
+                    break
+                case RoadEvent.EventType.Traffic:
+                    annotation.imageName = "trafficPointer"
+                    break
+                case RoadEvent.EventType.Cop:
+                    annotation.imageName = "copPointer"
+                    break
+                case RoadEvent.EventType.Other:
+                    annotation.imageName = "check_mark"
+                    break
             }
-            */
+            
             
             self.mapView.addAnnotation(annotation);
         }
