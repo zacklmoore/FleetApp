@@ -20,7 +20,6 @@
 		14C881181C165F4E002D4D6B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14C881171C165F4E002D4D6B /* MapKit.framework */; };
 		14C8811A1C167EC3002D4D6B /* LocationSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C881191C167EC3002D4D6B /* LocationSelectViewController.swift */; };
 		14DA805C1BF0047D005228F4 /* CreateJoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DA805B1BF0047D005228F4 /* CreateJoinViewController.swift */; };
-		300CDEB0C9DD9901C8692064 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E003820013AF012CB0EBE17F /* Pods.framework */; };
 		4110E2011BFFE9ED00FCE855 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4110E2001BFFE9ED00FCE855 /* MapViewController.swift */; };
 		414CDD581BFD368D00352CAF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414CDD571BFD368D00352CAF /* LoginViewController.swift */; };
 		8E92B32D1C0271EC00785A32 /* ColorTuple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E92B3261C0271EC00785A32 /* ColorTuple.swift */; };
@@ -35,6 +34,7 @@
 		8EC5EBD81C027FD000EF6B09 /* TripOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC5EBD71C027FD000EF6B09 /* TripOverviewViewController.swift */; };
 		8EC5EBDA1C027FF800EF6B09 /* TripSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC5EBD91C027FF800EF6B09 /* TripSettingsViewController.swift */; };
 		8EC5EBDC1C02801400EF6B09 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC5EBDB1C02801400EF6B09 /* ChatViewController.swift */; };
+		B6465816440740C7F6E11BBD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 409772EF4C72C52E9050DC80 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +65,7 @@
 		14C881191C167EC3002D4D6B /* LocationSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSelectViewController.swift; sourceTree = "<group>"; };
 		14DA805B1BF0047D005228F4 /* CreateJoinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateJoinViewController.swift; sourceTree = "<group>"; };
 		1EAF200E6A62DEEF9C6D8D6D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		409772EF4C72C52E9050DC80 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4110E2001BFFE9ED00FCE855 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = ../MapViewController.swift; sourceTree = "<group>"; };
 		414CDD571BFD368D00352CAF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8E92B3261C0271EC00785A32 /* ColorTuple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTuple.swift; sourceTree = "<group>"; };
@@ -79,7 +80,6 @@
 		8EC5EBD71C027FD000EF6B09 /* TripOverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripOverviewViewController.swift; sourceTree = "<group>"; };
 		8EC5EBD91C027FF800EF6B09 /* TripSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripSettingsViewController.swift; sourceTree = "<group>"; };
 		8EC5EBDB1C02801400EF6B09 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
-		E003820013AF012CB0EBE17F /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF513DD014D84DF5A4AD57E8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,7 +90,7 @@
 			files = (
 				14C881181C165F4E002D4D6B /* MapKit.framework in Frameworks */,
 				14C881161C165F23002D4D6B /* CoreLocation.framework in Frameworks */,
-				300CDEB0C9DD9901C8692064 /* Pods.framework in Frameworks */,
+				B6465816440740C7F6E11BBD /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,7 +179,7 @@
 		7BC563BEBCD57F5A73585398 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E003820013AF012CB0EBE17F /* Pods.framework */,
+				409772EF4C72C52E9050DC80 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
