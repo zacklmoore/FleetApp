@@ -56,4 +56,14 @@ class Trip: NSObject {
         
         return nil;
     }
+    
+    func eventForCoordinate(coord: CLLocationCoordinate2D) -> RoadEvent? {
+        for e in roadEvents {
+            if(e.location.latitude == coord.latitude && e.location.longitude == coord.longitude)
+            {
+                return e;
+            }
+        }
+        return nil;
+    }
 }

@@ -13,6 +13,10 @@ class CustomPointAnnotation: MKPointAnnotation {
     var imageName: String!
 }
 
+class EventPointAnnotation: MKPointAnnotation {
+    var imageName: String!
+}
+
 protocol CreateRoadEventDelegate {
     func saveRoadEvent(event: RoadEvent);
 }
@@ -48,28 +52,49 @@ class MapViewController: UIViewController, MKMapViewDelegate, CreateRoadEventDel
     }
     
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
-        if !(annotation is CustomPointAnnotation) {
-            return nil
+        if (annotation is CustomPointAnnotation) {
+            let reuseId = "custom"
+            
+            var anView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId)
+            if anView == nil {
+                anView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+                anView!.canShowCallout = true
+            }
+            else {
+                anView!.annotation = annotation
+            }
+            
+            //Set annotation-specific properties **AFTER**
+            //the view is dequeued or created...
+            
+            let cpa = annotation as! CustomPointAnnotation
+            anView!.image = UIImage(named:cpa.imageName)
+            
+            return anView
+        }
+        else if (annotation is EventPointAnnotation) {
+            let reuseId = "event"
+            
+            var anView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId)
+            if anView == nil {
+                anView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+                anView!.canShowCallout = true
+            }
+            else {
+                anView!.annotation = annotation
+            }
+            
+            //Set annotation-specific properties **AFTER**
+            //the view is dequeued or created...
+            
+            let cpa = annotation as! EventPointAnnotation
+            anView!.image = UIImage(named:cpa.imageName)
+            let btn = UIButton(type: .DetailDisclosure)
+            anView!.rightCalloutAccessoryView = btn
+            return anView
         }
         
-        let reuseId = "test"
-        
-        var anView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId)
-        if anView == nil {
-            anView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
-            anView!.canShowCallout = true
-        }
-        else {
-            anView!.annotation = annotation
-        }
-        
-        //Set annotation-specific properties **AFTER**
-        //the view is dequeued or created...
-        
-        let cpa = annotation as! CustomPointAnnotation
-        anView!.image = UIImage(named:cpa.imageName)
-        
-        return anView
+        return nil;
     }
     
     func updateTripLocations() {
@@ -110,7 +135,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CreateRoadEventDel
         //Pins for Road Events...
         for e in trip!.roadEvents
         {
-            let annotation = CustomPointAnnotation();
+            let annotation = EventPointAnnotation();
             annotation.title = e.titleString;
             annotation.subtitle = e.subtitleString;
             annotation.coordinate = e.location;
@@ -164,6 +189,16 @@ class MapViewController: UIViewController, MKMapViewDelegate, CreateRoadEventDel
         //Save Road Event
         trip.roadEvents.append(event);
         updateTripLocations()
+    }
+    
+    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        
+        let event = trip!.eventForCoordinate(view.annotation!.coordinate);
+        let index = trip!.roadEvents.indexOf(event!);
+        
+        trip!.roadEvents.removeAtIndex(index!);
+        
+        updateTripLocations();
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
