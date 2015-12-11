@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Riffle
 
 protocol registerReturnDelegate {
     func registerUser(newUser: User);
