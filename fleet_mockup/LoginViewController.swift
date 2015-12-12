@@ -23,10 +23,13 @@ var trip: Trip?
 var userList = [User]();
 var trips = [Trip]();
 
-class LoginViewController: UIViewController, registerReturnDelegate {
+class LoginViewController: UIViewController, registerReturnDelegate, RiffleDelegate {
     
     @IBOutlet weak var passworField: UITextField!
     @IBOutlet weak var usernameField: UITextField!
+    var app: RiffleDomain!
+    var me: RiffleDomain!
+    var backend:RiffleDomain!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,9 +56,17 @@ class LoginViewController: UIViewController, registerReturnDelegate {
         }
         else
         {
-            //Handle Login Via Excis HERE
+            //Handle Login Via Exis HERE
             
-            //The following code is temporary for fake logins. Remove it once Excis implemented
+            let name = usernameField.text!
+            
+            // Create the domain for this user based on the name they've submitted
+            app = RiffleDomain(domain: "xs.demo.geobadger.fleet")
+            me = RiffleDomain(name: name, superdomain: app)
+            me.delegate = self
+            me.join()
+            
+            //The following code is temporary for fake logins. Remove it once Exis implemented
             for u in userList {
                 if(u.username == usernameField.text && u.password == passworField.text)
                 {
@@ -64,8 +75,23 @@ class LoginViewController: UIViewController, registerReturnDelegate {
             }
         }
         
-        //Remove once Excis code implemented
+        //Remove once Exis code implemented
         return nil;
+    }
+    
+    func onJoin() {
+        print("Domain Joined")
+        print("Sending a greeting to the backend")
+        
+        backend = RiffleDomain(name: "Backend", superdomain: app)
+        
+        backend.call("Hello", me!.domain) { (greeting: String) -> () in
+            print("The backend replied with \(greeting)")
+        }
+    }
+    
+    func onLeave() {
+        print("Session left")
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
