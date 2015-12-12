@@ -66,6 +66,10 @@ class TripOverviewViewController: UIViewController, UITableViewDelegate, UITable
         {
             cell.myCarIcon.hidden = false;
         }
+        else
+        {
+            cell.myCarIcon.hidden = true;
+        }
         
         return cell
     }
@@ -107,7 +111,11 @@ class TripOverviewViewController: UIViewController, UITableViewDelegate, UITable
         else
         {
             let vehicle = trip!.vehicleForUser(loggedInUser!);
-            vehicle!.passengers.removeAtIndex(vehicle!.passengers.indexOf(loggedInUser!)!);
+            
+            if(vehicle != nil)
+            {
+                vehicle!.passengers.removeAtIndex(vehicle!.passengers.indexOf(loggedInUser!)!);
+            }
         }
         
         performSegueWithIdentifier("leaveTripSegue", sender: self);
@@ -170,8 +178,20 @@ class TripOverviewViewController: UIViewController, UITableViewDelegate, UITable
             }
         }
         
+        let myVehicle = trip!.vehicleForUser(loggedInUser!);
+        
+        if(myVehicle != nil)
+        {
+            myVehicle!.passengers.removeAtIndex(myVehicle!.passengers.indexOf(loggedInUser!)!);
+        }
+        
         trip!.vehicles.append(Vehicle(vCap: loggedInUser!));
         tableView.reloadData();
+    }
+    
+    @IBAction func debugButtonPressed(sender: AnyObject) {
+        //Allows you to back out of a trip without "leaving" it for debug purposes
+        performSegueWithIdentifier("leaveTripSegue", sender: self);
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

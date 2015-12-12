@@ -77,6 +77,12 @@ class CarDetailViewController: UIViewController, UITableViewDataSource, UITableV
             vehicle.passengers.removeAtIndex(vehicle.passengers.indexOf(loggedInUser!)!);
             joinLeaveButton.setTitle("Join this Car", forState: .Normal);
         }
+        else if(uVehicle!.captain == loggedInUser!)
+        {
+            let alert = UIAlertController(title: "Error", message: "You are already the Captain of another Car.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil));
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
         else
         {
             uVehicle!.passengers.removeAtIndex(uVehicle!.passengers.indexOf(loggedInUser!)!);

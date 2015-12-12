@@ -40,5 +40,11 @@ class JoinViewController: UIViewController {
             trip = foundTrip;
             performSegueWithIdentifier("joinOverviewSegue", sender: self)
         }
+        else
+        {
+            let alert = UIAlertController(title: "Error", message: "No Trip was found with the given Trip ID.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil));
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
     }
 }

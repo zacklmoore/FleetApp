@@ -519,6 +519,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Trip Overview" id="3au-0I-lmC">
+                        <barButtonItem key="leftBarButtonItem" title="  " style="plain" id="AjV-Ip-1Ye">
+                            <connections>
+                                <action selector="debugButtonPressed:" destination="2Wo-Ka-ail" id="PzO-OV-xOV"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Leave Trip" id="VCz-D7-tOW">
                             <connections>
                                 <action selector="leaveButtonPressed:" destination="2Wo-Ka-ail" id="3K1-2o-mbw"/>
@@ -1268,8 +1273,8 @@
         <image name="fleet" width="809" height="725"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cjl-c9-xpV"/>
         <segue reference="qrE-jW-7Mh"/>
+        <segue reference="22J-St-5ye"/>
         <segue reference="mMn-0A-iAN"/>
     </inferredMetricsTieBreakers>
 </document>
