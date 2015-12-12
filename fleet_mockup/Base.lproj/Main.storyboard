@@ -1254,6 +1254,7 @@
                         <outlet property="carMakeLabel" destination="hqm-a4-VGp" id="RgN-KE-W3R"/>
                         <outlet property="carModelLabel" destination="krv-Q3-hY8" id="C0S-VD-xD4"/>
                         <outlet property="carNameLabel" destination="mex-TT-Lwz" id="BAA-pu-bYe"/>
+                        <outlet property="joinLeaveButton" destination="vjD-VY-0CI" id="EBi-zH-dVz"/>
                         <outlet property="tableView" destination="jsI-tQ-Djj" id="lpo-Qg-vjv"/>
                     </connections>
                 </viewController>

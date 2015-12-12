@@ -83,17 +83,80 @@ class TripOverviewViewController: UIViewController, UITableViewDelegate, UITable
     //Handle leaving a trip
     func leaveTrip()
     {
+        var isCap = false;
+        
+        for v in trip!.vehicles
+        {
+            if(v.captain == loggedInUser)
+            {
+                isCap = true;
+                break;
+            }
+        }
+        
+        if(trip!.leader == loggedInUser)
+        {
+            //cancelTrip();
+            trips.removeAtIndex(trips.indexOf(trip!)!);
+        }
+        else if(isCap)
+        {
+            let vehicle = trip!.vehicleForUser(loggedInUser!);
+            trip!.vehicles.removeAtIndex(trip!.vehicles.indexOf(vehicle!)!);
+        }
+        else
+        {
+            let vehicle = trip!.vehicleForUser(loggedInUser!);
+            vehicle!.passengers.removeAtIndex(vehicle!.passengers.indexOf(loggedInUser!)!);
+        }
+        
         performSegueWithIdentifier("leaveTripSegue", sender: self);
     }
     
     @IBAction func leaveButtonPressed(sender: AnyObject) {
-        let alert = UIAlertController(title: "Are you sure?", message: "Are you sure you want to leave this trip?", preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.Default, handler:
+        var isCap = false;
+        
+        for v in trip!.vehicles
+        {
+            if(v.captain == loggedInUser)
             {
-                action in self.leaveTrip();
-        }));
-        alert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.Cancel, handler: nil));
-        self.presentViewController(alert, animated: true, completion: nil)
+                isCap = true;
+                break;
+            }
+        }
+        
+        if(trip!.leader == loggedInUser)
+        {
+            let alert = UIAlertController(title: "You are the Trip Leader", message: "Warning! You are the Trip Leader, if you leave then this Trip will be canceled.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Leave", style: UIAlertActionStyle.Default, handler:
+                {
+                    action in self.leaveTrip();
+            }));
+            alert.addAction(UIAlertAction(title: "Stay", style: UIAlertActionStyle.Cancel, handler: nil));
+            self.presentViewController(alert, animated: true, completion: nil)
+            
+        }
+        else if(isCap)
+        {
+            let alert = UIAlertController(title: "You are a Vehicle Captain", message: "Warning! You are the Captain of a Vehicle, if you leave then this Vehicle will be removed.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Leave", style: UIAlertActionStyle.Default, handler:
+                {
+                    action in self.leaveTrip();
+            }));
+            alert.addAction(UIAlertAction(title: "Stay", style: UIAlertActionStyle.Cancel, handler: nil));
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+        else
+        {
+            
+            let alert = UIAlertController(title: "Are you sure?", message: "Are you sure you want to leave this trip?", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.Default, handler:
+                {
+                    action in self.leaveTrip();
+            }));
+            alert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.Cancel, handler: nil));
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
     }
     
     @IBAction func addCarButtonPressed(sender: AnyObject) {
