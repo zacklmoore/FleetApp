@@ -22,6 +22,21 @@ class Container: RiffleDomain {
         print("\(player) says hello!")
         return "Hi, \(player)!"
     }
+
+
+   
+
+
+
+func playerLeft(domain: String) {
+    print("Domain left: \(domain)")
+}
+    
+    //instructions less clear for this function. The documentation references onJoin in main.swift but it hadn't previously told me to implement this function here.
+    func onJoin(){
+        app.subscribe("sessionLeft", playerLeft)
+    }
+
 }
 
 let container = Container(name: "gamelogic", superdomain: app)
