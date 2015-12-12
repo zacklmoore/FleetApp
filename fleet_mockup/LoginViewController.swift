@@ -83,9 +83,9 @@ class LoginViewController: UIViewController, registerReturnDelegate, RiffleDeleg
         print("Domain Joined")
         print("Sending a greeting to the backend")
         
-        backend = RiffleDomain(name: "Backend", superdomain: app)
+        backend = RiffleDomain(name: "gamelogic", superdomain: app)
         
-        backend.call("Hello", me!.domain) { (greeting: String) -> () in
+        backend.call("play", me!.domain) { (greeting: String) -> () in
             print("The backend replied with \(greeting)")
         }
     }

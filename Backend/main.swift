@@ -9,5 +9,21 @@
 import Foundation
 import Riffle
 
-print("Hello, World!")
+let app = RiffleDomain(domain: "xs.demo.geobadger.fleet")
 
+class Container: RiffleDomain {
+    override func onJoin() {
+        print("Domain joined")
+        
+        register("play", play)
+    }
+    
+    func play(player: String) -> AnyObject {
+        print("\(player) says hello!")
+        return "Hi, \(player)!"
+    }
+}
+
+let container = Container(name: "gamelogic", superdomain: app)
+container.join()
+NSRunLoop.currentRunLoop().run()
