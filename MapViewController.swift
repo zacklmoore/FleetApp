@@ -89,8 +89,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, CreateRoadEventDel
             
             let cpa = annotation as! EventPointAnnotation
             anView!.image = UIImage(named:cpa.imageName)
-            let btn = UIButton(type: .DetailDisclosure)
-            anView!.rightCalloutAccessoryView = btn
+            let deleteButton = UIButton(type: UIButtonType.Custom)
+            deleteButton.frame.size.width = 24
+            deleteButton.frame.size.height = 24
+            deleteButton.setImage(UIImage(named: "trash"), forState: .Normal)
+            anView!.rightCalloutAccessoryView = deleteButton
             return anView
         }
         
