@@ -39,7 +39,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CreateRoadEventDel
         
         //Create Long Press Gesture Recognizer to allow adding annotations
         let uilgr = UILongPressGestureRecognizer(target: self, action: "addAnnotation:")
-        uilgr.minimumPressDuration = 2.0
+        uilgr.minimumPressDuration = 1.25
         self.mapView.addGestureRecognizer(uilgr);
         
         //Load map pins
@@ -139,8 +139,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CreateRoadEventDel
         for e in trip!.roadEvents
         {
             let annotation = EventPointAnnotation();
-            annotation.title = e.titleString;
-            annotation.subtitle = e.subtitleString;
+            annotation.title = e.creator.firstName + " " + e.creator.lastName;
+            annotation.subtitle = e.descString;
             annotation.coordinate = e.location;
             
             //Set custom annotation icons
@@ -176,7 +176,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CreateRoadEventDel
             
             self.mapView.addAnnotation(annotation);
         }
-        
     }
     
     func addAnnotation(gestureRecognizer:UIGestureRecognizer) {

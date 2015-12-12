@@ -884,15 +884,8 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Edl-de-C4R">
-                                <rect key="frame" x="20" y="366" width="100" height="24"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Subtitle:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TeK-fk-lNv">
-                                <rect key="frame" x="20" y="436" width="130" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Short Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Edl-de-C4R">
+                                <rect key="frame" x="20" y="366" width="217" height="24"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -912,12 +905,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a32-fv-fhX">
-                                <rect key="frame" x="20" y="468" width="560" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uF7-oc-Dkf">
                                 <rect key="frame" x="275" y="541" width="51" height="39"/>
                                 <animations/>
@@ -931,9 +918,7 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="TeK-fk-lNv" firstAttribute="leading" secondItem="fcG-6P-NRl" secondAttribute="leadingMargin" id="6J7-aY-L6O"/>
                             <constraint firstItem="3NM-KB-WlW" firstAttribute="top" secondItem="uF7-oc-Dkf" secondAttribute="bottom" constant="20" id="9MI-CI-kzp"/>
-                            <constraint firstItem="TeK-fk-lNv" firstAttribute="top" secondItem="YJn-dF-Ebh" secondAttribute="bottom" constant="8" id="9QP-bp-C0q"/>
                             <constraint firstItem="3lh-mQ-j6f" firstAttribute="leading" secondItem="fcG-6P-NRl" secondAttribute="leadingMargin" id="EIJ-E2-0Cg"/>
                             <constraint firstItem="riQ-Fg-TCM" firstAttribute="leading" secondItem="fcG-6P-NRl" secondAttribute="leadingMargin" id="FeD-sD-Fac"/>
                             <constraint firstItem="riQ-Fg-TCM" firstAttribute="top" secondItem="3lh-mQ-j6f" secondAttribute="bottom" constant="8" id="JCY-ng-yCF"/>
@@ -943,10 +928,7 @@
                             <constraint firstItem="riQ-Fg-TCM" firstAttribute="trailing" secondItem="fcG-6P-NRl" secondAttribute="trailingMargin" id="SIp-Xe-AZT"/>
                             <constraint firstItem="bdm-OC-Hzi" firstAttribute="top" secondItem="Xdq-m9-Ely" secondAttribute="bottom" constant="8" id="Yw7-RC-ZkF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="YJn-dF-Ebh" secondAttribute="trailing" id="dx8-1d-XrC"/>
-                            <constraint firstItem="a32-fv-fhX" firstAttribute="top" secondItem="TeK-fk-lNv" secondAttribute="bottom" constant="8" id="fIK-EK-TMn"/>
-                            <constraint firstItem="a32-fv-fhX" firstAttribute="leading" secondItem="fcG-6P-NRl" secondAttribute="leadingMargin" id="fcU-mE-Y9B"/>
                             <constraint firstItem="bdm-OC-Hzi" firstAttribute="centerX" secondItem="fcG-6P-NRl" secondAttribute="centerX" id="k1s-aJ-Lfe"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="a32-fv-fhX" secondAttribute="trailing" id="lhS-KM-XMe"/>
                             <constraint firstItem="YJn-dF-Ebh" firstAttribute="leading" secondItem="fcG-6P-NRl" secondAttribute="leadingMargin" id="oVV-dz-pTf"/>
                             <constraint firstItem="YJn-dF-Ebh" firstAttribute="top" secondItem="Edl-de-C4R" secondAttribute="bottom" constant="8" id="rWO-Sa-Gek"/>
                             <constraint firstItem="uF7-oc-Dkf" firstAttribute="centerX" secondItem="fcG-6P-NRl" secondAttribute="centerX" id="vRk-WY-OZk"/>
@@ -955,7 +937,6 @@
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="eventSubtitleField" destination="a32-fv-fhX" id="i1g-lg-8om"/>
                         <outlet property="eventTitleField" destination="YJn-dF-Ebh" id="LqH-Yx-qBY"/>
                         <outlet property="eventTypePicker" destination="riQ-Fg-TCM" id="sMB-Nd-IWe"/>
                     </connections>

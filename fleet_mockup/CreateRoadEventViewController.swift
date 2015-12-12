@@ -13,7 +13,6 @@ class CreateRoadEventViewController: UIViewController, UIPickerViewDataSource, U
     
     @IBOutlet weak var eventTypePicker: UIPickerView!
     @IBOutlet weak var eventTitleField: UITextField!
-    @IBOutlet weak var eventSubtitleField: UITextField!
     
     var delegate: CreateRoadEventDelegate?
     var coordinates: CLLocationCoordinate2D!
@@ -48,7 +47,7 @@ class CreateRoadEventViewController: UIViewController, UIPickerViewDataSource, U
     }
     
     @IBAction func saveButtonPressed(sender: AnyObject) {
-        if(eventTitleField.text == "" || eventSubtitleField.text == "" || eventTypeIndex == nil)
+        if(eventTitleField.text == "" || eventTypeIndex == nil)
         {
             let alert = UIAlertController(title: "Error", message: "One or more fields is blank.", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil));
@@ -56,7 +55,7 @@ class CreateRoadEventViewController: UIViewController, UIPickerViewDataSource, U
         }
         else
         {
-            let newEvent = RoadEvent(loc:coordinates, event: RoadEvent.EventType(rawValue: eventTypeIndex!)!, title: eventTitleField.text!, subtitle: eventSubtitleField.text!);
+            let newEvent = RoadEvent(loc:coordinates, create: loggedInUser!, event: RoadEvent.EventType(rawValue: eventTypeIndex!)!, desc: eventTitleField.text!);
             
             delegate?.saveRoadEvent(newEvent);
             
