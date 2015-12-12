@@ -25,7 +25,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CreateRoadEventDel
 
     @IBOutlet weak var mapView: MKMapView!
     
-    var trip: Trip!
     var newCoords: CLLocationCoordinate2D?
     var newAnnotation: MKPointAnnotation?
     
@@ -107,14 +106,14 @@ class MapViewController: UIViewController, MKMapViewDelegate, CreateRoadEventDel
         
         //Pins for Start / Finish
         let startAnnotation = CustomPointAnnotation();
-        startAnnotation.title = trip.startString;
-        startAnnotation.coordinate = trip.startLoc;
+        startAnnotation.title = trip!.startString;
+        startAnnotation.coordinate = trip!.startLoc;
         startAnnotation.imageName = "start_icon";
         self.mapView.addAnnotation(startAnnotation);
         
         let endAnnotation = CustomPointAnnotation();
-        endAnnotation.title = trip.endString;
-        endAnnotation.coordinate = trip.endLoc;
+        endAnnotation.title = trip!.endString;
+        endAnnotation.coordinate = trip!.endLoc;
         endAnnotation.imageName = "finish_icon";
         self.mapView.addAnnotation(endAnnotation);
         
@@ -124,7 +123,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CreateRoadEventDel
             annotation.title = v.captain.firstName + " " + v.captain.lastName + "'s Car";
             annotation.coordinate = v.captain.curLocation!.coordinate;
             
-            if(trip.vehicleForUser(loggedInUser!) == v)
+            if(trip!.vehicleForUser(loggedInUser!) == v)
             {
                 annotation.imageName = "mycar_icon";
             }
@@ -189,7 +188,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CreateRoadEventDel
     
     func saveRoadEvent(event: RoadEvent) {
         //Save Road Event
-        trip.roadEvents.append(event);
+        trip!.roadEvents.append(event);
         updateTripLocations()
     }
     

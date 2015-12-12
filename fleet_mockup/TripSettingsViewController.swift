@@ -15,7 +15,6 @@ class TripSettingsViewController: UIViewController {
     @IBOutlet weak var tripStartLocationField: UITextField!
     @IBOutlet weak var tripEndLocationField: UITextField!
     
-    var  trip: Trip!
     var delegate: settingsReturnDelegate!
     
     override func viewDidLoad() {
@@ -23,10 +22,10 @@ class TripSettingsViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         if(trip != nil)
         {
-            tripNameField.text = trip.name;
-            tripDateTimePicker.date = trip.startDateTime;
-            tripStartLocationField.text = trip.startString;
-            tripEndLocationField.text = trip.endString;
+            tripNameField.text = trip!.name;
+            tripDateTimePicker.date = trip!.startDateTime;
+            tripStartLocationField.text = trip!.startString;
+            tripEndLocationField.text = trip!.endString;
         }
     }
     
@@ -35,10 +34,10 @@ class TripSettingsViewController: UIViewController {
         
         if(trip != nil)
         {
-            tripNameField.text = trip.name;
-            tripDateTimePicker.date = trip.startDateTime;
-            tripStartLocationField.text = trip.startString;
-            tripEndLocationField.text = trip.endString;
+            tripNameField.text = trip!.name;
+            tripDateTimePicker.date = trip!.startDateTime;
+            tripStartLocationField.text = trip!.startString;
+            tripEndLocationField.text = trip!.endString;
         }
     }
     
@@ -59,12 +58,11 @@ class TripSettingsViewController: UIViewController {
         }
         else
         {
-            trip.name = tripNameField.text!;
-            trip.startDateTime = tripDateTimePicker.date;
-            trip.startString = tripStartLocationField.text!;
-            trip.endString = tripEndLocationField.text!;
+            trip!.name = tripNameField.text!;
+            trip!.startDateTime = tripDateTimePicker.date;
+            trip!.startString = tripStartLocationField.text!;
+            trip!.endString = tripEndLocationField.text!;
         
-            delegate.saveTripSettings(trip);
             navigationController?.popViewControllerAnimated(true);
         }
     }

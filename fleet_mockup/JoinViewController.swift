@@ -10,7 +10,7 @@ import UIKit
 class JoinViewController: UIViewController {
     
     @IBOutlet weak var tripIDField: UITextField!
-    var theTrip: Trip?
+    var foundTrip: Trip?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,19 +21,6 @@ class JoinViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if(segue.identifier == "joinOverviewSegue")
-        {
-            let nextNav = segue.destinationViewController  as! UINavigationController;
-            let next = nextNav.topViewController as! TripOverviewViewController;
-            if(theTrip != nil){
-                next.trip = theTrip
-            }
-            
-            //NOTE: Eventually Pass Recieved Trip Object
-        }
     }
     
     func joinTrip(tripID: String) -> Trip? {
@@ -47,9 +34,10 @@ class JoinViewController: UIViewController {
     }
     
     @IBAction func joinTripButtonPressed(sender: AnyObject) {
-      theTrip = joinTrip(tripIDField.text!)
+      foundTrip = joinTrip(tripIDField.text!)
         
-        if(theTrip != nil){
+        if(foundTrip != nil){
+            trip = foundTrip;
             performSegueWithIdentifier("joinOverviewSegue", sender: self)
         }
     }

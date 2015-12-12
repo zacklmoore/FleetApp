@@ -54,21 +54,15 @@ class CreateViewController: UIViewController, startLocationReturnDelegate, endLo
         {
             //Create Trip object
             newTrip = Trip(name: tripNameField.text!, lead: loggedInUser!, dateTime: tripDateTimePicker.date, startPoint: startLoc!, endPoint: endLoc!, startName: tripStartLocationField.text!, endName: tripEndLocationField.text!);
-            trips.append(newTrip)
             newTrip.vehicles.append(Vehicle(vCap: loggedInUser!));
+            trips.append(newTrip)
+            trip = newTrip;
             performSegueWithIdentifier("createOverviewSegue", sender: self);
         }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if(segue.identifier == "createOverviewSegue")
-        {
-            let nextNav = segue.destinationViewController  as! UINavigationController;
-            let next = nextNav.topViewController as! TripOverviewViewController;
-            
-            next.trip = newTrip;
-        }
-        else if(segue.identifier == "selectStartLocationSegue")
+        if(segue.identifier == "selectStartLocationSegue")
         {
             let next = segue.destinationViewController as! LocationSelectViewController;
             next.startDelegate = self;

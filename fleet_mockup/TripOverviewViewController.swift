@@ -20,8 +20,6 @@ class TripOverviewViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var tripLocationsLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
-    var trip: Trip!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -99,7 +97,7 @@ class TripOverviewViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     @IBAction func addCarButtonPressed(sender: AnyObject) {
-        for v in trip.vehicles {
+        for v in trip!.vehicles {
             if(v.captain == loggedInUser)
             {
                 let alert = UIAlertController(title: "Error", message: "You are already the captain of another car.", preferredStyle: UIAlertControllerStyle.Alert)
@@ -109,7 +107,7 @@ class TripOverviewViewController: UIViewController, UITableViewDelegate, UITable
             }
         }
         
-        trip.vehicles.append(Vehicle(vCap: loggedInUser!));
+        trip!.vehicles.append(Vehicle(vCap: loggedInUser!));
         tableView.reloadData();
     }
     
@@ -117,19 +115,13 @@ class TripOverviewViewController: UIViewController, UITableViewDelegate, UITable
         if(segue.identifier == "settingsSegue")
         {
             let nextViewController = segue.destinationViewController as! TripSettingsViewController;
-            nextViewController.trip = trip;
             nextViewController.delegate = self;
         }
         else if(segue.identifier == "carDetailSegue")
         {
             let nextViewController = segue.destinationViewController as! CarDetailViewController;
-            nextViewController.vehicle = trip.vehicles[tableView.indexPathForSelectedRow!.row];
+            nextViewController.vehicle = trip!.vehicles[tableView.indexPathForSelectedRow!.row];
             //nextViewController.delegate = self;
-        }
-        else if(segue.identifier == "mapViewSegue")
-        {
-            let nextViewController = segue.destinationViewController as! MapViewController;
-            nextViewController.trip = trip;
         }
     }
 }

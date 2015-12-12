@@ -16,7 +16,10 @@ protocol registerReturnDelegate {
 //User Should Be Global
 var loggedInUser: User?
 
-//Temporary Global Array of Users until Excis Impleneted
+//Current Trip Should Be Global
+var trip: Trip?
+
+//Temporary Global Arrays of Users until Exis Implemented
 var userList = [User]();
 var trips = [Trip]();
 

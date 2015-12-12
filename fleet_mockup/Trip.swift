@@ -38,8 +38,14 @@ class Trip: NSObject {
         self.endLoc = endPoint;
         self.startDateTime = dateTime;
         
-        self.id = self.leader.username + NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .MediumStyle, timeStyle: .ShortStyle)
+        self.id = self.leader.username + "_" + NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .ShortStyle, timeStyle: .ShortStyle);
         
+        self.id = self.id.stringByReplacingOccurrencesOfString(", ", withString: "");
+        self.id = self.id.stringByReplacingOccurrencesOfString("\\", withString: "");
+        self.id = self.id.stringByReplacingOccurrencesOfString("/", withString: "");
+        self.id = self.id.stringByReplacingOccurrencesOfString(":", withString: "");
+        self.id = self.id.stringByReplacingOccurrencesOfString(" AM", withString: "");
+        self.id = self.id.stringByReplacingOccurrencesOfString(" PM", withString: "");
         
         for _ in 1...20 {
             defaultColors.append(UIColor.randomFlatColor())
