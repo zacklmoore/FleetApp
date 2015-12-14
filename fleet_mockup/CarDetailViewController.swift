@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CarDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class CarDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var carMakeLabel: UILabel!
     @IBOutlet weak var carModelLabel: UILabel!
@@ -16,6 +16,16 @@ class CarDetailViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var carNameLabel: UILabel!
     @IBOutlet weak var joinLeaveButton: UIButton!
+    @IBOutlet weak var makeText: UITextField!
+    @IBOutlet weak var modelText: UITextField!
+    @IBOutlet weak var colorText: UITextField!
+    @IBOutlet weak var save: UIButton!
+    
+    @IBAction func saveButton(sender: AnyObject) {
+        vehicle.make = makeText.text
+        vehicle.model = modelText.text
+        //vehicle.vehicleColor = colorText.text
+    }
     
     var vehicle: Vehicle!
     
@@ -23,6 +33,25 @@ class CarDetailViewController: UIViewController, UITableViewDataSource, UITableV
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         carNameLabel.text = vehicle.captain.firstName + " " + vehicle.captain.lastName + "'s Car";
+
+        if(loggedInUser?.username != vehicle.captain.username){
+            makeText.userInteractionEnabled = false
+            modelText.userInteractionEnabled = false
+            colorText.userInteractionEnabled = false
+            save.userInteractionEnabled = false
+            
+        }
+        else{
+            makeText.userInteractionEnabled = true
+            modelText.userInteractionEnabled = true
+            colorText.userInteractionEnabled = true
+            save.userInteractionEnabled = true
+            
+        }
+        
+        makeText.text = vehicle.make
+        modelText.text = vehicle.model
+        //colorText.text = vehicle.vehicleColor
         
         if(vehicle.captain == loggedInUser!)
         {
