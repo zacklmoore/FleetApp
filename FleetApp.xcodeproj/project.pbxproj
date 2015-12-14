@@ -12,6 +12,8 @@
 		126DF6081BED2F3E002D9A7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 126DF6061BED2F3E002D9A7D /* Main.storyboard */; };
 		126DF60A1BED2F3E002D9A7D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 126DF6091BED2F3E002D9A7D /* Images.xcassets */; };
 		126DF60D1BED2F3E002D9A7D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 126DF60B1BED2F3E002D9A7D /* LaunchScreen.xib */; };
+		14528E3F1C1E14C6005DC727 /* JSQMessagesViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14528E3E1C1E14C6005DC727 /* JSQMessagesViewController.framework */; };
+		14528E411C1E14D0005DC727 /* JSQSystemSoundPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14528E401C1E14D0005DC727 /* JSQSystemSoundPlayer.framework */; };
 		147100DF1C100E1500802359 /* CarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147100DE1C100E1500802359 /* CarTableViewCell.swift */; };
 		147100E11C10C82000802359 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147100E01C10C82000802359 /* RegistrationViewController.swift */; };
 		147100E31C10FB5E00802359 /* CarDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147100E21C10FB5D00802359 /* CarDetailViewController.swift */; };
@@ -72,6 +74,9 @@
 		126DF6091BED2F3E002D9A7D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		126DF60C1BED2F3E002D9A7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		126DF6121BED2F3E002D9A7D /* FleetApp.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FleetApp.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		14528E3E1C1E14C6005DC727 /* JSQMessagesViewController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSQMessagesViewController.framework; path = "Pods/../build/Debug-iphoneos/JSQMessagesViewController.framework"; sourceTree = "<group>"; };
+		14528E401C1E14D0005DC727 /* JSQSystemSoundPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSQSystemSoundPlayer.framework; path = "Pods/../build/Debug-iphoneos/JSQSystemSoundPlayer.framework"; sourceTree = "<group>"; };
+		14528E421C1E15AA005DC727 /* FleetApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FleetApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		147100DE1C100E1500802359 /* CarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarTableViewCell.swift; sourceTree = "<group>"; };
 		147100E01C10C82000802359 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		147100E21C10FB5D00802359 /* CarDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarDetailViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +114,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14528E411C1E14D0005DC727 /* JSQSystemSoundPlayer.framework in Frameworks */,
+				14528E3F1C1E14C6005DC727 /* JSQMessagesViewController.framework in Frameworks */,
 				14C881181C165F4E002D4D6B /* MapKit.framework in Frameworks */,
 				14C881161C165F23002D4D6B /* CoreLocation.framework in Frameworks */,
 				2094BDA358B37AB638CDC302 /* Pods_FleetApp.framework in Frameworks */,
@@ -186,6 +193,7 @@
 				126DF6001BED2F3E002D9A7D /* Supporting Files */,
 				147100E01C10C82000802359 /* RegistrationViewController.swift */,
 				147100E21C10FB5D00802359 /* CarDetailViewController.swift */,
+				14528E421C1E15AA005DC727 /* FleetApp-Bridging-Header.h */,
 			);
 			name = FleetApp;
 			path = fleet_mockup;
@@ -202,6 +210,8 @@
 		4FC7BB2C8E36779C3747C213 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				14528E401C1E14D0005DC727 /* JSQSystemSoundPlayer.framework */,
+				14528E3E1C1E14C6005DC727 /* JSQMessagesViewController.framework */,
 				FC6395E8F7D89584C9DD5DD3 /* Pods_Backend.framework */,
 				C210937DBFB399FB7DE0CE4A /* Pods_FleetApp.framework */,
 			);
@@ -608,10 +618,17 @@
 			baseConfigurationReference = CB4CBDC0F0734F636AA5C686 /* Pods-FleetApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = fleet_mockup/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.fleet-app";
 				PRODUCT_NAME = FleetApp;
+				SWIFT_OBJC_BRIDGING_HEADER = "fleet_mockup/FleetApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -620,10 +637,16 @@
 			baseConfigurationReference = BD8872D3E1B015671E6C2ABC /* Pods-FleetApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = fleet_mockup/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.fleet-app";
 				PRODUCT_NAME = FleetApp;
+				SWIFT_OBJC_BRIDGING_HEADER = "fleet_mockup/FleetApp-Bridging-Header.h";
 			};
 			name = Release;
 		};

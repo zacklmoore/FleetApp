@@ -7,7 +7,8 @@
 //
 
 import UIKit
-import CoreLocation;
+import CoreLocation
+import JSQMessagesViewController
 
 class Trip: NSObject {
     var startString: String
@@ -21,6 +22,7 @@ class Trip: NSObject {
     var members = [User]()
     var vehicles = [Vehicle]()
     var roadEvents = [RoadEvent]()
+    var messages = [JSQMessage]()
     var totalMiles : Int = 0
     var defaultColors = [UIColor]()
     var usedColors = [UIColor]()

@@ -80,7 +80,7 @@
                                 <rect key="frame" x="246" y="393" width="109" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Username:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUf-Y0-2h1">
                                 <rect key="frame" x="152" y="352" width="84" height="21"/>
@@ -199,7 +199,7 @@
                                 <rect key="frame" x="20" y="168" width="560" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vi8-6A-jfX">
                                 <rect key="frame" x="20" y="235" width="560" height="30"/>
@@ -469,7 +469,7 @@
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <state key="normal" title="Trip Chat"/>
                                 <connections>
-                                    <segue destination="P7P-Ng-Ge0" kind="show" identifier="chatSegue" id="YGv-zy-7ty"/>
+                                    <segue destination="zUz-gE-run" kind="show" identifier="chatSegue" id="SDV-ng-MJi"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B3a-QR-oD3">
@@ -950,36 +950,21 @@
             </objects>
             <point key="canvasLocation" x="5772" y="-388"/>
         </scene>
-        <!--Chat View Controller-->
-        <scene sceneID="29i-dm-YxU">
+        <!--Trip Chat-->
+        <scene sceneID="PxI-rV-8xT">
             <objects>
-                <viewController title="Chat View Controller" id="P7P-Ng-Ge0" customClass="ChatViewController" customModule="FleetApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Trip Chat" id="zUz-gE-run" customClass="ChatViewController" customModule="FleetApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="eJd-0v-VT8"/>
-                        <viewControllerLayoutGuide type="bottom" id="MIL-e0-bqt"/>
+                        <viewControllerLayoutGuide type="top" id="oUn-Kb-3fx"/>
+                        <viewControllerLayoutGuide type="bottom" id="hf1-6z-OfB"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="j5Q-cO-qEa">
+                    <view key="view" contentMode="scaleToFill" id="uI6-Zz-cAX">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trip Chat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82c-cI-bPY">
-                                <rect key="frame" x="265" y="72" width="71" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="82c-cI-bPY" firstAttribute="top" secondItem="eJd-0v-VT8" secondAttribute="bottom" constant="8" id="KYz-S4-V8K"/>
-                            <constraint firstItem="82c-cI-bPY" firstAttribute="centerX" secondItem="j5Q-cO-qEa" secondAttribute="centerX" id="W8E-YN-wRH"/>
-                        </constraints>
                     </view>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2x8-kH-QWd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T2g-kb-YEy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5032" y="304"/>
         </scene>
@@ -1274,7 +1259,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="qrE-jW-7Mh"/>
-        <segue reference="22J-St-5ye"/>
+        <segue reference="cjl-c9-xpV"/>
         <segue reference="mMn-0A-iAN"/>
     </inferredMetricsTieBreakers>
 </document>

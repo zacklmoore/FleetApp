@@ -7,16 +7,77 @@
 //
 
 import UIKit
+import JSQMessagesViewController
 
-class ChatViewController: UIViewController {
+class ChatViewController: JSQMessagesViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        self.senderId = loggedInUser!.username;
+        self.senderDisplayName = loggedInUser!.firstName + " " + loggedInUser!.lastName;
+        
+        self.collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSizeZero;
+        self.inputToolbar!.contentView!.leftBarButtonItem = nil;
+        self.collectionView!.reloadData();
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func didPressSendButton(button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: NSDate!)
+    {
+        let message = JSQMessage(senderId: self.senderId, displayName: self.senderDisplayName, text: text);
+        trip!.messages += [message];
+        
+        self.finishSendingMessageAnimated(true);
+    }
+    
+    override func collectionView(collectionView: JSQMessagesCollectionView!, messageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageData! {
+        let data = trip!.messages[indexPath.row]
+        return data
+    }
+    
+    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return trip!.messages.count
+    }
+    
+    override func collectionView(collectionView: JSQMessagesCollectionView!, didDeleteMessageAtIndexPath indexPath: NSIndexPath!) {
+        trip!.messages.removeAtIndex(indexPath.row)
+    }
+    
+    override func collectionView(collectionView: JSQMessagesCollectionView!, messageBubbleImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageBubbleImageDataSource! {
+        let data = trip!.messages[indexPath.row]
+        
+        let factory = JSQMessagesBubbleImageFactory();
+        
+        let outGoingBubble = factory.outgoingMessagesBubbleImageWithColor(UIColor.blueColor());
+        
+        let incomingBubble = factory.incomingMessagesBubbleImageWithColor(UIColor.lightGrayColor());
+        
+        switch(data.senderId) {
+        case self.senderId:
+            return outGoingBubble
+        default:
+            return incomingBubble
+        }
+    }
+    
+    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
+    {
+        let cell = super.collectionView(collectionView, cellForItemAtIndexPath: indexPath);
+        
+        // This doesn't really do anything, but it's a good point for customization
+        let message = trip!.messages[indexPath.item];
+        
+        return cell;  
+    }
+    
+    override func collectionView(collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageAvatarImageDataSource!
+    {
+        return nil;
     }
 }
