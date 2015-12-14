@@ -38,10 +38,29 @@ class RegistrationViewController: UIViewController {
         }
         else
         {
-            let newUser = User(uName: usernameField.text!, pWord: passwordField.text!, fName: firstNameField.text!, lName: lastNameField.text!);
-            delegate.registerUser(newUser);
-            navigationController?.popViewControllerAnimated(true);
+            if(uniqueUsername(usernameField.text!.lowercaseString))
+            {
+                let newUser = User(uName: usernameField.text!.lowercaseString, pWord: passwordField.text!, fName: firstNameField.text!, lName: lastNameField.text!);
+                delegate.registerUser(newUser);
+                navigationController?.popViewControllerAnimated(true);
+            }
+            else
+            {
+                let alert = UIAlertController(title: "Error", message: "This username is already taken.", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil));
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
         }
+    }
+    
+    func uniqueUsername(string: String) -> Bool {
+        for u in userList {
+            if(u.username == string)
+            {
+                return false;
+            }
+        }
+        return true;
     }
     
     @IBAction func finishButtonPressed(sender: AnyObject) {

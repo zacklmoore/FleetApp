@@ -14,6 +14,7 @@ class TripSettingsViewController: UIViewController {
     @IBOutlet weak var tripDateTimePicker: UIDatePicker!
     @IBOutlet weak var tripStartLocationField: UITextField!
     @IBOutlet weak var tripEndLocationField: UITextField!
+    @IBOutlet weak var saveSettingsButton: UIButton!
     
     var delegate: settingsReturnDelegate!
     
@@ -27,6 +28,23 @@ class TripSettingsViewController: UIViewController {
             tripStartLocationField.text = trip!.startString;
             tripEndLocationField.text = trip!.endString;
         }
+        
+        if(loggedInUser! != trip!.leader)
+        {
+            tripNameField.userInteractionEnabled = false;
+            tripDateTimePicker.userInteractionEnabled = false;
+            tripStartLocationField.userInteractionEnabled = false;
+            tripEndLocationField.userInteractionEnabled = false;
+            saveSettingsButton.hidden = true;
+        }
+        else
+        {
+            tripNameField.userInteractionEnabled = true;
+            tripDateTimePicker.userInteractionEnabled = true;
+            tripStartLocationField.userInteractionEnabled = true;
+            tripEndLocationField.userInteractionEnabled = true;
+            saveSettingsButton.hidden = false;
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -38,6 +56,23 @@ class TripSettingsViewController: UIViewController {
             tripDateTimePicker.date = trip!.startDateTime;
             tripStartLocationField.text = trip!.startString;
             tripEndLocationField.text = trip!.endString;
+        }
+        
+        if(loggedInUser! != trip!.leader)
+        {
+            tripNameField.userInteractionEnabled = false;
+            tripDateTimePicker.userInteractionEnabled = false;
+            tripStartLocationField.userInteractionEnabled = false;
+            tripEndLocationField.userInteractionEnabled = false;
+            saveSettingsButton.hidden = true;
+        }
+        else
+        {
+            tripNameField.userInteractionEnabled = true;
+            tripDateTimePicker.userInteractionEnabled = true;
+            tripStartLocationField.userInteractionEnabled = true;
+            tripEndLocationField.userInteractionEnabled = true;
+            saveSettingsButton.hidden = false;
         }
     }
     

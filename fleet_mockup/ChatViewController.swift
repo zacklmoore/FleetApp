@@ -71,7 +71,13 @@ class ChatViewController: JSQMessagesViewController {
             }
         default:
             let otherUser = trip!.userForUsername(data.senderId);
-            let otherUserVehicle = trip!.vehicleForUser(otherUser!);
+            
+            var otherUserVehicle: Vehicle?
+            
+            if(otherUser != nil)
+            {
+                otherUserVehicle = trip!.vehicleForUser(otherUser!);
+            }
             
             if(otherUserVehicle != nil)
             {

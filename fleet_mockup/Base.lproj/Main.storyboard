@@ -1076,6 +1076,7 @@
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="saveSettingsButton" destination="AZD-ze-yGR" id="mEX-QW-5yx"/>
                         <outlet property="tripDateTimePicker" destination="Aow-ZA-l9h" id="TLN-wO-JNR"/>
                         <outlet property="tripEndLocationField" destination="OZp-q7-LNp" id="B6W-db-5yU"/>
                         <outlet property="tripNameField" destination="6G4-dy-2Zx" id="7aA-AA-fP8"/>

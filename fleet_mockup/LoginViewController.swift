@@ -58,7 +58,7 @@ class LoginViewController: UIViewController, registerReturnDelegate, RiffleDeleg
         {
             //Handle Login Via Exis HERE
             
-            let name = usernameField.text!
+            let name = usernameField.text!.lowercaseString;
             
             // Create the domain for this user based on the name they've submitted
             app = RiffleDomain(domain: "xs.demo.geobadger.fleet")
@@ -68,7 +68,7 @@ class LoginViewController: UIViewController, registerReturnDelegate, RiffleDeleg
             
             //The following code is temporary for fake logins. Remove it once Exis implemented
             for u in userList {
-                if(u.username == usernameField.text && u.password == passworField.text)
+                if(u.username == usernameField.text!.lowercaseString && u.password == passworField.text)
                 {
                     return u;
                 }
