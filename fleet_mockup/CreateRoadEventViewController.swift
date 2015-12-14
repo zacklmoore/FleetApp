@@ -16,7 +16,7 @@ class CreateRoadEventViewController: UIViewController, UIPickerViewDataSource, U
     
     var delegate: CreateRoadEventDelegate?
     var coordinates: CLLocationCoordinate2D!
-    var pickerData = ["Stop", "Hazard", "Food", "Gas", "Crash", "Traffic", "Cop", "Other"]
+    var pickerData = ["Stop", "Hazard", "Food", "Gas", "Crash", "Traffic", "Cop"]
     var eventTypeIndex : Int?
     
     override func viewDidLoad() {
