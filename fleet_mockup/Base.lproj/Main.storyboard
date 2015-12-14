@@ -347,7 +347,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Log Out" id="wfL-3F-1Ti">
                             <connections>
                                 <action selector="logoutButtonPressed:" destination="Yq7-8f-yve" id="x3J-xs-a6Q"/>
-                                <segue destination="04S-Eg-Z3y" kind="showDetail" id="pDp-mN-SiY"/>
+                                <segue destination="04S-Eg-Z3y" kind="showDetail" identifier="logoutSegue" id="pDp-mN-SiY"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1303,8 +1303,8 @@
         <image name="white-car" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qrE-jW-7Mh"/>
-        <segue reference="cjl-c9-xpV"/>
         <segue reference="mMn-0A-iAN"/>
+        <segue reference="22J-St-5ye"/>
+        <segue reference="qrE-jW-7Mh"/>
     </inferredMetricsTieBreakers>
 </document>

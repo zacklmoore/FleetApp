@@ -10,11 +10,14 @@ import UIKit
 
 class CreateJoinViewController: UIViewController {
     
-   
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        loggedInUser!.locationManager.startUpdatingLocation();
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        loggedInUser!.locationManager.startUpdatingLocation();
     }
     
     override func didReceiveMemoryWarning() {
@@ -23,7 +26,10 @@ class CreateJoinViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
+        if(segue.identifier == "logoutSegue")
+        {
+            loggedInUser!.locationManager.stopUpdatingLocation();
+        }
     }
 }
 
