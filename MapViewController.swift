@@ -11,10 +11,12 @@ import MapKit
 
 class CustomPointAnnotation: MKPointAnnotation {
     var imageName: String!
+    var color: UIColor!
 }
 
 class EventPointAnnotation: MKPointAnnotation {
     var imageName: String!
+    var creator: User!
 }
 
 protocol CreateRoadEventDelegate {
@@ -68,6 +70,12 @@ class MapViewController: UIViewController, MKMapViewDelegate, CreateRoadEventDel
             
             let cpa = annotation as! CustomPointAnnotation
             anView!.image = UIImage(named:cpa.imageName)
+            anView!.layer.anchorPoint = CGPointMake(0.5, 1.0);
+            
+            if(cpa.color != nil)
+            {
+                anView!.image = anView!.image!.imageWithRenderingMode(.AlwaysTemplate).colorized(cpa.color);
+            }
             
             return anView
         }
@@ -88,11 +96,17 @@ class MapViewController: UIViewController, MKMapViewDelegate, CreateRoadEventDel
             
             let cpa = annotation as! EventPointAnnotation
             anView!.image = UIImage(named:cpa.imageName)
-            let deleteButton = UIButton(type: UIButtonType.Custom)
-            deleteButton.frame.size.width = 24
-            deleteButton.frame.size.height = 24
-            deleteButton.setImage(UIImage(named: "trash"), forState: .Normal)
-            anView!.rightCalloutAccessoryView = deleteButton
+            anView!.layer.anchorPoint = CGPointMake(0.5, 1.0);
+            
+            if(cpa.creator == loggedInUser! || loggedInUser == trip!.leader)
+            {
+                let deleteButton = UIButton(type: UIButtonType.Custom)
+                deleteButton.frame.size.width = 24
+                deleteButton.frame.size.height = 24
+                deleteButton.setImage(UIImage(named: "trash"), forState: .Normal)
+                anView!.rightCalloutAccessoryView = deleteButton
+            }
+            
             return anView
         }
         
@@ -108,13 +122,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, CreateRoadEventDel
         let startAnnotation = CustomPointAnnotation();
         startAnnotation.title = trip!.startString;
         startAnnotation.coordinate = trip!.startLoc;
-        startAnnotation.imageName = "start_icon";
+        startAnnotation.imageName = "startPointer";
         self.mapView.addAnnotation(startAnnotation);
         
         let endAnnotation = CustomPointAnnotation();
         endAnnotation.title = trip!.endString;
         endAnnotation.coordinate = trip!.endLoc;
-        endAnnotation.imageName = "finish_icon";
+        endAnnotation.imageName = "endPointer";
         self.mapView.addAnnotation(endAnnotation);
         
         //Pins for Vehicles
@@ -125,11 +139,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, CreateRoadEventDel
             
             if(trip!.vehicleForUser(loggedInUser!) == v)
             {
-                annotation.imageName = "mycar_icon";
+                annotation.imageName = "car-icon-flip";
+                annotation.color = v.textColor;
             }
             else
             {
-                annotation.imageName = "car_icon";
+                annotation.imageName = "car-icon-flip";
+                annotation.color = v.textColor;
             }
             self.mapView.addAnnotation(annotation);
         }
@@ -141,6 +157,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CreateRoadEventDel
             annotation.title = e.creator.firstName + " " + e.creator.lastName;
             annotation.subtitle = e.descString;
             annotation.coordinate = e.location;
+            annotation.creator = e.creator;
             
             //Set custom annotation icons
             
@@ -229,5 +246,22 @@ class MapViewController: UIViewController, MKMapViewDelegate, CreateRoadEventDel
     @IBAction func refreshButtonPressed(sender: AnyObject) {
         //Refresh user locations and pins
         updateTripLocations();
+    }
+}
+
+extension UIImage {
+    
+    func colorized(color : UIColor) -> UIImage {
+        let rect = CGRectMake(0, 0, self.size.width, self.size.height);
+        UIGraphicsBeginImageContextWithOptions(rect.size, false, 0.0);
+        let context = UIGraphicsGetCurrentContext();
+        CGContextSetBlendMode(context, .Multiply)
+        CGContextDrawImage(context, rect, self.CGImage)
+        CGContextClipToMask(context, rect, self.CGImage)
+        CGContextSetFillColorWithColor(context, color.CGColor)
+        CGContextFillRect(context, rect)
+        let colorizedImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        return colorizedImage
     }
 }

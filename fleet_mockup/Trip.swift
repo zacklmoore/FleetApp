@@ -74,4 +74,16 @@ class Trip: NSObject {
         }
         return nil;
     }
+    
+    func userForUsername(name: String) ->User? {
+        for v in vehicles {
+            for u in v.passengers {
+                if(u.username == name)
+                {
+                    return u;
+                }
+            }
+        }
+        return nil;
+    }
 }

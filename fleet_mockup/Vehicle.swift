@@ -16,13 +16,13 @@ class Vehicle: NSObject {
    
     var make : String?
     var model : String?
+    var color : String?
     var captain: User
-    var vehicleColor : UIColor?
     var MPG : Int?
     var passengers = [User]()
     
     //textColor = vehicleColor except when vehicleColor has already been used for a vehicle on this trip.
-    var textColor : UIColor?
+    var textColor : UIColor
     
     // add ~20 default color values
     // remove all the colors in the usedColors array in the init before initializing textColor
@@ -32,6 +32,7 @@ class Vehicle: NSObject {
     {
         captain = vCap
         passengers.append(vCap);
+        textColor = UIColor.randomColor()
     }
     
     //Temprarily disabled until all pre-requistes implemented

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CarDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
+class CarDetailViewController: UIViewController, UIPopoverPresentationControllerDelegate, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, SwiftColorPickerDelegate {
     
     @IBOutlet weak var carMakeLabel: UILabel!
     @IBOutlet weak var carModelLabel: UILabel!
@@ -20,11 +20,13 @@ class CarDetailViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var modelText: UITextField!
     @IBOutlet weak var colorText: UITextField!
     @IBOutlet weak var save: UIButton!
+    @IBOutlet weak var selectColorButton: UIButton!
+    @IBOutlet weak var carIcon: UIImageView!
     
     @IBAction func saveButton(sender: AnyObject) {
         vehicle.make = makeText.text
         vehicle.model = modelText.text
-        //vehicle.vehicleColor = colorText.text
+        vehicle.color = colorText.text
     }
     
     var vehicle: Vehicle!
@@ -38,20 +40,24 @@ class CarDetailViewController: UIViewController, UITableViewDataSource, UITableV
             makeText.userInteractionEnabled = false
             modelText.userInteractionEnabled = false
             colorText.userInteractionEnabled = false
-            save.userInteractionEnabled = false
+            save.hidden = true
+            selectColorButton.hidden = true
             
         }
         else{
             makeText.userInteractionEnabled = true
             modelText.userInteractionEnabled = true
             colorText.userInteractionEnabled = true
-            save.userInteractionEnabled = true
+            save.hidden = false
+            selectColorButton.hidden = false
             
         }
         
         makeText.text = vehicle.make
         modelText.text = vehicle.model
-        //colorText.text = vehicle.vehicleColor
+        colorText.text = vehicle.color
+        carIcon.image = carIcon.image!.imageWithRenderingMode(.AlwaysTemplate);
+        carIcon.tintColor = vehicle.textColor;
         
         if(vehicle.captain == loggedInUser!)
         {
@@ -84,8 +90,17 @@ class CarDetailViewController: UIViewController, UITableViewDataSource, UITableV
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func colorSelectionChanged(selectedColor color: UIColor) {
+        carIcon.tintColor = color;
+        vehicle.textColor = color;
+    }
+    
+    // MARK: popover presenation delegates
+    
+    // this enables pop over on iphones
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
         
+        return UIModalPresentationStyle.None
     }
     
     @IBAction func joinButtonPressed(sender: AnyObject) {
@@ -121,4 +136,20 @@ class CarDetailViewController: UIViewController, UITableViewDataSource, UITableV
         
         self.tableView.reloadData();
     }
+    
+    @IBAction func selectColorButtonPressed(sender: AnyObject) {
+        let colorPickerVC = SwiftColorPickerViewController()
+        colorPickerVC.delegate = self
+        colorPickerVC.modalPresentationStyle = .Popover
+        let popVC = colorPickerVC.popoverPresentationController!;
+        popVC.sourceRect = sender.frame
+        popVC.sourceView = self.view
+        popVC.permittedArrowDirections = .Any;
+        popVC.delegate = self;
+        
+        self.presentViewController(colorPickerVC, animated: true, completion: {
+            print("Reade<");
+        })
+    }
+    
 }

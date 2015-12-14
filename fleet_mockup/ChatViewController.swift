@@ -30,7 +30,8 @@ class ChatViewController: JSQMessagesViewController {
     
     override func didPressSendButton(button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: NSDate!)
     {
-        let message = JSQMessage(senderId: self.senderId, displayName: self.senderDisplayName, text: text);
+        let fullText = self.senderDisplayName + ": " + text;
+        let message = JSQMessage(senderId: self.senderId, displayName: self.senderDisplayName, text: fullText);
         trip!.messages += [message];
         
         self.finishSendingMessageAnimated(true);
@@ -54,15 +55,34 @@ class ChatViewController: JSQMessagesViewController {
         
         let factory = JSQMessagesBubbleImageFactory();
         
-        let outGoingBubble = factory.outgoingMessagesBubbleImageWithColor(UIColor.blueColor());
-        
-        let incomingBubble = factory.incomingMessagesBubbleImageWithColor(UIColor.lightGrayColor());
-        
         switch(data.senderId) {
         case self.senderId:
-            return outGoingBubble
+            let userVehicle = trip!.vehicleForUser(loggedInUser!);
+            
+            if(userVehicle != nil)
+            {
+                let outGoingBubble = factory.outgoingMessagesBubbleImageWithColor(userVehicle!.textColor);
+                return outGoingBubble
+            }
+            else
+            {
+                let outGoingBubble = factory.outgoingMessagesBubbleImageWithColor(UIColor.lightGrayColor());
+                return outGoingBubble
+            }
         default:
-            return incomingBubble
+            let otherUser = trip!.userForUsername(data.senderId);
+            let otherUserVehicle = trip!.vehicleForUser(otherUser!);
+            
+            if(otherUserVehicle != nil)
+            {
+                let incomingBubble = factory.incomingMessagesBubbleImageWithColor(otherUserVehicle!.textColor);
+                return incomingBubble
+            }
+            else
+            {
+                let incomingBubble = factory.incomingMessagesBubbleImageWithColor(UIColor.darkGrayColor());
+                return incomingBubble
+            }
         }
     }
     

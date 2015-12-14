@@ -14,6 +14,8 @@
 		126DF60D1BED2F3E002D9A7D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 126DF60B1BED2F3E002D9A7D /* LaunchScreen.xib */; };
 		14528E3F1C1E14C6005DC727 /* JSQMessagesViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14528E3E1C1E14C6005DC727 /* JSQMessagesViewController.framework */; };
 		14528E411C1E14D0005DC727 /* JSQSystemSoundPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14528E401C1E14D0005DC727 /* JSQSystemSoundPlayer.framework */; };
+		14528E471C1E8556005DC727 /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14528E461C1E8555005DC727 /* ColorPickerViewController.swift */; };
+		14528E491C1E86DA005DC727 /* colorPalette.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14528E481C1E86D9005DC727 /* colorPalette.plist */; };
 		147100DF1C100E1500802359 /* CarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147100DE1C100E1500802359 /* CarTableViewCell.swift */; };
 		147100E11C10C82000802359 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147100E01C10C82000802359 /* RegistrationViewController.swift */; };
 		147100E31C10FB5E00802359 /* CarDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147100E21C10FB5D00802359 /* CarDetailViewController.swift */; };
@@ -77,6 +79,8 @@
 		14528E3E1C1E14C6005DC727 /* JSQMessagesViewController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSQMessagesViewController.framework; path = "Pods/../build/Debug-iphoneos/JSQMessagesViewController.framework"; sourceTree = "<group>"; };
 		14528E401C1E14D0005DC727 /* JSQSystemSoundPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSQSystemSoundPlayer.framework; path = "Pods/../build/Debug-iphoneos/JSQSystemSoundPlayer.framework"; sourceTree = "<group>"; };
 		14528E421C1E15AA005DC727 /* FleetApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FleetApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		14528E461C1E8555005DC727 /* ColorPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
+		14528E481C1E86D9005DC727 /* colorPalette.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = colorPalette.plist; sourceTree = "<group>"; };
 		147100DE1C100E1500802359 /* CarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarTableViewCell.swift; sourceTree = "<group>"; };
 		147100E01C10C82000802359 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		147100E21C10FB5D00802359 /* CarDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarDetailViewController.swift; sourceTree = "<group>"; };
@@ -182,6 +186,7 @@
 				147100E41C11048B00802359 /* PassengerTableViewCell.swift */,
 				8EC5EBD91C027FF800EF6B09 /* TripSettingsViewController.swift */,
 				8EC5EBDB1C02801400EF6B09 /* ChatViewController.swift */,
+				14528E461C1E8555005DC727 /* ColorPickerViewController.swift */,
 				8EC5EBD71C027FD000EF6B09 /* TripOverviewViewController.swift */,
 				147100DE1C100E1500802359 /* CarTableViewCell.swift */,
 				8EC5EBD51C027FAF00EF6B09 /* JoinViewController.swift */,
@@ -203,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				126DF6011BED2F3E002D9A7D /* Info.plist */,
+				14528E481C1E86D9005DC727 /* colorPalette.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -350,6 +356,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14528E491C1E86DA005DC727 /* colorPalette.plist in Resources */,
 				126DF6081BED2F3E002D9A7D /* Main.storyboard in Resources */,
 				126DF60D1BED2F3E002D9A7D /* LaunchScreen.xib in Resources */,
 				126DF60A1BED2F3E002D9A7D /* Images.xcassets in Resources */,
@@ -475,6 +482,7 @@
 				8E92B3311C0271EC00785A32 /* Trip.swift in Sources */,
 				14DA805C1BF0047D005228F4 /* CreateJoinViewController.swift in Sources */,
 				8E92B3321C0271EC00785A32 /* User.swift in Sources */,
+				14528E471C1E8556005DC727 /* ColorPickerViewController.swift in Sources */,
 				8E92B32D1C0271EC00785A32 /* ColorTuple.swift in Sources */,
 				8EC5EBDA1C027FF800EF6B09 /* TripSettingsViewController.swift in Sources */,
 				147100E11C10C82000802359 /* RegistrationViewController.swift in Sources */,
