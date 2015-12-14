@@ -645,13 +645,13 @@
                                 <rect key="frame" x="20" y="359" width="560" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
+                                <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select a Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mA4-Yc-1XK">
                                 <rect key="frame" x="20" y="426" width="560" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
+                                <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lmt-oI-Jyt">
                                 <rect key="frame" x="20" y="330" width="122" height="21"/>
@@ -1304,8 +1304,8 @@
         <image name="white-car" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mMn-0A-iAN"/>
+        <segue reference="kbD-ec-6Uo"/>
         <segue reference="22J-St-5ye"/>
-        <segue reference="qrE-jW-7Mh"/>
+        <segue reference="mMn-0A-iAN"/>
     </inferredMetricsTieBreakers>
 </document>
