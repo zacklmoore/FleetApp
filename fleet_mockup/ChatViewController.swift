@@ -66,13 +66,45 @@ class ChatViewController: JSQMessagesViewController {
         }
     }
     
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
+    override func collectionView(collectionView: JSQMessagesCollectionView!, attributedTextForCellTopLabelAtIndexPath indexPath: NSIndexPath!) -> NSAttributedString!
     {
-        let cell = super.collectionView(collectionView, cellForItemAtIndexPath: indexPath);
-        
-        // This doesn't really do anything, but it's a good point for customization
+        //Date Label every 3rd Message
+        if(indexPath.row % 3 == 0)
+        {
+            let message = trip!.messages[indexPath.item];
+            return JSQMessagesTimestampFormatter().attributedTimestampForDate(message.date);
+        }
+        return nil;
+    }
+    
+    override func collectionView(collectionView: JSQMessagesCollectionView!, attributedTextForMessageBubbleTopLabelAtIndexPath indexPath: NSIndexPath!) -> NSAttributedString!
+    {
+        //Name Label every Message
         let message = trip!.messages[indexPath.item];
         
+        if(message.senderId == self.senderId)
+        {
+            return nil;
+        }
+        
+        if(indexPath.row - 1 > 0)
+        {
+            let prevMessage = trip!.messages[indexPath.row-1];
+            
+            if(prevMessage.senderId == message.senderId)
+            {
+                return nil;
+            }
+        }
+        
+        return NSAttributedString(string: message.senderDisplayName);
+    }
+    
+    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
+    {
+        let cell = super.collectionView(collectionView, cellForItemAtIndexPath: indexPath) as! JSQMessagesCollectionViewCell;
+        
+        cell.textView?.dataDetectorTypes = UIDataDetectorTypes.None;
         return cell;  
     }
     
